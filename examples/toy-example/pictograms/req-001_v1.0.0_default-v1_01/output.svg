@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"
+     data-case-id="req-001_v1.0.0_default-v1_01"
+     data-vcsci-score="4.50"
+     data-decision="accept"
+     data-vcsci-certified="true">
+
+  <metadata>
+    <vcsci:metadata xmlns:vcsci="https://vcsci.org/schema/v1">
+      <![CDATA[
+{
+  "vcsci": {
+    "version": "1.0.0",
+    "case_id": "req-001_v1.0.0_default-v1_01",
+    "phrase_id": "req-001",
+    "chain_of_thought": {
+      "1_input": {
+        "phrase": {
+          "spanish": "Quiero ir al baño.",
+          "english": "I want to go to the toilet.",
+          "domain": "Higiene/Salud"
+        },
+        "style_profile_id": "default-v1",
+        "pipeline_version": "v1.0.0"
+      },
+      "2_generation": {
+        "model": "example-generator",
+        "timestamp": "2025-01-26T15:30:00Z",
+        "parameters": {
+          "temperature": 0.7,
+          "seed": 42,
+          "style": "minimalist",
+          "complexity": "simple"
+        }
+      },
+      "3_evaluation": {
+        "ratings": {
+          "clarity": 4,
+          "recognizability": 5,
+          "semantic_transparency": 4,
+          "pragmatic_fit": 5,
+          "cultural_adequacy": 4,
+          "cognitive_accessibility": 5
+        },
+        "vcsci_score": 4.5,
+        "decision": "accept",
+        "evaluator_role": "expert-aac",
+        "evaluation_date": "2025-01-26",
+        "required_edits": [],
+        "notes": "Excellent pictogram for AAC use."
+      },
+      "4_provenance": {
+        "created_by": "VCSCI Pipeline v1.0.0",
+        "created_at": "2025-01-26T15:30:00Z",
+        "evaluated_at": "2025-01-26T16:00:00Z",
+        "iteration": 1,
+        "parent_case_id": null
+      }
+    }
+  }
+}
+      ]]>
+    </vcsci:metadata>
+  </metadata>
+
+  <title>I want to go to the toilet</title>
+  <desc>Minimalist pictogram showing a person and toilet, communicating the need to use the bathroom. Suitable for AAC communication boards.</desc>
+
+  <defs>
+    <style>
+      .person { fill: #2c3e50; }
+      .toilet { fill: #95a5a6; }
+      .arrow { fill: #3498db; opacity: 0.7; }
+    </style>
+  </defs>
+
+  <!-- Background (optional, for visibility) -->
+  <rect width="512" height="512" fill="#ffffff"/>
+
+  <!-- Person figure (left side) -->
+  <g id="person" class="person">
+    <!-- Head -->
+    <circle cx="150" cy="150" r="40"/>
+    <!-- Body -->
+    <rect x="110" y="200" width="80" height="120" rx="10"/>
+    <!-- Arms -->
+    <rect x="85" y="220" width="20" height="80" rx="10"/>
+    <rect x="185" y="220" width="20" height="80" rx="10"/>
+    <!-- Legs -->
+    <rect x="120" y="320" width="25" height="100" rx="10"/>
+    <rect x="155" y="320" width="25" height="100" rx="10"/>
+  </g>
+
+  <!-- Movement arrow (indicating direction/intent) -->
+  <g id="arrow" class="arrow">
+    <path d="M 220 256 L 300 256 L 300 236 L 340 266 L 300 296 L 300 276 L 220 276 Z"/>
+  </g>
+
+  <!-- Toilet symbol (right side) -->
+  <g id="toilet" class="toilet">
+    <!-- Tank -->
+    <rect x="360" y="220" width="80" height="50" rx="5"/>
+    <!-- Bowl -->
+    <rect x="350" y="270" width="100" height="100" rx="10"/>
+    <!-- Base -->
+    <ellipse cx="400" cy="370" rx="60" ry="25"/>
+    <!-- Seat detail -->
+    <ellipse cx="400" cy="320" rx="40" ry="15" fill="none" stroke="#7f8c8d" stroke-width="3"/>
+  </g>
+
+  <!-- Optional: thought bubble or emphasis (shows "wanting/needing") -->
+  <g id="emphasis" opacity="0.3">
+    <circle cx="150" cy="120" r="15" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <circle cx="150" cy="120" r="20" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  </g>
+
+</svg>
