@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VCSCI Hexagonal Rating Interface - Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f6fa;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .demo-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .rating-panel {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .hexagon-panel {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dimension {
+      margin-bottom: 20px;
+    }
+
+    .dimension-label {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .rating-options {
+      display: flex;
+      gap: 10px;
+    }
+
+    .rating-btn {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #dfe6e9;
+      background: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .rating-btn:hover {
+      border-color: #74b9ff;
+      background: #f0f8ff;
+    }
+
+    .rating-btn.active {
+      background: #0984e3;
+      color: white;
+      border-color: #0984e3;
+    }
+
+    #hexagon-viz {
+      margin: 20px 0;
+    }
+
+    .stats {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .vcsci-score {
+      font-size: 48px;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .score-label {
+      font-size: 14px;
+      color: #7f8c8d;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .decision-panel {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .decision-btn {
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .decision-btn.accept {
+      background: #2ecc71;
+      color: white;
+    }
+
+    .decision-btn.accept-edit {
+      background: #f39c12;
+      color: white;
+    }
+
+    .decision-btn.reject {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .decision-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .demo-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>VCSCI Hexagonal Rating Interface</h1>
+
+    <div class="demo-wrapper">
+      <!-- Rating Panel -->
+      <div class="rating-panel">
+        <h2>Rate the Pictogram</h2>
+        <p style="color: #7f8c8d; margin-bottom: 20px;">
+          Rate each dimension on a scale of 1-5
+        </p>
+
+        <div class="dimension">
+          <label class="dimension-label">1. Clarity</label>
+          <div class="rating-options">
+            <button class="rating-btn" onclick="rate('clarity', 1)">1</button>
+            <button class="rating-btn" onclick="rate('clarity', 2)">2</button>
+            <button class="rating-btn" onclick="rate('clarity', 3)">3</button>
+            <button class="rating-btn" onclick="rate('clarity', 4)">4</button>
+            <button class="rating-btn" onclick="rate('clarity', 5)">5</button>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <label class="dimension-label">2. Recognizability</label>
+          <div class="rating-options">
+            <button class="rating-btn" onclick="rate('recognizability', 1)">1</button>
+            <button class="rating-btn" onclick="rate('recognizability', 2)">2</button>
+            <button class="rating-btn" onclick="rate('recognizability', 3)">3</button>
+            <button class="rating-btn" onclick="rate('recognizability', 4)">4</button>
+            <button class="rating-btn" onclick="rate('recognizability', 5)">5</button>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <label class="dimension-label">3. Semantic Transparency</label>
+          <div class="rating-options">
+            <button class="rating-btn" onclick="rate('semantic_transparency', 1)">1</button>
+            <button class="rating-btn" onclick="rate('semantic_transparency', 2)">2</button>
+            <button class="rating-btn" onclick="rate('semantic_transparency', 3)">3</button>
+            <button class="rating-btn" onclick="rate('semantic_transparency', 4)">4</button>
+            <button class="rating-btn" onclick="rate('semantic_transparency', 5)">5</button>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <label class="dimension-label">4. Pragmatic Fit</label>
+          <div class="rating-options">
+            <button class="rating-btn" onclick="rate('pragmatic_fit', 1)">1</button>
+            <button class="rating-btn" onclick="rate('pragmatic_fit', 2)">2</button>
+            <button class="rating-btn" onclick="rate('pragmatic_fit', 3)">3</button>
+            <button class="rating-btn" onclick="rate('pragmatic_fit', 4)">4</button>
+            <button class="rating-btn" onclick="rate('pragmatic_fit', 5)">5</button>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <label class="dimension-label">5. Cultural Adequacy</label>
+          <div class="rating-options">
+            <button class="rating-btn" onclick="rate('cultural_adequacy', 1)">1</button>
+            <button class="rating-btn" onclick="rate('cultural_adequacy', 2)">2</button>
+            <button class="rating-btn" onclick="rate('cultural_adequacy', 3)">3</button>
+            <button class="rating-btn" onclick="rate('cultural_adequacy', 4)">4</button>
+            <button class="rating-btn" onclick="rate('cultural_adequacy', 5)">5</button>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <label class="dimension-label">6. Cognitive Accessibility</label>
+          <div class="rating-options">
+            <button class="rating-btn" onclick="rate('cognitive_accessibility', 1)">1</button>
+            <button class="rating-btn" onclick="rate('cognitive_accessibility', 2)">2</button>
+            <button class="rating-btn" onclick="rate('cognitive_accessibility', 3)">3</button>
+            <button class="rating-btn" onclick="rate('cognitive_accessibility', 4)">4</button>
+            <button class="rating-btn" onclick="rate('cognitive_accessibility', 5)">5</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hexagon Visualization -->
+      <div class="hexagon-panel">
+        <h2>Visual Score Profile</h2>
+        <svg id="hexagon-viz" viewBox="0 0 400 400" width="400" height="400">
+          <!-- Grid hexagons -->
+          <g id="grid"></g>
+          <!-- Axes -->
+          <g id="axes"></g>
+          <!-- Data polygon -->
+          <polygon id="data-shape" fill="rgba(52, 152, 219, 0.3)" stroke="#2980b9" stroke-width="2"/>
+          <!-- Labels -->
+          <g id="labels"></g>
+          <!-- Dots -->
+          <g id="dots"></g>
+        </svg>
+
+        <div class="stats">
+          <div class="vcsci-score" id="vcsci-score">0.00</div>
+          <div class="score-label">VCSCI Score</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decision Panel -->
+    <div class="decision-panel">
+      <h2>Overall Decision</h2>
+      <button class="decision-btn accept" onclick="makeDecision('accept')">
+        ✓ Accept
+      </button>
+      <button class="decision-btn accept-edit" onclick="makeDecision('accept-with-edits')">
+        ✎ Accept with Edits
+      </button>
+      <button class="decision-btn reject" onclick="makeDecision('reject')">
+        ✗ Reject
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const scores = {
+      clarity: 0,
+      recognizability: 0,
+      semantic_transparency: 0,
+      pragmatic_fit: 0,
+      cultural_adequacy: 0,
+      cognitive_accessibility: 0
+    };
+
+    const dimensions = [
+      { key: 'clarity', label: 'Clarity', angle: -90 },
+      { key: 'semantic_transparency', label: 'Semantic\nTransparency', angle: -30 },
+      { key: 'pragmatic_fit', label: 'Pragmatic\nFit', angle: 30 },
+      { key: 'cultural_adequacy', label: 'Cultural\nAdequacy', angle: 90 },
+      { key: 'cognitive_accessibility', label: 'Cognitive\nAccessibility', angle: 150 },
+      { key: 'recognizability', label: 'Recognizability', angle: 210 }
+    ];
+
+    const centerX = 200;
+    const centerY = 200;
+    const maxRadius = 150;
+
+    function hexagonVertex(angleInDegrees, radius) {
+      const angleRad = (angleInDegrees * Math.PI) / 180;
+      return {
+        x: centerX + radius * Math.cos(angleRad),
+        y: centerY + radius * Math.sin(angleRad)
+      };
+    }
+
+    function initHexagon() {
+      // Draw grid
+      const grid = document.getElementById('grid');
+      for (let i = 1; i <= 5; i++) {
+        const points = dimensions.map(d => {
+          const v = hexagonVertex(d.angle, (i / 5) * maxRadius);
+          return `${v.x},${v.y}`;
+        }).join(' ');
+
+        const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        polygon.setAttribute('points', points);
+        polygon.setAttribute('fill', 'none');
+        polygon.setAttribute('stroke', '#ecf0f1');
+        polygon.setAttribute('stroke-width', '1');
+        grid.appendChild(polygon);
+      }
+
+      // Draw axes
+      const axes = document.getElementById('axes');
+      dimensions.forEach(d => {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        const endpoint = hexagonVertex(d.angle, maxRadius);
+        line.setAttribute('x1', centerX);
+        line.setAttribute('y1', centerY);
+        line.setAttribute('x2', endpoint.x);
+        line.setAttribute('y2', endpoint.y);
+        line.setAttribute('stroke', '#bdc3c7');
+        line.setAttribute('stroke-width', '1');
+        axes.appendChild(line);
+      });
+
+      // Draw labels
+      const labels = document.getElementById('labels');
+      dimensions.forEach(d => {
+        const labelPos = hexagonVertex(d.angle, maxRadius + 30);
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', labelPos.x);
+        text.setAttribute('y', labelPos.y);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('dominant-baseline', 'middle');
+        text.setAttribute('font-size', '12');
+        text.setAttribute('fill', '#2c3e50');
+        text.textContent = d.label.replace('\n', ' ');
+        labels.appendChild(text);
+      });
+    }
+
+    function updateHexagon() {
+      // Update data shape
+      const points = dimensions.map(d => {
+        const score = scores[d.key] || 0;
+        const radius = (score / 5) * maxRadius;
+        const v = hexagonVertex(d.angle, radius);
+        return `${v.x},${v.y}`;
+      }).join(' ');
+
+      document.getElementById('data-shape').setAttribute('points', points);
+
+      // Update dots
+      const dotsGroup = document.getElementById('dots');
+      dotsGroup.innerHTML = '';
+
+      dimensions.forEach(d => {
+        const score = scores[d.key] || 0;
+        if (score > 0) {
+          const radius = (score / 5) * maxRadius;
+          const pos = hexagonVertex(d.angle, radius);
+          const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          circle.setAttribute('cx', pos.x);
+          circle.setAttribute('cy', pos.y);
+          circle.setAttribute('r', '5');
+          circle.setAttribute('fill', '#2980b9');
+          dotsGroup.appendChild(circle);
+        }
+      });
+
+      // Update VCSCI score
+      const values = Object.values(scores).filter(s => s > 0);
+      const vcsci = values.length > 0
+        ? values.reduce((sum, s) => sum + s, 0) / values.length
+        : 0;
+      document.getElementById('vcsci-score').textContent = vcsci.toFixed(2);
+    }
+
+    function rate(dimension, score) {
+      scores[dimension] = score;
+
+      // Update button states
+      const buttons = document.querySelectorAll(`[onclick*="${dimension}"]`);
+      buttons.forEach((btn, idx) => {
+        if (idx + 1 === score) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      updateHexagon();
+    }
+
+    function makeDecision(decision) {
+      alert(`Decision: ${decision}\n\nScores:\n${JSON.stringify(scores, null, 2)}`);
+    }
+
+    // Initialize
+    initHexagon();
+    updateHexagon();
+  </script>
+</body>
+</html>
