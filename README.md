@@ -26,6 +26,20 @@ Each file contains around 10–15 phrases, totalling approximately 100 core bili
 - **[Download the complete list](core-phrase-list-all.json)**
 
 
+## Current Unit of Analysis
+
+The VCSCI framework currently operates at the **model level**:
+
+- **Input**: A set of phrases (core phrase list)
+- **Process**: Model generates pictograms for each phrase
+- **Output**: Aggregated score across all generated pictograms
+- **Result**: Overall model performance assessment
+
+This approach is designed to evaluate and compare different generative models or model versions based on their collective output quality.
+
+Future versions will also support **pictogram-level evaluation** for individual case analysis and iterative refinement.
+
+
 ## Methodology
 
 The evaluation process involves five stages:

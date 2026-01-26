@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vcsci.org/schemas/rating-record.json",
+  "title": "RatingRecord",
+  "description": "Schema for human evaluation of a pictogram case",
+  "type": "object",
+  "required": [
+    "rating_id",
+    "case_id",
+    "evaluator_role",
+    "evaluation_date",
+    "ratings",
+    "decision"
+  ],
+  "properties": {
+    "rating_id": {
+      "type": "string",
+      "description": "Unique identifier for this rating record",
+      "pattern": "^rating-[a-f0-9-]+$",
+      "examples": ["rating-550e8400-e29b-41d4-a716-446655440000"]
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Reference to the evaluated pictogram case",
+      "pattern": "^[a-z]{3}-\\d{3}_v\\d+\\.\\d+\\.\\d+_[a-z0-9-]+_\\d{2}$"
+    },
+    "evaluator_role": {
+      "type": "string",
+      "description": "Role of the evaluator (anonymized)",
+      "enum": [
+        "expert-aac",
+        "expert-design",
+        "clinician",
+        "educator",
+        "family-member",
+        "end-user",
+        "researcher"
+      ]
+    },
+    "evaluation_date": {
+      "type": "string",
+      "description": "Date of evaluation",
+      "format": "date",
+      "examples": ["2025-01-15"]
+    },
+    "evaluation_mode": {
+      "type": "string",
+      "description": "How the evaluation was conducted",
+      "enum": ["online", "in-person", "remote-interview", "survey"],
+      "default": "online"
+    },
+    "ratings": {
+      "type": "object",
+      "description": "Ratings across evaluation dimensions (1-5 scale)",
+      "required": ["clarity", "recognizability", "semantic_transparency", "pragmatic_fit"],
+      "properties": {
+        "clarity": {
+          "type": "integer",
+          "description": "Visual clarity and legibility",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "recognizability": {
+          "type": "integer",
+          "description": "Ease of recognition without context",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "semantic_transparency": {
+          "type": "integer",
+          "description": "How well it conveys the intended meaning",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "pragmatic_fit": {
+          "type": "integer",
+          "description": "Usefulness in real communication contexts",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "cultural_adequacy": {
+          "type": "integer",
+          "description": "Cultural appropriateness and relevance",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "cognitive_accessibility": {
+          "type": "integer",
+          "description": "Accessibility for users with cognitive differences",
+          "minimum": 1,
+          "maximum": 5
+        }
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "string",
+      "description": "Overall decision for this pictogram",
+      "enum": ["accept", "accept-with-edits", "reject"]
+    },
+    "required_edits": {
+      "type": "array",
+      "description": "List of specific changes needed if not accepted as-is",
+      "items": {
+        "type": "object",
+        "required": ["category", "description"],
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Type of edit needed",
+            "enum": [
+              "color",
+              "shape",
+              "detail-level",
+              "composition",
+              "symbolism",
+              "cultural-adaptation",
+              "accessibility",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description of the required edit"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["critical", "important", "minor"],
+            "default": "important"
+          }
+        }
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-form notes from the evaluator"
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "description": "Time taken for evaluation in seconds",
+      "minimum": 0
+    },
+    "context": {
+      "type": "object",
+      "description": "Additional contextual information",
+      "properties": {
+        "device": {
+          "type": "string",
+          "description": "Device used for evaluation"
+        },
+        "environment": {
+          "type": "string",
+          "description": "Physical environment (controlled, natural, etc.)"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
