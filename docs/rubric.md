@@ -14,13 +14,15 @@ The rubric ensures:
 
 All dimensions use a 5-point scale:
 
-| Score | Label | Description |
-|-------|-------|-------------|
-| **5** | Excellent | Exceeds expectations, exemplary quality |
-| **4** | Good | Above average, minor improvements possible |
-| **3** | Acceptable | Meets minimum standards for AAC use |
-| **2** | Below Average | Significant issues, major improvements needed |
-| **1** | Poor | Fails to meet basic requirements |
+| Score | Label | General Description |
+|-------|-------|---------------------|
+| **5** | Excelente | No necesita mejoras. Listo para uso inmediato. |
+| **4** | Bien | Funciona bien, pero se puede mejorar. Mejoras menores opcionales. |
+| **3** | Funciona | Funciona pero requiere mejoras. Cumple mínimo para AAC. |
+| **2** | Insuficiente | No apto para público general. Necesita mejoras significativas. |
+| **1** | No funcional | No funciona. Necesita repensarse completamente desde cero. |
+
+**Nota**: Cada dimensión tiene descripciones específicas para cada nivel. Las definiciones operacionales completas están disponibles en [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json), que puede ser consultado programáticamente por interfaces de evaluación y scripts de análisis.
 
 ---
 
@@ -36,34 +38,17 @@ All dimensions use a 5-point scale:
 - Scalability (readable at different sizes)
 - Technical quality (proper SVG rendering)
 
-### Rating Anchors
+### Scale Descriptions
 
-#### Score 5 (Excellent)
-- Crisp, clean lines with no artifacts
-- High contrast, immediately distinguishable elements
-- Minimal visual noise
-- Scales perfectly to any size
-- Professional technical execution
+**Complete operational definitions for each score level (1-5) are available in [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json).**
 
-**Example**: A bold, simple icon with 2-3 clear elements, high contrast black/white, perfect SVG rendering.
+Quick reference:
 
-#### Score 3 (Acceptable)
-- Generally clear but may have minor issues
-- Adequate contrast in most contexts
-- Some non-essential details present
-- Readable at typical AAC device sizes
-- Minor technical imperfections
-
-**Example**: A recognizable pictogram with slightly thin lines or moderate detail level, still functional.
-
-#### Score 1 (Poor)
-- Blurry, pixelated, or low-quality rendering
-- Poor contrast, hard to distinguish elements
-- Cluttered with excessive detail
-- Illegible when scaled
-- Major technical problems
-
-**Example**: A complex, detailed drawing with thin lines, low contrast, or rendering errors.
+- **5 (Excelente)**: Líneas nítidas, alto contraste, sin ruido visual, escala perfectamente
+- **4 (Bien)**: Visualmente claro, detalles menores no afectan legibilidad
+- **3 (Funciona)**: Generalmente claro, imperfecciones menores aceptables
+- **2 (Insuficiente)**: Problemas de claridad evidentes, compromete usabilidad
+- **1 (No funcional)**: Borroso, pixelado, ilegible, requiere rediseño completo
 
 ---
 
@@ -79,34 +64,17 @@ All dimensions use a 5-point scale:
 - Minimal ambiguity or alternative interpretations
 - Works without text labels
 
-### Rating Anchors
+### Scale Descriptions
 
-#### Score 5 (Excellent)
-- Instantly recognizable by anyone
-- Unambiguous single interpretation
-- Uses universal visual conventions
-- No caption needed
-- Matches existing AAC standards (e.g., ARASAAC, PCS)
+**Complete operational definitions for each score level (1-5) are available in [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json).**
 
-**Example**: A toilet for "bathroom", a bed for "sleep", a plate with food for "eat".
+Quick reference:
 
-#### Score 3 (Acceptable)
-- Recognizable with brief consideration
-- Main meaning clear, minor alternative interpretations possible
-- Uses common visual elements
-- May benefit from context but not required
-- Generally matches AAC conventions
-
-**Example**: A pictogram showing a person + action that takes 2-3 seconds to interpret but is ultimately clear.
-
-#### Score 1 (Poor)
-- Difficult or impossible to recognize
-- Highly ambiguous, multiple interpretations
-- Uses obscure or personal symbolism
-- Requires explanation to understand
-- Contradicts AAC conventions
-
-**Example**: Abstract shapes with no clear meaning, or representations that don't match the concept.
+- **5 (Excelente)**: Instantáneamente reconocible, inequívoco, usa convenciones universales
+- **4 (Bien)**: Fácilmente reconocible, significado principal evidente
+- **3 (Funciona)**: Reconocible en 2-3 segundos, interpretación clara
+- **2 (Insuficiente)**: Difícil de reconocer, múltiples interpretaciones
+- **1 (No funcional)**: Imposible de reconocer, simbolismo oscuro, requiere rediseño
 
 ---
 
@@ -122,34 +90,17 @@ All dimensions use a 5-point scale:
 - Conveys action, object, emotion, or relationship as needed
 - Aligns with linguistic structure
 
-### Rating Anchors
+### Scale Descriptions
 
-#### Score 5 (Excellent)
-- Perfectly captures phrase meaning
-- All key semantic elements present
-- Correct level of specificity
-- Appropriate to linguistic structure (verb vs. noun, etc.)
-- No semantic loss or distortion
+**Complete operational definitions for each score level (1-5) are available in [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json).**
 
-**Example**: For "I want to go to the toilet" → shows person + toilet + movement indicator, capturing want/need, location, and action.
+Quick reference:
 
-#### Score 3 (Acceptable)
-- Captures core meaning
-- May miss some nuanced elements
-- Generally appropriate specificity
-- Main semantic components present
-- Minor semantic drift acceptable
-
-**Example**: For "I want to go to the toilet" → shows just a toilet, losing the "want/need" and "go" but still communicating the core need.
-
-#### Score 1 (Poor)
-- Misrepresents phrase meaning
-- Missing critical semantic elements
-- Wrong level of specificity
-- Inappropriate to linguistic structure
-- Significant semantic distortion
-
-**Example**: For "I want to go to the toilet" → shows generic bathroom items without clear need/action indication.
+- **5 (Excelente)**: Captura perfectamente el significado, todos los elementos semánticos presentes
+- **4 (Bien)**: Captura muy bien el significado principal, matices menores pueden perderse
+- **3 (Funciona)**: Captura el significado central, componentes principales presentes
+- **2 (Insuficiente)**: Captura parcialmente, faltan elementos importantes
+- **1 (No funcional)**: No representa adecuadamente, distorsión semántica severa
 
 ---
 
@@ -165,34 +116,17 @@ All dimensions use a 5-point scale:
 - Socially appropriate
 - Supports communicative goals
 
-### Rating Anchors
+### Scale Descriptions
 
-#### Score 5 (Excellent)
-- Highly practical for AAC use
-- Age and ability appropriate
-- Supports effective communication
-- Socially appropriate in all contexts
-- Facilitates user autonomy and dignity
+**Complete operational definitions for each score level (1-5) are available in [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json).**
 
-**Example**: A pictogram that can be used confidently in public, at school, at home, etc., enabling clear communication.
+Quick reference:
 
-#### Score 3 (Acceptable)
-- Generally practical for AAC
-- Appropriate for most contexts
-- Functionally adequate
-- No major social appropriateness issues
-- Supports basic communication needs
-
-**Example**: A pictogram that works well in most situations but might need supplementation in some contexts.
-
-#### Score 1 (Poor)
-- Impractical for real AAC use
-- Inappropriate for target users
-- Ineffective for communication
-- Socially problematic
-- Does not support user needs
-
-**Example**: A pictogram that is embarrassing, unclear in context, or doesn't enable actual communication.
+- **5 (Excelente)**: Altamente práctico, apropiado para edad/capacidad, facilita autonomía
+- **4 (Bien)**: Muy práctico, apropiado para mayoría de usuarios y contextos
+- **3 (Funciona)**: Generalmente práctico, funcionalmente adecuado para necesidades básicas
+- **2 (Insuficiente)**: Limitaciones prácticas significativas, efectividad limitada
+- **1 (No funcional)**: Impráctico, inapropiado, no facilita comunicación efectiva
 
 ---
 
@@ -208,41 +142,19 @@ All dimensions use a 5-point scale:
 - Linguistically aligned (Spanish/English context)
 - Avoids stereotypes
 
-### Rating Anchors
+### Scale Descriptions
 
-#### Score 5 (Excellent)
-- Perfectly culturally appropriate
-- Reflects target culture authentically
-- No stereotypes or insensitive elements
-- Linguistically and culturally aligned
-- Broadly acceptable across subcultural groups
+**Complete operational definitions for each score level (1-5) are available in [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json).**
 
-**Example**: Food items, clothing, or activities that match the target culture's everyday life.
+Quick reference:
 
-#### Score 3 (Acceptable)
-- Generally culturally appropriate
-- No major cultural violations
-- May be culturally neutral rather than specific
-- Acceptable across most cultural contexts
-- Minor cultural adaptations possible
+- **5 (Excelente)**: Perfectamente adecuado culturalmente, refleja auténticamente cultura objetivo
+- **4 (Bien)**: Culturalmente apropiado, alta adecuación, bien alineado
+- **3 (Funciona)**: Generalmente adecuado, culturalmente neutral o aceptable
+- **2 (Insuficiente)**: Problemas de adecuación cultural, alineamiento débil
+- **1 (No funcional)**: Culturalmente inapropiado u ofensivo, requiere rediseño
 
-**Example**: Universal symbols that work across cultures, or items that are common enough to be recognizable.
-
-#### Score 1 (Poor)
-- Culturally inappropriate or offensive
-- Reflects wrong cultural context
-- Contains stereotypes
-- Linguistically misaligned
-- Requires significant cultural adaptation
-
-**Example**: Food, clothing, or practices from a different culture, or stereotypical representations.
-
-### N/A Option
-
-Select N/A if:
-- The concept is universally applicable
-- Cultural considerations are not relevant
-- Evaluator lacks cultural competence to judge
+**N/A Option**: Select N/A if the concept is universally applicable, cultural considerations are not relevant, or evaluator lacks cultural competence to judge.
 
 ---
 
@@ -258,40 +170,19 @@ Select N/A if:
 - Attention requirements (captures and holds attention)
 - ISO/IEC 24751 compliance
 
-### Rating Anchors
+### Scale Descriptions
 
-#### Score 5 (Excellent)
-- Extremely simple and clear
-- Minimal cognitive load
-- Immediately processable
-- Attention-grabbing but not distracting
-- Fully compliant with accessibility standards
+**Complete operational definitions for each score level (1-5) are available in [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json).**
 
-**Example**: 2-3 bold shapes, high contrast, instant recognition, no ambiguity.
+Quick reference:
 
-#### Score 3 (Acceptable)
-- Adequately simple
-- Reasonable cognitive load
-- Processable with some effort
-- Maintains attention
-- Meets basic accessibility standards
+- **5 (Excelente)**: Extremadamente simple, carga cognitiva mínima, inmediatamente procesable
+- **4 (Bien)**: Muy accesible, carga cognitiva baja, reconocimiento rápido
+- **3 (Funciona)**: Adecuadamente accesible, carga cognitiva razonable
+- **2 (Insuficiente)**: Desafíos significativos, carga cognitiva alta
+- **1 (No funcional)**: Inaccesible, carga excesiva, requiere simplificación radical
 
-**Example**: A moderately detailed pictogram that requires some cognitive processing but is still accessible.
-
-#### Score 1 (Poor)
-- Too complex
-- High cognitive load
-- Difficult to process
-- Loses user attention
-- Fails accessibility standards
-
-**Example**: Highly detailed, many elements, abstract concepts requiring interpretation.
-
-### N/A Option
-
-Select N/A if:
-- Evaluator lacks expertise in cognitive accessibility
-- Specialized assessment tools needed
+**N/A Option**: Select N/A if evaluator lacks expertise in cognitive accessibility or specialized assessment tools are needed.
 
 ---
 

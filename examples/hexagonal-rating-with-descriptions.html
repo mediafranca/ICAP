@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VCSCI Hexagonal Rating - Con Descripciones del Rubric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f6fa;
+      padding: 20px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #7f8c8d;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .demo-wrapper {
+      display: grid;
+      grid-template-columns: 400px 1fr 400px;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .panel {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .panel h2 {
+      font-size: 18px;
+      color: #34495e;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    /* Rating sliders */
+    .dimension-group {
+      margin-bottom: 25px;
+    }
+
+    .dimension-label {
+      display: block;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slider {
+      flex: 1;
+      height: 8px;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3498db;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3498db;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .score-display {
+      min-width: 40px;
+      font-weight: 700;
+      color: #2c3e50;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    /* Hexagon visualization */
+    #hexagonChart {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Description panel */
+    .description-content {
+      min-height: 400px;
+    }
+
+    .current-dimension {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #3498db;
+    }
+
+    .current-dimension h3 {
+      color: #2c3e50;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .current-dimension .score-label {
+      color: #7f8c8d;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .description-text {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e1e8ed;
+      color: #2c3e50;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .no-selection {
+      color: #95a5a6;
+      font-style: italic;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    /* Summary panel */
+    .vcsci-score {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .vcsci-score-value {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .vcsci-score-label {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .compiled-evaluation {
+      margin-top: 20px;
+    }
+
+    .compiled-evaluation h3 {
+      font-size: 16px;
+      color: #34495e;
+      margin-bottom: 15px;
+    }
+
+    .evaluation-paragraph {
+      margin-bottom: 15px;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evaluation-paragraph strong {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    /* Export section */
+    .export-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .export-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Lexend', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .export-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .export-btn:active {
+      transform: translateY(0);
+    }
+
+    .export-info {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #7f8c8d;
+      font-style: italic;
+    }
+
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #95a5a6;
+    }
+
+    @media (max-width: 1200px) {
+      .demo-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>VCSCI Hexagonal Rating Interface</h1>
+    <p class="subtitle">Interfaz de evaluación con descripciones del rubric desde JSON centralizado</p>
+
+    <div class="demo-wrapper">
+      <!-- Left panel: Rating sliders -->
+      <div class="panel">
+        <h2>Evaluación por Dimensiones</h2>
+        <div id="ratingsContainer"></div>
+      </div>
+
+      <!-- Center panel: Hexagon visualization -->
+      <div class="panel">
+        <h2>Visualización Hexagonal</h2>
+        <svg id="hexagonChart" width="400" height="400"></svg>
+        <div class="vcsci-score">
+          <div class="vcsci-score-value" id="vcsc iScoreValue">0.00</div>
+          <div class="vcsci-score-label">VCSCI Score</div>
+        </div>
+      </div>
+
+      <!-- Right panel: Descriptions -->
+      <div class="panel">
+        <h2>Descripción del Puntaje</h2>
+        <div class="description-content">
+          <div id="descriptionDisplay" class="no-selection">
+            Mueve los sliders para ver las descripciones de cada puntaje
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom panel: Compiled evaluation -->
+    <div class="panel">
+      <h2>Evaluación Compilada (Overall)</h2>
+      <div class="compiled-evaluation">
+        <div id="compiledEvaluation" class="no-selection">
+          La evaluación completa aparecerá aquí como párrafos compilados
+        </div>
+      </div>
+
+      <div class="export-section">
+        <button id="exportBtn" class="export-btn" onclick="exportEvaluation()">
+          📥 Exportar Evaluación (JSON)
+        </button>
+        <p class="export-info">
+          El JSON incluirá los párrafos completos de la rúbrica para máxima transparencia
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Load rubric descriptions
+    let rubricData = null;
+    let currentScores = {
+      clarity: 3,
+      recognizability: 3,
+      semantic_transparency: 3,
+      pragmatic_fit: 3,
+      cultural_adequacy: 3,
+      cognitive_accessibility: 3
+    };
+    let activeDimension = 'clarity';
+
+    const dimensions = [
+      { key: 'clarity', label: 'Claridad', color: '#e74c3c' },
+      { key: 'recognizability', label: 'Reconocibilidad', color: '#f39c12' },
+      { key: 'semantic_transparency', label: 'Transparencia Semántica', color: '#f1c40f' },
+      { key: 'pragmatic_fit', label: 'Adecuación Pragmática', color: '#2ecc71' },
+      { key: 'cultural_adequacy', label: 'Adecuación Cultural', color: '#3498db' },
+      { key: 'cognitive_accessibility', label: 'Accesibilidad Cognitiva', color: '#9b59b6' }
+    ];
+
+    // Load rubric JSON
+    async function loadRubric() {
+      try {
+        const response = await fetch('../data/rubric-scale-descriptions.json');
+        rubricData = await response.json();
+        console.log('Rubric loaded successfully');
+        initializeInterface();
+      } catch (error) {
+        console.error('Error loading rubric:', error);
+        document.getElementById('descriptionDisplay').innerHTML =
+          '<div class="loading">Error: No se pudo cargar rubric-scale-descriptions.json</div>';
+      }
+    }
+
+    function initializeInterface() {
+      createRatingSliders();
+      drawHexagon();
+      updateDescription();
+      updateCompiledEvaluation();
+    }
+
+    function createRatingSliders() {
+      const container = document.getElementById('ratingsContainer');
+
+      dimensions.forEach(dim => {
+        const group = document.createElement('div');
+        group.className = 'dimension-group';
+
+        const label = document.createElement('label');
+        label.className = 'dimension-label';
+        label.textContent = dim.label;
+
+        const sliderContainer = document.createElement('div');
+        sliderContainer.className = 'slider-container';
+
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.min = '1';
+        slider.max = '5';
+        slider.value = currentScores[dim.key];
+        slider.className = 'slider';
+        slider.style.background = `linear-gradient(to right, ${dim.color}dd, ${dim.color}44)`;
+
+        const scoreDisplay = document.createElement('span');
+        scoreDisplay.className = 'score-display';
+        scoreDisplay.textContent = currentScores[dim.key];
+
+        slider.addEventListener('input', (e) => {
+          currentScores[dim.key] = parseInt(e.target.value);
+          scoreDisplay.textContent = e.target.value;
+          activeDimension = dim.key;
+          drawHexagon();
+          updateDescription();
+          updateCompiledEvaluation();
+        });
+
+        slider.addEventListener('focus', () => {
+          activeDimension = dim.key;
+          updateDescription();
+        });
+
+        sliderContainer.appendChild(slider);
+        sliderContainer.appendChild(scoreDisplay);
+
+        group.appendChild(label);
+        group.appendChild(sliderContainer);
+        container.appendChild(group);
+      });
+    }
+
+    function drawHexagon() {
+      const svg = document.getElementById('hexagonChart');
+      const width = 400;
+      const height = 400;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const maxRadius = 150;
+
+      // Clear SVG
+      svg.innerHTML = '';
+
+      // Draw background circles (grid)
+      const levels = [1, 2, 3, 4, 5];
+      levels.forEach(level => {
+        const radius = (level / 5) * maxRadius;
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', centerX);
+        circle.setAttribute('cy', centerY);
+        circle.setAttribute('r', radius);
+        circle.setAttribute('fill', 'none');
+        circle.setAttribute('stroke', level === 5 ? '#95a5a6' : '#ecf0f1');
+        circle.setAttribute('stroke-width', level === 5 ? '2' : '1');
+        circle.setAttribute('stroke-dasharray', level === 5 ? '0' : '5,5');
+        svg.appendChild(circle);
+      });
+
+      // Draw axes
+      dimensions.forEach((dim, i) => {
+        const angle = (Math.PI / 2) - (i * Math.PI / 3);
+        const x = centerX + maxRadius * Math.cos(angle);
+        const y = centerY - maxRadius * Math.sin(angle);
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', centerX);
+        line.setAttribute('y1', centerY);
+        line.setAttribute('x2', x);
+        line.setAttribute('y2', y);
+        line.setAttribute('stroke', '#bdc3c7');
+        line.setAttribute('stroke-width', '1');
+        svg.appendChild(line);
+
+        // Add labels
+        const labelX = centerX + (maxRadius + 30) * Math.cos(angle);
+        const labelY = centerY - (maxRadius + 30) * Math.sin(angle);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', labelX);
+        text.setAttribute('y', labelY);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('dominant-baseline', 'middle');
+        text.setAttribute('font-size', '12');
+        text.setAttribute('font-weight', '600');
+        text.setAttribute('fill', dim.color);
+        text.textContent = dim.label;
+        svg.appendChild(text);
+      });
+
+      // Draw data hexagon
+      const points = dimensions.map((dim, i) => {
+        const score = currentScores[dim.key];
+        const radius = (score / 5) * maxRadius;
+        const angle = (Math.PI / 2) - (i * Math.PI / 3);
+        const x = centerX + radius * Math.cos(angle);
+        const y = centerY - radius * Math.sin(angle);
+        return `${x},${y}`;
+      }).join(' ');
+
+      const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      polygon.setAttribute('points', points);
+      polygon.setAttribute('fill', 'rgba(52, 152, 219, 0.3)');
+      polygon.setAttribute('stroke', '#3498db');
+      polygon.setAttribute('stroke-width', '2');
+      svg.appendChild(polygon);
+
+      // Draw data points
+      dimensions.forEach((dim, i) => {
+        const score = currentScores[dim.key];
+        const radius = (score / 5) * maxRadius;
+        const angle = (Math.PI / 2) - (i * Math.PI / 3);
+        const x = centerX + radius * Math.cos(angle);
+        const y = centerY - radius * Math.sin(angle);
+
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x);
+        circle.setAttribute('cy', y);
+        circle.setAttribute('r', '6');
+        circle.setAttribute('fill', dim.color);
+        circle.setAttribute('stroke', 'white');
+        circle.setAttribute('stroke-width', '2');
+        svg.appendChild(circle);
+      });
+
+      // Update VCSCI score
+      const avgScore = Object.values(currentScores).reduce((a, b) => a + b, 0) / 6;
+      document.getElementById('vcsciScoreValue').textContent = avgScore.toFixed(2);
+    }
+
+    function updateDescription() {
+      if (!rubricData) return;
+
+      const dim = dimensions.find(d => d.key === activeDimension);
+      const score = currentScores[activeDimension];
+      const dimData = rubricData.dimensions[activeDimension];
+      const levelData = dimData.levels[score.toString()];
+      const scaleData = rubricData.scale[score.toString()];
+
+      const html = `
+        <div class="current-dimension">
+          <h3>${dim.label}</h3>
+          <p class="score-label">Puntaje ${score}/5 - ${scaleData.label}</p>
+        </div>
+        <div class="description-text">
+          ${levelData.text}
+        </div>
+      `;
+
+      document.getElementById('descriptionDisplay').innerHTML = html;
+    }
+
+    function updateCompiledEvaluation() {
+      if (!rubricData) return;
+
+      const avgScore = Object.values(currentScores).reduce((a, b) => a + b, 0) / 6;
+      const roundedScore = Math.round(avgScore);
+      const scaleData = rubricData.scale[roundedScore.toString()];
+
+      let html = `
+        <p style="text-align: center; margin-bottom: 20px; font-size: 16px;">
+          <strong>VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label})</strong><br>
+          <em>${scaleData.general}</em>
+        </p>
+      `;
+
+      dimensions.forEach(dim => {
+        const score = currentScores[dim.key];
+        const dimData = rubricData.dimensions[dim.key];
+        const levelData = dimData.levels[score.toString()];
+
+        html += `
+          <div class="evaluation-paragraph">
+            <strong>${dim.label}:</strong> ${levelData.text}
+          </div>
+        `;
+      });
+
+      document.getElementById('compiledEvaluation').innerHTML = html;
+    }
+
+    function exportEvaluation() {
+      if (!rubricData) {
+        alert('Error: Rubric data not loaded');
+        return;
+      }
+
+      const avgScore = Object.values(currentScores).reduce((a, b) => a + b, 0) / 6;
+      const roundedScore = Math.round(avgScore);
+      const scaleData = rubricData.scale[roundedScore.toString()];
+
+      // Build compiled paragraphs
+      const compiledParagraphs = [];
+      const dimensionEvaluations = {};
+
+      dimensions.forEach(dim => {
+        const score = currentScores[dim.key];
+        const dimData = rubricData.dimensions[dim.key];
+        const levelData = dimData.levels[score.toString()];
+        const scaleLevel = rubricData.scale[score.toString()];
+
+        // Store full evaluation for each dimension
+        dimensionEvaluations[dim.key] = {
+          dimension_name: dim.label,
+          dimension_name_en: dimData.name,
+          score: score,
+          score_label: scaleLevel.label,
+          score_label_en: scaleLevel.label_en,
+          description: levelData.text,
+          description_en: levelData.text_en
+        };
+
+        // Add to compiled paragraphs
+        compiledParagraphs.push({
+          dimension: dim.key,
+          dimension_label: dim.label,
+          text: `${dim.label}: ${levelData.text}`
+        });
+      });
+
+      // Create complete evaluation object
+      const evaluation = {
+        metadata: {
+          evaluation_date: new Date().toISOString(),
+          rubric_version: rubricData.version,
+          interface_type: 'hexagonal',
+          exported_from: 'hexagonal-rating-with-descriptions.html'
+        },
+        scores: currentScores,
+        vcsci_score: parseFloat(avgScore.toFixed(2)),
+        overall_assessment: {
+          score: parseFloat(avgScore.toFixed(2)),
+          label: scaleData.label,
+          label_en: scaleData.label_en,
+          general_description: scaleData.general,
+          general_description_en: scaleData.general_en
+        },
+        dimension_evaluations: dimensionEvaluations,
+        compiled_evaluation: {
+          paragraphs: compiledParagraphs,
+          full_text: compiledParagraphs.map(p => p.text).join('\n\n'),
+          summary: `VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label}). ${scaleData.general}`
+        },
+        rubric_transparency: {
+          note: 'This evaluation includes complete rubric descriptions for each score to ensure transparency and reproducibility',
+          rubric_source: '../data/rubric-scale-descriptions.json'
+        }
+      };
+
+      // Download as JSON
+      const blob = new Blob([JSON.stringify(evaluation, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `vcsci-evaluation-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      console.log('Exported evaluation:', evaluation);
+    }
+
+    // Initialize on load
+    loadRubric();
+  </script>
+</body>
+</html>

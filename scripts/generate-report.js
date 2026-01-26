@@ -27,9 +27,22 @@ const reportTitle = getArg('--title') || `VCSCI Evaluation Report - ${today}`;
 const filterPipeline = getArg('--pipeline');
 const filterStyle = getArg('--style');
 const minScore = parseFloat(getArg('--min-score')) || 0;
+const includeDescriptions = args.includes('--include-descriptions');
 
 console.log('VCSCI Report Generator');
 console.log('=====================\n');
+
+// Load rubric descriptions if needed
+let rubricData = null;
+if (includeDescriptions) {
+  const rubricPath = path.join(__dirname, '../data/rubric-scale-descriptions.json');
+  if (fs.existsSync(rubricPath)) {
+    rubricData = JSON.parse(fs.readFileSync(rubricPath, 'utf8'));
+    console.log('Loaded rubric descriptions for detailed reporting');
+  } else {
+    console.warn('Warning: rubric-scale-descriptions.json not found. Descriptions will be omitted.');
+  }
+}
 
 // Load case scores
 const scoresFile = 'analysis/results/case-scores.json';

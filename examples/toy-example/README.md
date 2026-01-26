@@ -1,6 +1,11 @@
 # VCSCI Toy Example: Complete Chain of Thought
 
-This example demonstrates the complete flow from generation to evaluation with embedded metadata as single source of truth.
+This directory contains two complementary examples demonstrating the complete VCSCI pipeline:
+
+1. **Basic Example**: "I want to go to the toilet" (req-001) - Shows the core flow
+2. **Canonical Example**: "Make the bed" - Shows best practices with perfect scores
+
+Both demonstrate the complete flow from utterance to evaluated pictogram with embedded metadata as single source of truth.
 
 ## The Flow
 

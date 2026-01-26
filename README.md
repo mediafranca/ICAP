@@ -119,7 +119,45 @@ You can edit JSON files separately and then compile them into a single unified f
 ```bash
 python3 merge-core-phrases.py
 ```
+
 to produce an updated compiled JSON file.
+
+## Centralized Rubric Descriptions
+
+**New Feature:** All operational definitions for the VCSCI evaluation rubric are now stored in a single source of truth:
+
+**[data/rubric-scale-descriptions.json](data/rubric-scale-descriptions.json)**
+
+This enables:
+
+- **Consistent evaluation** - Same descriptions across all interfaces
+- **Programmatic access** - Scripts and web UIs query the same source
+- **Bilingual support** - Spanish and English in sync
+- **Compiled evaluations** - Scores automatically compile into narrative paragraphs
+
+### Usage Examples
+
+```bash
+# Compile evaluation scores into narrative text
+node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4
+
+# Output in HTML format for web display
+node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4 --format html
+
+# English output
+node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4 --lang en
+```
+
+**See:** [docs/rubric-descriptions-usage.md](docs/rubric-descriptions-usage.md) for complete documentation.
+
+**Interactive Demo:** Open [examples/hexagonal-rating-with-descriptions.html](examples/hexagonal-rating-with-descriptions.html) to see:
+
+- Real-time rubric descriptions as you rate dimensions (Lexend typography)
+- Compiled evaluation (overall) showing all 6 paragraphs
+- One-click JSON export with complete rubric transparency
+- Hexagonal visualization updating in real-time
+
+**Example Export:** See [examples/exported-evaluation-example.json](examples/exported-evaluation-example.json) for a complete exported evaluation with all rubric descriptions included.
 
 ## Quick Start
 
@@ -180,6 +218,7 @@ cat analysis/results/case-scores.json | jq '.["req-001_v1.0.0_default-v1_01"]'
 - [Generation Workflow](docs/generation-workflow.md) - How to generate cases
 - [Evaluation Instrument](docs/evaluation-instrument.md) - How to evaluate
 - [Evaluation Rubric](docs/rubric.md) - Detailed rating criteria
+- [Rubric Descriptions Usage](docs/rubric-descriptions-usage.md) - How to use centralized rubric JSON
 - [Data Schemas](schemas/README.md) - Data structure validation
 - [Data Handling](docs/data-handling.md) - Privacy and governance
 

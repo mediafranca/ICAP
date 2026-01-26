@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="pictogram" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" role="img" class="hc"
+    aria-labelledby="title desc" lang="es" tabindex="0" focusable="true"
+    data-case-id="test-001_v1.0.0_default-v1_01"
+    data-vcsci-score="4.50"
+    data-decision="accept-with-edits"
+    data-vcsci-certified="true"
+    data-domain="home" data-intent="commissive"
+    data-utterance="Voy a hacer mi cama"
+    style="font-size:12px">
+
+    <title id="title">Voy a hacer mi cama - Test con scores variados</title>
+    <desc id="desc">
+        SVG canónico de prueba para el visualizador de metadatos con scores variados.
+        Test canonical SVG for metadata visualizer with varied scores.
+    </desc>
+
+    <metadata id="vcsci-metadata">
+        <vcsci:metadata xmlns:vcsci="https://vcsci.org/schema/v1">
+        <![CDATA[
+{
+  "vcsci": {
+    "version": "1.0.0",
+    "case_id": "test-001_v1.0.0_default-v1_01",
+    "phrase_id": "test-001",
+    "chain_of_thought": {
+      "1_input": {
+        "phrase": {
+          "spanish": "Voy a hacer mi cama",
+          "english": "I'm going to make my bed",
+          "domain": "Activities of Daily Living"
+        },
+        "semantic_analysis": {
+          "speech_act": "commissive",
+          "frame": "Arranging",
+          "agent": "Speaker",
+          "patient": "Bed",
+          "nsm_explication": "I want to do something to this thing. I want to move parts of this thing. I want this thing to be good."
+        },
+        "style_profile_id": "default-v1",
+        "pipeline_version": "v1.0.0"
+      },
+      "2_generation": {
+        "model": "claude-opus-4-5-20251101",
+        "timestamp": "2026-01-27T00:15:00Z",
+        "parameters": {
+          "temperature": 0.7,
+          "visual_structure": "hierarchical",
+          "composition": "medium_shot_elevated"
+        }
+      },
+      "3_evaluation": {
+        "ratings": {
+          "clarity": 5,
+          "recognizability": 4,
+          "semantic_transparency": 4,
+          "pragmatic_fit": 5,
+          "cultural_adequacy": 4,
+          "cognitive_accessibility": 5
+        },
+        "dimension_evaluations": {
+          "clarity": {
+            "score": 5,
+            "label": "Excelente",
+            "color": "#ff6b6b",
+            "description": "El pictograma tiene líneas nítidas y limpias sin artefactos visuales. El contraste es alto y los elementos se distinguen inmediatamente. No hay ruido visual. Escala perfectamente a cualquier tamaño. La calidad técnica es profesional y lista para uso en producción."
+          },
+          "recognizability": {
+            "score": 4,
+            "label": "Bien",
+            "color": "#ff8c42",
+            "description": "El pictograma es fácilmente reconocible tras una observación breve. La representación es clara y utiliza elementos visuales convencionales. Puede tener una interpretación alternativa menor pero el significado principal es evidente. Es consistente con convenciones AAC. Funciona bien sin contexto adicional en la mayoría de situaciones."
+          },
+          "semantic_transparency": {
+            "score": 4,
+            "label": "Bien",
+            "color": "#ffd93d",
+            "description": "El pictograma captura muy bien el significado principal de la frase. La mayoría de los elementos semánticos clave están presentes. Puede perder algunos matices menores pero el mensaje principal es claro. El nivel de especificidad es generalmente apropiado. La estructura lingüística está bien representada. La distorsión semántica es mínima."
+          },
+          "pragmatic_fit": {
+            "score": 5,
+            "label": "Excelente",
+            "color": "#6bcf7f",
+            "description": "El pictograma es altamente práctico para uso en AAC. Es apropiado para la edad y capacidades del usuario objetivo. Apoya la comunicación efectiva en múltiples contextos. Es socialmente apropiado en todas las situaciones. Facilita la autonomía y dignidad del usuario. Se puede usar con confianza en espacios públicos, escolares, domésticos, etc."
+          },
+          "cultural_adequacy": {
+            "score": 4,
+            "label": "Bien",
+            "color": "#4d96ff",
+            "description": "El pictograma es culturalmente apropiado con alta adecuación. Refleja bien la cultura objetivo con elementos reconocibles. No tiene problemas significativos de estereotipos. Está bien alineado con el contexto cultural y lingüístico. Es aceptable para la gran mayoría de los subgrupos culturales. Puede tener detalles menores que podrían adaptarse mejor pero no causan problemas."
+          },
+          "cognitive_accessibility": {
+            "score": 5,
+            "label": "Excelente",
+            "color": "#9b59b6",
+            "description": "El pictograma es extremadamente simple y claro para procesamiento cognitivo. Requiere carga cognitiva mínima. Es inmediatamente procesable sin esfuerzo. Capta la atención sin ser distractor. Cumple completamente con estándares de accesibilidad ISO/IEC 24751. Utiliza 2-3 formas simples y audaces con alto contraste. Permite reconocimiento instantáneo sin necesidad de memorización."
+          }
+        },
+        "vcsci_score": 4.5,
+        "decision": "accept-with-edits",
+        "evaluator_role": "aac_expert",
+        "evaluation_date": "2026-01-27",
+        "evaluation_mode": "hexagonal_gradient_interface",
+        "interface_version": "hexagonal-rating-gradient.html",
+        "compiled_evaluation": "VCSCI Score: 4.50/5.0 (Bien). Funciona bien, pero se puede mejorar. Mejoras menores opcionales. El pictograma tiene excelente claridad y accesibilidad cognitiva, muy buena adecuación pragmática, y buena reconocibilidad, transparencia semántica y adecuación cultural.",
+        "required_edits": [
+          {
+            "dimension": "recognizability",
+            "priority": "low",
+            "category": "visual_convention",
+            "description": "Considerar agregar indicadores de movimiento más explícitos para mejorar reconocimiento inmediato de la acción"
+          },
+          {
+            "dimension": "semantic_transparency",
+            "priority": "low",
+            "category": "semantic_element",
+            "description": "Podría enfatizarse más la intención/futuro inmediato del acto commissive"
+          }
+        ],
+        "notes": "Excelente pictograma con muy alta calidad en casi todas dimensiones. Las mejoras sugeridas son menores y opcionales. Apto para uso en producción."
+      },
+      "4_provenance": {
+        "created_by": "PictoNet Test Suite",
+        "author": "VCSCI Development Team",
+        "license": "CC BY 4.0",
+        "version": "1.0-test",
+        "created_at": "2026-01-27T00:15:00Z",
+        "evaluated_at": "2026-01-27T00:20:00Z",
+        "iteration": 1,
+        "parent_case_id": null,
+        "certification": {
+          "status": "production_ready_with_edits",
+          "certified_by": "VCSCI v1.0.0",
+          "certified_date": "2026-01-27",
+          "certification_type": "test_example"
+        },
+        "repository": "https://github.com/your-org/vcsci",
+        "accessibility_schema": "https://pictos.net/schemas/pictogram-accessibility/v1"
+      }
+    }
+  }
+}
+        ]]>
+        </vcsci:metadata>
+    </metadata>
+
+    <metadata id="mf-accessibility">
+        {
+        "schema": "https://pictos.net/schemas/pictogram-accessibility/v1",
+        "utterance": {
+        "text": "Voy a hacer mi cama",
+        "speechAct": "commissive",
+        "language": "es",
+        "domain": "Activities of Daily Living"
+        },
+        "nsm": {
+        "primes": ["WANT","DO","SOMETHING","THING","MOVE","PARTS","GOOD"],
+        "gloss": "SOMEONE DO something to bed NOW so bed is good to sleep"
+        },
+        "concepts": [
+        {"id": "bed", "role": "patient", "kind": "OBJECT"},
+        {"id": "person", "role": "agent", "kind": "HUMAN"},
+        {"id": "make", "role": "action", "kind": "VERB"}
+        ],
+        "accessibility": {
+        "readingOrder": ["title","desc","g-person","g-bed"],
+        "keyboard": {"tabStops": ["g-person","g-bed"]},
+        "contrast": {"preferred": "AA", "strokeMin": 2},
+        "motion": {"noMotionDefault": true}
+        },
+        "provenance": {
+        "author": "PictoNet Test Suite",
+        "license": "CC BY 4.0",
+        "version": "1.0-test"
+        }
+        }
+    </metadata>
+
+    <defs>
+        <style>
+            .f, .k {
+                stroke-linejoin: round;
+                stroke-width: 1ex;
+            }
+            .f {
+                fill: #fff;
+                stroke: #000;
+            }
+            .k {
+                fill: #000;
+                stroke: #fff;
+            }
+            svg.hc .f {
+                fill: #fff;
+                stroke: #000;
+                stroke-width: .4ex;
+            }
+            svg.hc .k {
+                fill: #000;
+                stroke: #fff;
+                stroke-width: .3ex;
+            }
+        </style>
+    </defs>
+
+    <!-- BED (Patient) -->
+    <g id="g-bed" role="group" class="hc f" tabindex="0" aria-label="Cama" data-role="patient" data-concept="bed">
+        <path id="bed_frame" d="M86.6,66.1l6.7,10.9v7.1h-5.1v5.1c0,.9-.7,1.6-1.6,1.6h-2.3c-.9,
+      0-1.6-.7-1.6-1.6v-5.1h-38.2v5.1c0,.9-.7,1.6-1.6,1.6h-2.3c-.9,
+      0-1.6-.7-1.6-1.6v-5.1h-5.1v-7.1l6.7-10.9v-18.5c0-1.3,1.1-2.4,
+      2.4-2.4h41.3c1.3,0,2.4,1.1,2.4,2.4v18.5h-.1Z" aria-label="Estructura" />
+        <path id="mattress" d="M85.9,78.6h-44.4c-3,0-5.4-2.4-5.4-5.4v-1.9c0-1.5.7-3,
+      1.8-4l7.7-6.8c1-.9,2.3-1.4,3.6-1.4h29c1.3,0,2.6.5,3.6,1.4l7.7,
+      6.8c1.2,1,1.8,2.5,1.8,4v1.9c0,3-2.4,5.4-5.4,5.4Z" aria-label="Colchón" />
+        <path id="pillow" d="M52.2,53.5h22.4c2.3,0,4.1,1.8,4.1,4h0c0,2.2-1.8,4-4.1,
+      4h-22.4c-2.3,0-4.1-1.8-4.1-4h0c0-2.2,1.8-4,4.1-4Z" aria-label="Almohada" />
+        <path id="sheet" d="M50.6,39.6c2.1,1.3,15.3,5.5,15.3,5.5,0,0-1.3,9.6-3.9,
+      12.5-6.3,7.1-17.2,8.3-20.7,10.2s-3.4,9.7.8,
+      10.8c-7.6.3-6.9-8.9-4.2-11.3s7.9-6.7,10.7-11.7c4.1-7.4,2.3-13.8,2-16Z"
+            aria-label="Sábana" />
+    </g>
+
+    <!-- PERSON (Agent) -->
+    <g id="g-person" role="group" class="hc k" tabindex="0" aria-label="Persona" data-role="agent" data-concept="person">
+        <path id="arm" d="M29.9,37.5l4.2,7.8,6.7,3.7c1.1.6,1.5,2.1.7,3.2h0c-.6.8-1.7,
+      1.1-2.6.7l-9.1-3.9-4.1-6.4" aria-label="Brazo" />
+        <path id="body" d="M29,90.5l-4.9.2-5-35.6-3,18.9-4.2,
+      17.1h-5l4.3-19.7.6-19.4c.2-2.1.2-3.2.6-5,0,0,.8-3.7,2-6.9s3.5-7.2,
+      5.2-9.3l2.3-2.7c2.4-2.8,6.7-3.1,9.5-.7l2.1,1.8,7.6,9.2c.8.9,1.8,1.6,
+      3,2l10,3c1.4.4,2.2,2,1.6,3.4h0c-.5,1.1-1.7,1.8-2.9,
+      1.5l-13.7-3.3-9.1-7.5-4.9,7.5,4,45.5h0Z" aria-label="Cuerpo" />
+        <circle id="head" cx="38.9" cy="19.9" r="5.5" aria-label="Cabeza" />
+    </g>
+
+    <text x="-9999" y="-9999" aria-hidden="true">Voy a hacer mi cama</text>
+
+</svg>

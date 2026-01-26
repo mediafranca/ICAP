@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "evaluation_date": "2026-01-26T15:30:00.000Z",
+    "rubric_version": "1.0.0",
+    "interface_type": "hexagonal",
+    "exported_from": "hexagonal-rating-with-descriptions.html"
+  },
+  "scores": {
+    "clarity": 5,
+    "recognizability": 4,
+    "semantic_transparency": 3,
+    "pragmatic_fit": 4,
+    "cultural_adequacy": 5,
+    "cognitive_accessibility": 4
+  },
+  "vcsci_score": 4.17,
+  "overall_assessment": {
+    "score": 4.17,
+    "label": "Bien",
+    "label_en": "Good",
+    "general_description": "Funciona bien, pero se puede mejorar. Mejoras menores opcionales.",
+    "general_description_en": "Works well, but can be improved. Minor improvements optional."
+  },
+  "dimension_evaluations": {
+    "clarity": {
+      "dimension_name": "Claridad",
+      "dimension_name_en": "Clarity",
+      "score": 5,
+      "score_label": "Excelente",
+      "score_label_en": "Excellent",
+      "description": "El pictograma tiene líneas nítidas y limpias sin artefactos visuales. El contraste es alto y los elementos se distinguen inmediatamente. No hay ruido visual. Escala perfectamente a cualquier tamaño. La calidad técnica es profesional y lista para uso en producción.",
+      "description_en": "The pictogram has sharp, clean lines without visual artifacts. Contrast is high and elements are immediately distinguishable. No visual noise. Scales perfectly to any size. Technical quality is professional and production-ready."
+    },
+    "recognizability": {
+      "dimension_name": "Reconocibilidad",
+      "dimension_name_en": "Recognizability",
+      "score": 4,
+      "score_label": "Bien",
+      "score_label_en": "Good",
+      "description": "El pictograma es fácilmente reconocible tras una observación breve. La representación es clara y utiliza elementos visuales convencionales. Puede tener una interpretación alternativa menor pero el significado principal es evidente. Es consistente con convenciones AAC. Funciona bien sin contexto adicional en la mayoría de situaciones.",
+      "description_en": "The pictogram is easily recognizable after brief observation. Representation is clear and uses conventional visual elements. May have a minor alternative interpretation but main meaning is evident. Consistent with AAC conventions. Works well without additional context in most situations."
+    },
+    "semantic_transparency": {
+      "dimension_name": "Transparencia Semántica",
+      "dimension_name_en": "Semantic Transparency",
+      "score": 3,
+      "score_label": "Funciona",
+      "score_label_en": "Acceptable",
+      "description": "El pictograma captura el significado central de la frase. Puede perder algunos elementos semánticos pero los componentes principales están presentes. El nivel de especificidad es generalmente apropiado aunque puede ser algo genérico. La estructura lingüística básica está representada. Hay desviación semántica menor pero aceptable para comunicación funcional.",
+      "description_en": "The pictogram captures the core phrase meaning. May miss some semantic elements but main components are present. Level of specificity is generally appropriate though may be somewhat generic. Basic linguistic structure is represented. Minor but acceptable semantic drift for functional communication."
+    },
+    "pragmatic_fit": {
+      "dimension_name": "Adecuación Pragmática",
+      "dimension_name_en": "Pragmatic Fit",
+      "score": 4,
+      "score_label": "Bien",
+      "score_label_en": "Good",
+      "description": "El pictograma es muy práctico para uso en AAC. Es apropiado para la mayoría de usuarios del rango objetivo. Apoya bien la comunicación en contextos típicos. Es socialmente apropiado en la gran mayoría de situaciones. Facilita la autonomía del usuario. Funciona bien en la mayoría de entornos con necesidad mínima de adaptación.",
+      "description_en": "The pictogram is very practical for AAC use. Appropriate for most users in target range. Supports communication well in typical contexts. Socially appropriate in vast majority of situations. Facilitates user autonomy. Works well in most environments with minimal need for adaptation."
+    },
+    "cultural_adequacy": {
+      "dimension_name": "Adecuación Cultural",
+      "dimension_name_en": "Cultural Adequacy",
+      "score": 5,
+      "score_label": "Excelente",
+      "score_label_en": "Excellent",
+      "description": "El pictograma es perfectamente adecuado culturalmente. Refleja auténticamente la cultura objetivo. No contiene estereotipos ni elementos insensibles. Está alineado lingüística y culturalmente con el contexto español/latinoamericano. Es ampliamente aceptable entre diferentes subgrupos culturales. Representa elementos cotidianos (comida, vestimenta, actividades) que coinciden con la vida diaria de la cultura objetivo.",
+      "description_en": "The pictogram is perfectly culturally adequate. Authentically reflects target culture. Contains no stereotypes or insensitive elements. Linguistically and culturally aligned with Spanish/Latin American context. Broadly acceptable across different cultural subgroups. Represents everyday elements (food, clothing, activities) that match target culture's daily life."
+    },
+    "cognitive_accessibility": {
+      "dimension_name": "Accesibilidad Cognitiva",
+      "dimension_name_en": "Cognitive Accessibility",
+      "score": 4,
+      "score_label": "Bien",
+      "score_label_en": "Good",
+      "description": "El pictograma es muy accesible cognitivamente. La carga cognitiva es baja. Es procesable con esfuerzo mínimo. Mantiene bien la atención sin distraer. Cumple con estándares de accesibilidad con alto nivel. Es simple con detalles mínimos bien integrados. El reconocimiento es rápido y no requiere memorización significativa. Apropiado para amplio rango de capacidades cognitivas.",
+      "description_en": "The pictogram is very cognitively accessible. Cognitive load is low. Processable with minimal effort. Maintains attention well without distraction. Meets accessibility standards at high level. Simple with minimal well-integrated details. Recognition is quick and doesn't require significant memorization. Appropriate for wide range of cognitive abilities."
+    }
+  },
+  "compiled_evaluation": {
+    "paragraphs": [
+      {
+        "dimension": "clarity",
+        "dimension_label": "Claridad",
+        "text": "Claridad: El pictograma tiene líneas nítidas y limpias sin artefactos visuales. El contraste es alto y los elementos se distinguen inmediatamente. No hay ruido visual. Escala perfectamente a cualquier tamaño. La calidad técnica es profesional y lista para uso en producción."
+      },
+      {
+        "dimension": "recognizability",
+        "dimension_label": "Reconocibilidad",
+        "text": "Reconocibilidad: El pictograma es fácilmente reconocible tras una observación breve. La representación es clara y utiliza elementos visuales convencionales. Puede tener una interpretación alternativa menor pero el significado principal es evidente. Es consistente con convenciones AAC. Funciona bien sin contexto adicional en la mayoría de situaciones."
+      },
+      {
+        "dimension": "semantic_transparency",
+        "dimension_label": "Transparencia Semántica",
+        "text": "Transparencia Semántica: El pictograma captura el significado central de la frase. Puede perder algunos elementos semánticos pero los componentes principales están presentes. El nivel de especificidad es generalmente apropiado aunque puede ser algo genérico. La estructura lingüística básica está representada. Hay desviación semántica menor pero aceptable para comunicación funcional."
+      },
+      {
+        "dimension": "pragmatic_fit",
+        "dimension_label": "Adecuación Pragmática",
+        "text": "Adecuación Pragmática: El pictograma es muy práctico para uso en AAC. Es apropiado para la mayoría de usuarios del rango objetivo. Apoya bien la comunicación en contextos típicos. Es socialmente apropiado en la gran mayoría de situaciones. Facilita la autonomía del usuario. Funciona bien en la mayoría de entornos con necesidad mínima de adaptación."
+      },
+      {
+        "dimension": "cultural_adequacy",
+        "dimension_label": "Adecuación Cultural",
+        "text": "Adecuación Cultural: El pictograma es perfectamente adecuado culturalmente. Refleja auténticamente la cultura objetivo. No contiene estereotipos ni elementos insensibles. Está alineado lingüística y culturalmente con el contexto español/latinoamericano. Es ampliamente aceptable entre diferentes subgrupos culturales. Representa elementos cotidianos (comida, vestimenta, actividades) que coinciden con la vida diaria de la cultura objetivo."
+      },
+      {
+        "dimension": "cognitive_accessibility",
+        "dimension_label": "Accesibilidad Cognitiva",
+        "text": "Accesibilidad Cognitiva: El pictograma es muy accesible cognitivamente. La carga cognitiva es baja. Es procesable con esfuerzo mínimo. Mantiene bien la atención sin distraer. Cumple con estándares de accesibilidad con alto nivel. Es simple con detalles mínimos bien integrados. El reconocimiento es rápido y no requiere memorización significativa. Apropiado para amplio rango de capacidades cognitivas."
+      }
+    ],
+    "full_text": "Claridad: El pictograma tiene líneas nítidas y limpias sin artefactos visuales. El contraste es alto y los elementos se distinguen inmediatamente. No hay ruido visual. Escala perfectamente a cualquier tamaño. La calidad técnica es profesional y lista para uso en producción.\n\nReconocibilidad: El pictograma es fácilmente reconocible tras una observación breve. La representación es clara y utiliza elementos visuales convencionales. Puede tener una interpretación alternativa menor pero el significado principal es evidente. Es consistente con convenciones AAC. Funciona bien sin contexto adicional en la mayoría de situaciones.\n\nTransparencia Semántica: El pictograma captura el significado central de la frase. Puede perder algunos elementos semánticos pero los componentes principales están presentes. El nivel de especificidad es generalmente apropiado aunque puede ser algo genérico. La estructura lingüística básica está representada. Hay desviación semántica menor pero aceptable para comunicación funcional.\n\nAdecuación Pragmática: El pictograma es muy práctico para uso en AAC. Es apropiado para la mayoría de usuarios del rango objetivo. Apoya bien la comunicación en contextos típicos. Es socialmente apropiado en la gran mayoría de situaciones. Facilita la autonomía del usuario. Funciona bien en la mayoría de entornos con necesidad mínima de adaptación.\n\nAdecuación Cultural: El pictograma es perfectamente adecuado culturalmente. Refleja auténticamente la cultura objetivo. No contiene estereotipos ni elementos insensibles. Está alineado lingüística y culturalmente con el contexto español/latinoamericano. Es ampliamente aceptable entre diferentes subgrupos culturales. Representa elementos cotidianos (comida, vestimenta, actividades) que coinciden con la vida diaria de la cultura objetivo.\n\nAccesibilidad Cognitiva: El pictograma es muy accesible cognitivamente. La carga cognitiva es baja. Es procesable con esfuerzo mínimo. Mantiene bien la atención sin distraer. Cumple con estándares de accesibilidad con alto nivel. Es simple con detalles mínimos bien integrados. El reconocimiento es rápido y no requiere memorización significativa. Apropiado para amplio rango de capacidades cognitivas.",
+    "summary": "VCSCI Score: 4.17/5.0 (Bien). Funciona bien, pero se puede mejorar. Mejoras menores opcionales."
+  },
+  "rubric_transparency": {
+    "note": "This evaluation includes complete rubric descriptions for each score to ensure transparency and reproducibility",
+    "rubric_source": "../data/rubric-scale-descriptions.json"
+  }
+}

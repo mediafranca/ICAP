@@ -33,6 +33,19 @@ The 6 evaluation dimensions form a perfect hexagon when all scores are at maximu
 
 ## Visual Design
 
+### Typography
+
+The interface uses **Lexend** as the primary typeface:
+
+- **Font**: [Lexend](https://fonts.google.com/specimen/Lexend)
+- **Rationale**: Designed specifically for readability and accessibility
+- **Weights**: 400 (regular), 600 (semi-bold) for emphasis
+- **Benefits**:
+  - High legibility for evaluators
+  - Supports accessibility standards
+  - Modern, professional appearance
+  - Excellent screen rendering
+
 ### Hexagon Properties
 
 - **Center**: Origin (0,0), represents score of 0
@@ -308,10 +321,18 @@ High-resolution image for reports and presentations
 ### SVG Export
 Vector format for papers and scalable displays
 
-### JSON Data
+### JSON Data with Complete Rubric Transparency
+
+The interface exports comprehensive JSON that includes not only scores but the complete rubric descriptions for maximum transparency:
+
 ```json
 {
-  "case_id": "req-001_v1.0.0_default-v1_01",
+  "metadata": {
+    "evaluation_date": "2026-01-26T10:30:00.000Z",
+    "rubric_version": "1.0.0",
+    "interface_type": "hexagonal",
+    "exported_from": "hexagonal-rating-with-descriptions.html"
+  },
   "scores": {
     "clarity": 4,
     "recognizability": 5,
@@ -321,18 +342,102 @@ Vector format for papers and scalable displays
     "cognitive_accessibility": 5
   },
   "vcsci_score": 4.17,
-  "visualization": "hexagon"
+  "overall_assessment": {
+    "score": 4.17,
+    "label": "Bien",
+    "label_en": "Good",
+    "general_description": "Funciona bien, pero se puede mejorar...",
+    "general_description_en": "Works well, but can be improved..."
+  },
+  "dimension_evaluations": {
+    "clarity": {
+      "dimension_name": "Claridad",
+      "dimension_name_en": "Clarity",
+      "score": 4,
+      "score_label": "Bien",
+      "score_label_en": "Good",
+      "description": "El pictograma es visualmente claro con contraste adecuado...",
+      "description_en": "The pictogram is visually clear with adequate contrast..."
+    }
+    // ... 5 more dimensions
+  },
+  "compiled_evaluation": {
+    "paragraphs": [
+      {
+        "dimension": "clarity",
+        "dimension_label": "Claridad",
+        "text": "Claridad: El pictograma es visualmente claro..."
+      }
+      // ... 5 more paragraphs
+    ],
+    "full_text": "Claridad: El pictograma es visualmente claro...\n\nReconocibilidad: ...",
+    "summary": "VCSCI Score: 4.17/5.0 (Bien). Funciona bien, pero se puede mejorar..."
+  },
+  "rubric_transparency": {
+    "note": "This evaluation includes complete rubric descriptions for each score to ensure transparency and reproducibility",
+    "rubric_source": "../data/rubric-scale-descriptions.json"
+  }
 }
 ```
 
+**Benefits of Complete Export:**
+
+- **Transparency**: Anyone can understand exactly what each score means
+- **Reproducibility**: Complete evaluation can be reproduced from JSON alone
+- **Self-documenting**: No need to reference external rubric documentation
+- **Research-ready**: Suitable for publication datasets with full provenance
+- **Multilingual**: Includes both Spanish and English descriptions
+
+## Current Implementation Features
+
+The latest version ([examples/hexagonal-rating-with-descriptions.html](../examples/hexagonal-rating-with-descriptions.html)) includes:
+
+### ✅ Real-time Rubric Integration
+
+- Loads descriptions from centralized JSON ([data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json))
+- Shows dimension-specific descriptions as you rate
+- Updates dynamically when sliders change
+
+### ✅ Compiled Evaluation (Overall)
+
+- **Visual Summary**: All 6 dimension paragraphs compiled in real-time
+- **Overall Assessment**: VCSCI score with general description
+- **Complete Transparency**: Shows exactly what each score means
+- **Live Updates**: Changes immediately as you adjust ratings
+
+### ✅ Transparent JSON Export
+
+- **One-click export**: Download complete evaluation as JSON
+- **Full rubric descriptions**: Includes all paragraph texts
+- **Bilingual**: Spanish and English versions
+- **Self-contained**: JSON is fully interpretable without external documentation
+- **Research-ready**: Suitable for dataset publication
+
+### ✅ Accessibility Features
+
+- **Lexend typography**: Optimized for readability
+- **High contrast**: Clear visual hierarchy
+- **Semantic HTML**: Screen reader friendly
+- **Keyboard navigation**: Full keyboard support
+
+### Example Workflow
+
+1. **Load pictogram**: View pictogram to evaluate (currently placeholder)
+2. **Rate dimensions**: Adjust 6 sliders for each dimension
+3. **See descriptions**: Hover/focus shows what each score means
+4. **Review overall**: Bottom panel shows compiled evaluation
+5. **Export**: Click button to download JSON with complete transparency
+
 ## Future Enhancements
 
-1. **Animation**: Smooth transitions between scores
+1. **Pictogram upload**: Drag & drop SVG to evaluate
 2. **Comparison mode**: Overlay multiple hexagons
 3. **Time-series**: Show evolution across iterations
 4. **3D view**: Depth shows confidence/agreement
 5. **Mobile gesture**: Swipe to navigate dimensions
 6. **AR view**: Display hexagon over physical pictogram
+7. **Animation**: Smooth transitions between scores
+8. **Auto-save**: Local storage persistence
 
 ## References
 
