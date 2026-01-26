@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VCSCI - Ejemplos Interactivos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lexend', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #2d3748;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    .intro {
+      padding: 50px 40px;
+      background: #f7fafc;
+      border-bottom: 3px solid #e2e8f0;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      color: #667eea;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #4a5568;
+    }
+
+    .dimensions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .dimension-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dimension-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .dimension-card.clarity { border-left-color: #ff6b6b; }
+    .dimension-card.recognizability { border-left-color: #ff8c42; }
+    .dimension-card.semantic { border-left-color: #ffd93d; }
+    .dimension-card.pragmatic { border-left-color: #6bcf7f; }
+    .dimension-card.cultural { border-left-color: #4d96ff; }
+    .dimension-card.cognitive { border-left-color: #9b59b6; }
+
+    .dimension-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2d3748;
+    }
+
+    .dimension-card p {
+      font-size: 0.95rem;
+      color: #718096;
+    }
+
+    .section {
+      padding: 50px 40px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #2d3748;
+      margin-bottom: 30px;
+      font-weight: 600;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 15px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .demo-card {
+      background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .demo-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .demo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+      border-color: #667eea;
+    }
+
+    .demo-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .demo-badge.new {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .demo-card h3 {
+      font-size: 1.4rem;
+      color: #2d3748;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .demo-card p {
+      color: #4a5568;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .features {
+      list-style: none;
+      margin: 15px 0;
+    }
+
+    .features li {
+      padding: 6px 0;
+      color: #718096;
+      font-size: 0.9rem;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #2d3748;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: #cbd5e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .data-examples {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 25px;
+    }
+
+    .data-examples h3 {
+      font-size: 1.3rem;
+      color: #2d3748;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .data-list {
+      list-style: none;
+    }
+
+    .data-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .data-list li:last-child {
+      border-bottom: none;
+    }
+
+    .data-list a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .data-list a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+
+    .file-type {
+      display: inline-block;
+      background: #edf2f7;
+      color: #4a5568;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      font-family: 'Courier New', monospace;
+    }
+
+    footer {
+      background: #2d3748;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #90cdf4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .workflow {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 25px;
+      border: 2px solid #e2e8f0;
+    }
+
+    .workflow h3 {
+      font-size: 1.3rem;
+      color: #2d3748;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .flow-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .flow-content {
+      flex: 1;
+    }
+
+    .flow-title {
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 3px;
+    }
+
+    .flow-desc {
+      color: #718096;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dimensions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>VCSCI</h1>
+      <p class="subtitle">Visual Communicability & Semantic Correspondence Index</p>
+    </header>
+
+    <div class="intro">
+      <h2>¿Qué es VCSCI?</h2>
+      <p>
+        <strong>VCSCI</strong> es un marco de evaluación multidimensional para pictogramas generados mediante IA,
+        diseñado específicamente para sistemas de <strong>Comunicación Aumentativa y Alternativa (AAC)</strong>.
+      </p>
+      <p>
+        Evalúa la calidad de pictogramas a través de <strong>6 dimensiones fundamentales</strong>, generando un
+        puntaje compuesto (0-5) que indica si un pictograma es apto para uso en producción en aplicaciones AAC.
+      </p>
+
+      <div class="workflow">
+        <h3>Flujo de Trabajo VCSCI</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-number">1</div>
+            <div class="flow-content">
+              <div class="flow-title">Entrada (Input)</div>
+              <div class="flow-desc">Frase + análisis semántico + perfil de estilo</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">2</div>
+            <div class="flow-content">
+              <div class="flow-title">Generación</div>
+              <div class="flow-desc">Modelo de IA crea SVG pictograma con metadatos</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">3</div>
+            <div class="flow-content">
+              <div class="flow-title">Evaluación</div>
+              <div class="flow-desc">Expertos AAC evalúan con interfaz hexagonal (6 dimensiones)</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">4</div>
+            <div class="flow-content">
+              <div class="flow-title">Certificación</div>
+              <div class="flow-desc">Metadatos se embeben en SVG como fuente única de verdad (SSOT)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimensions">
+        <div class="dimension-card clarity">
+          <h4>1. Claridad</h4>
+          <p>Calidad técnica visual: nitidez, contraste, escalabilidad</p>
+        </div>
+        <div class="dimension-card recognizability">
+          <h4>2. Reconocibilidad</h4>
+          <p>Facilidad de identificación inmediata del concepto</p>
+        </div>
+        <div class="dimension-card semantic">
+          <h4>3. Transparencia Semántica</h4>
+          <p>Fidelidad al significado de la frase original</p>
+        </div>
+        <div class="dimension-card pragmatic">
+          <h4>4. Adecuación Pragmática</h4>
+          <p>Utilidad práctica en contextos AAC reales</p>
+        </div>
+        <div class="dimension-card cultural">
+          <h4>5. Adecuación Cultural</h4>
+          <p>Apropiación cultural y ausencia de estereotipos</p>
+        </div>
+        <div class="dimension-card cognitive">
+          <h4>6. Accesibilidad Cognitiva</h4>
+          <p>Simplicidad y facilidad de procesamiento mental</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>Demos Interactivas</h2>
+
+      <div class="demo-grid">
+        <div class="demo-card">
+          <span class="demo-badge new">✨ Nuevo</span>
+          <h3>Interfaz con Gradientes</h3>
+          <p>Visualización hexagonal con interpolación de colores por vértice usando Canvas 2D.</p>
+          <ul class="features">
+            <li>Colores únicos por dimensión</li>
+            <li>Gradientes radiales suaves</li>
+            <li>Evaluación compilada con párrafos</li>
+            <li>Tema oscuro optimizado</li>
+            <li>Exportación JSON con transparencia</li>
+          </ul>
+          <a href="hexagonal-rating-gradient.html" class="btn">Abrir Demo</a>
+        </div>
+
+        <div class="demo-card">
+          <span class="demo-badge">Interactiva</span>
+          <h3>Interfaz con Descripciones</h3>
+          <p>Evaluación hexagonal SVG con descripciones de rúbrica en tiempo real.</p>
+          <ul class="features">
+            <li>Renderizado SVG limpio</li>
+            <li>Descripciones bilingües (ES/EN)</li>
+            <li>Tema claro profesional</li>
+            <li>Tipografía Lexend accesible</li>
+            <li>Exportación completa</li>
+          </ul>
+          <a href="hexagonal-rating-with-descriptions.html" class="btn">Abrir Demo</a>
+        </div>
+
+        <div class="demo-card">
+          <span class="demo-badge">Herramienta</span>
+          <h3>Visualizador de Metadatos</h3>
+          <p>Extrae y visualiza metadatos VCSCI embebidos en archivos SVG.</p>
+          <ul class="features">
+            <li>Drag & drop de archivos SVG</li>
+            <li>Extracción automática de metadata</li>
+            <li>Visualización hexagonal</li>
+            <li>Cadena de pensamiento completa</li>
+            <li>Análisis de proveniencia</li>
+          </ul>
+          <a href="metadata-visualizer.html" class="btn">Abrir Herramienta</a>
+        </div>
+
+        <div class="demo-card">
+          <span class="demo-badge">Básico</span>
+          <h3>Demo Original</h3>
+          <p>Interfaz hexagonal básica sin integración de rúbrica (versión legacy).</p>
+          <ul class="features">
+            <li>Visualización simple</li>
+            <li>6 sliders de evaluación</li>
+            <li>Cálculo de VCSCI</li>
+            <li>SVG responsive</li>
+          </ul>
+          <a href="hexagonal-rating-demo.html" class="btn btn-secondary">Ver Demo</a>
+        </div>
+      </div>
+
+      <div class="data-examples">
+        <h3>Ejemplos de Datos</h3>
+        <ul class="data-list">
+          <li>
+            <a href="test-canonical-varied-scores.svg" target="_blank">
+              Ejemplo Canónico con Puntajes Variados
+            </a>
+            <span class="file-type">SVG</span>
+            <p style="margin-top: 5px; color: #718096; font-size: 0.9rem;">
+              SVG de prueba con scores 5,4,4,5,4,5 (VCSCI: 4.5) para validar visualizador
+            </p>
+          </li>
+          <li>
+            <a href="exported-evaluation-example.json" target="_blank">
+              JSON de Evaluación Exportada
+            </a>
+            <span class="file-type">JSON</span>
+            <p style="margin-top: 5px; color: #718096; font-size: 0.9rem;">
+              Formato completo de exportación con transparencia de rúbrica
+            </p>
+          </li>
+          <li>
+            <a href="toy-example/">
+              Toy Example: Flujo Completo
+            </a>
+            <span class="file-type">Directorio</span>
+            <p style="margin-top: 5px; color: #718096; font-size: 0.9rem;">
+              Ejemplo completo: "Voy a hacer mi cama" con análisis semántico, estructura visual y evaluación
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <strong>VCSCI Framework</strong> - Evaluación de Pictogramas para AAC
+      </p>
+      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+        Documentación completa:
+        <a href="../README.md">README Principal</a> |
+        <a href="../docs/rubric.md">Rúbrica</a> |
+        <a href="../docs/hexagonal-interface.md">Interfaz Hexagonal</a> |
+        <a href="../docs/canonical-example.md">Ejemplo Canónico</a>
+      </p>
+      <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">
+        Tipografía: <a href="https://fonts.google.com/specimen/Lexend">Lexend</a> (optimizada para accesibilidad)
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

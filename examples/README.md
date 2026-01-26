@@ -2,6 +2,18 @@
 
 This directory contains interactive demos and example files for the VCSCI evaluation framework.
 
+## 🚀 Quick Start
+
+**[Open the Interactive Index](index.html)** - Navegación visual de todos los ejemplos con explicación completa de VCSCI.
+
+The index provides:
+
+- Visual explanation of what VCSCI is
+- Interactive cards for all demos
+- Links to data examples
+- Complete workflow diagram
+- Quick access to all resources
+
 ## Interactive Demos
 
 ### 1. Hexagonal Rating with Gradient Interpolation ✨ NEW
