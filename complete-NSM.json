@@ -1,0 +1,3832 @@
+[
+  {
+    "id": 0,
+    "sheet": "Solicitar",
+    "row_index": 0,
+    "phrase": "I want to go to the toilet.",
+    "meta": {
+      "english": "I want to go to the toilet.",
+      "spanish": "Quiero ir al baño.",
+      "domain": "Higiene/Salud",
+      "syntax": "Verbo (querer) + infinitivo + lugar"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 1,
+    "sheet": "Solicitar",
+    "row_index": 1,
+    "phrase": "I want to play outside.",
+    "meta": {
+      "english": "I want to play outside.",
+      "spanish": "Quiero jugar afuera.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Verbo (querer) + infinitivo + adverbio"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 2,
+    "sheet": "Solicitar",
+    "row_index": 2,
+    "phrase": "I want to eat pizza.",
+    "meta": {
+      "english": "I want to eat pizza.",
+      "spanish": "Quiero comer pizza.",
+      "domain": "Casa/Hogar",
+      "syntax": "Verbo (querer) + infinitivo + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 3,
+    "sheet": "Solicitar",
+    "row_index": 3,
+    "phrase": "I need help.",
+    "meta": {
+      "english": "I need help.",
+      "spanish": "Necesito ayuda.",
+      "domain": "General",
+      "syntax": "Verbo (necesitar) + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 4,
+    "sheet": "Solicitar",
+    "row_index": 4,
+    "phrase": "Can you pass me the water?",
+    "meta": {
+      "english": "Can you pass me the water?",
+      "spanish": "¿Me pasas el agua?",
+      "domain": "Casa/Hogar",
+      "syntax": "Interrogativa (pasar + objeto)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 5,
+    "sheet": "Solicitar",
+    "row_index": 5,
+    "phrase": "I want to watch TV.",
+    "meta": {
+      "english": "I want to watch TV.",
+      "spanish": "Quiero ver la tele.",
+      "domain": "Casa/Hogar",
+      "syntax": "Verbo (querer) + infinitivo + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 6,
+    "sheet": "Solicitar",
+    "row_index": 6,
+    "phrase": "I need a break.",
+    "meta": {
+      "english": "I need a break.",
+      "spanish": "Necesito un descanso.",
+      "domain": "Escuela",
+      "syntax": "Verbo (necesitar) + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 7,
+    "sheet": "Solicitar",
+    "row_index": 7,
+    "phrase": "I want that toy.",
+    "meta": {
+      "english": "I want that toy.",
+      "spanish": "Quiero ese juguete.",
+      "domain": "Casa/Hogar",
+      "syntax": "Verbo (querer) + objeto (demostrativo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 8,
+    "sheet": "Solicitar",
+    "row_index": 8,
+    "phrase": "I want to go home.",
+    "meta": {
+      "english": "I want to go home.",
+      "spanish": "Quiero ir a casa.",
+      "domain": "Escuela",
+      "syntax": "Verbo (querer) + infinitivo + lugar"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 9,
+    "sheet": "Solicitar",
+    "row_index": 9,
+    "phrase": "Can I have a sweet?",
+    "meta": {
+      "english": "Can I have a sweet?",
+      "spanish": "¿Puedo tener un caramelo?",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Interrogativa (poder + inf + objeto)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 10,
+    "sheet": "Solicitar",
+    "row_index": 10,
+    "phrase": "I want to go for a walk.",
+    "meta": {
+      "english": "I want to go for a walk.",
+      "spanish": "Quiero salir a caminar.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Verbo (querer) + infinitivo + finalidad"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 11,
+    "sheet": "Solicitar",
+    "row_index": 11,
+    "phrase": "I want to talk with you.",
+    "meta": {
+      "english": "I want to talk with you.",
+      "spanish": "Quiero hablar contigo.",
+      "domain": "General",
+      "syntax": "Verbo (querer) + infinitivo + complemento"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 12,
+    "sheet": "Solicitar",
+    "row_index": 12,
+    "phrase": "I need my medicine.",
+    "meta": {
+      "english": "I need my medicine.",
+      "spanish": "Necesito mi medicina.",
+      "domain": "Higiene/Salud",
+      "syntax": "Verbo (necesitar) + objeto (posesivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 13,
+    "sheet": "Solicitar",
+    "row_index": 13,
+    "phrase": "I want to drink water.",
+    "meta": {
+      "english": "I want to drink water.",
+      "spanish": "Quiero beber agua.",
+      "domain": "Higiene/Salud",
+      "syntax": "Verbo (querer) + infinitivo + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 14,
+    "sheet": "Solicitar",
+    "row_index": 14,
+    "phrase": "Can you help me with homework?",
+    "meta": {
+      "english": "Can you help me with homework?",
+      "spanish": "¿Me ayudas con la tarea?",
+      "domain": "Escuela",
+      "syntax": "Interrogativa (poder + verbo + objeto)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT YOU TO DO SOMETHING. I THINK: YOU CAN DO IT NOW OR AFTER THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "DO",
+        "SOMETHING",
+        "THINK",
+        "CAN",
+        "AFTER",
+        "THIS"
+      ],
+      "frame": "REQUESTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 15,
+    "sheet": "Rechazar",
+    "row_index": 0,
+    "phrase": "I don't want that.",
+    "meta": {
+      "english": "I don't want that.",
+      "spanish": "No quiero eso.",
+      "domain": "General",
+      "syntax": "Negación + verbo (querer) + pronombre demostrativo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 16,
+    "sheet": "Rechazar",
+    "row_index": 1,
+    "phrase": "I don't like this.",
+    "meta": {
+      "english": "I don't like this.",
+      "spanish": "No me gusta esto.",
+      "domain": "General",
+      "syntax": "Negación + verbo (gustar) + pronombre demostrativo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 17,
+    "sheet": "Rechazar",
+    "row_index": 2,
+    "phrase": "No, thank you.",
+    "meta": {
+      "english": "No, thank you.",
+      "spanish": "No, gracias.",
+      "domain": "General",
+      "syntax": "Negación + expresión de cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 18,
+    "sheet": "Rechazar",
+    "row_index": 3,
+    "phrase": "Stop, please.",
+    "meta": {
+      "english": "Stop, please.",
+      "spanish": "Para, por favor.",
+      "domain": "General",
+      "syntax": "Imperativo + cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 19,
+    "sheet": "Rechazar",
+    "row_index": 4,
+    "phrase": "That's enough.",
+    "meta": {
+      "english": "That's enough.",
+      "spanish": "Basta ya.",
+      "domain": "General",
+      "syntax": "Fórmula fija de rechazo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 20,
+    "sheet": "Rechazar",
+    "row_index": 5,
+    "phrase": "I don't want to go.",
+    "meta": {
+      "english": "I don't want to go.",
+      "spanish": "No quiero ir.",
+      "domain": "Escuela",
+      "syntax": "Negación + verbo (querer) + infinitivo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 21,
+    "sheet": "Rechazar",
+    "row_index": 6,
+    "phrase": "Don't do that.",
+    "meta": {
+      "english": "Don't do that.",
+      "spanish": "No hagas eso.",
+      "domain": "Casa/Hogar",
+      "syntax": "Imperativo negativo (no + hacer + demostrativo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 22,
+    "sheet": "Rechazar",
+    "row_index": 7,
+    "phrase": "I can't.",
+    "meta": {
+      "english": "I can't.",
+      "spanish": "No puedo.",
+      "domain": "Escuela",
+      "syntax": "Negación + verbo modal (poder)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 23,
+    "sheet": "Rechazar",
+    "row_index": 8,
+    "phrase": "Leave me alone.",
+    "meta": {
+      "english": "Leave me alone.",
+      "spanish": "Déjame en paz.",
+      "domain": "General",
+      "syntax": "Imperativo + pronombre enclítico + complemento"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 24,
+    "sheet": "Rechazar",
+    "row_index": 9,
+    "phrase": "It's not fair.",
+    "meta": {
+      "english": "It's not fair.",
+      "spanish": "No es justo.",
+      "domain": "Casa/Hogar",
+      "syntax": "Negación + verbo copulativo (ser) + adjetivo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 25,
+    "sheet": "Rechazar",
+    "row_index": 10,
+    "phrase": "Not now.",
+    "meta": {
+      "english": "Not now.",
+      "spanish": "No ahora.",
+      "domain": "General",
+      "syntax": "Negación + adverbio temporal"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 26,
+    "sheet": "Rechazar",
+    "row_index": 11,
+    "phrase": "I don't need help.",
+    "meta": {
+      "english": "I don't need help.",
+      "spanish": "No necesito ayuda.",
+      "domain": "General",
+      "syntax": "Negación + verbo (necesitar) + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 27,
+    "sheet": "Rechazar",
+    "row_index": 12,
+    "phrase": "No more.",
+    "meta": {
+      "english": "No more.",
+      "spanish": "No más.",
+      "domain": "General",
+      "syntax": "Negación + cuantificador"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 28,
+    "sheet": "Rechazar",
+    "row_index": 13,
+    "phrase": "I don't want to eat that.",
+    "meta": {
+      "english": "I don't want to eat that.",
+      "spanish": "No quiero comer eso.",
+      "domain": "Casa/Hogar",
+      "syntax": "Negación + verbo (querer) + infinitivo + demostrativo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 29,
+    "sheet": "Rechazar",
+    "row_index": 14,
+    "phrase": "I'm not ready.",
+    "meta": {
+      "english": "I'm not ready.",
+      "spanish": "No estoy listo.",
+      "domain": "Escuela",
+      "syntax": "Negación + verbo copulativo (estar) + adjetivo"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T WANT TO DO THIS. I THINK: IF I HAVE TO DO IT, I WILL FEEL SOMETHING BAD.",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T WANT",
+        "DO",
+        "THIS",
+        "THINK",
+        "IF",
+        "HAVE TO",
+        "FEEL",
+        "BAD",
+        "WILL"
+      ],
+      "frame": "REFUSING",
+      "roles": {
+        "EXPERIENCER": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 30,
+    "sheet": "Dirigir",
+    "row_index": 0,
+    "phrase": "Come here.",
+    "meta": {
+      "english": "Come here.",
+      "spanish": "Ven aquí.",
+      "domain": "General",
+      "syntax": "Imperativo (venir) + adverbio"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 31,
+    "sheet": "Dirigir",
+    "row_index": 1,
+    "phrase": "Look at this.",
+    "meta": {
+      "english": "Look at this.",
+      "spanish": "Mira esto.",
+      "domain": "General",
+      "syntax": "Imperativo (mirar) + demostrativo"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 32,
+    "sheet": "Dirigir",
+    "row_index": 2,
+    "phrase": "Listen.",
+    "meta": {
+      "english": "Listen.",
+      "spanish": "Escucha.",
+      "domain": "General",
+      "syntax": "Imperativo (verbo simple)"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 33,
+    "sheet": "Dirigir",
+    "row_index": 3,
+    "phrase": "Follow me.",
+    "meta": {
+      "english": "Follow me.",
+      "spanish": "Sígueme.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Imperativo + pronombre enclítico"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 34,
+    "sheet": "Dirigir",
+    "row_index": 4,
+    "phrase": "Give me your hand.",
+    "meta": {
+      "english": "Give me your hand.",
+      "spanish": "Dame la mano.",
+      "domain": "Casa/Hogar",
+      "syntax": "Imperativo (dar) + objeto + pronombre"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 35,
+    "sheet": "Dirigir",
+    "row_index": 5,
+    "phrase": "Put it there.",
+    "meta": {
+      "english": "Put it there.",
+      "spanish": "Ponlo allí.",
+      "domain": "Casa/Hogar",
+      "syntax": "Imperativo (poner) + pronombre enclítico + adverbio"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 36,
+    "sheet": "Dirigir",
+    "row_index": 6,
+    "phrase": "Open the door.",
+    "meta": {
+      "english": "Open the door.",
+      "spanish": "Abre la puerta.",
+      "domain": "Casa/Hogar",
+      "syntax": "Imperativo (abrir) + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 37,
+    "sheet": "Dirigir",
+    "row_index": 7,
+    "phrase": "Close the window.",
+    "meta": {
+      "english": "Close the window.",
+      "spanish": "Cierra la ventana.",
+      "domain": "Casa/Hogar",
+      "syntax": "Imperativo (cerrar) + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 38,
+    "sheet": "Dirigir",
+    "row_index": 8,
+    "phrase": "Sit down, please.",
+    "meta": {
+      "english": "Sit down, please.",
+      "spanish": "Siéntate, por favor.",
+      "domain": "Escuela",
+      "syntax": "Imperativo reflexivo + cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 39,
+    "sheet": "Dirigir",
+    "row_index": 9,
+    "phrase": "Stand up.",
+    "meta": {
+      "english": "Stand up.",
+      "spanish": "Levántate.",
+      "domain": "General",
+      "syntax": "Imperativo reflexivo"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 40,
+    "sheet": "Dirigir",
+    "row_index": 10,
+    "phrase": "Let's go home.",
+    "meta": {
+      "english": "Let's go home.",
+      "spanish": "Vamos a casa.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Imperativo inclusivo (ir) + lugar"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 41,
+    "sheet": "Dirigir",
+    "row_index": 11,
+    "phrase": "Let's play.",
+    "meta": {
+      "english": "Let's play.",
+      "spanish": "Vamos a jugar.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Imperativo inclusivo (ir) + infinitivo"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 42,
+    "sheet": "Dirigir",
+    "row_index": 12,
+    "phrase": "Do it again.",
+    "meta": {
+      "english": "Do it again.",
+      "spanish": "Hazlo otra vez.",
+      "domain": "Escuela",
+      "syntax": "Imperativo (hacer) + pronombre enclítico + adverbio"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 43,
+    "sheet": "Dirigir",
+    "row_index": 13,
+    "phrase": "Don't run.",
+    "meta": {
+      "english": "Don't run.",
+      "spanish": "No corras.",
+      "domain": "Escuela/Ocio",
+      "syntax": "Imperativo negativo (no + verbo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 44,
+    "sheet": "Dirigir",
+    "row_index": 14,
+    "phrase": "Speak more slowly, please.",
+    "meta": {
+      "english": "Speak more slowly, please.",
+      "spanish": "Habla más despacio, por favor.",
+      "domain": "General",
+      "syntax": "Imperativo + complemento + cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY: YOU HAVE TO DO SOMETHING NOW. I SAY THIS BECAUSE I WANT SOMETHING GOOD TO HAPPEN.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YOU",
+        "HAVE TO",
+        "DO",
+        "SOMETHING",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "HAPPEN"
+      ],
+      "frame": "DIRECTING",
+      "roles": {
+        "DIRECTOR": "I",
+        "AGENT": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 45,
+    "sheet": "Aceptar",
+    "row_index": 0,
+    "phrase": "Yes, I want that.",
+    "meta": {
+      "english": "Yes, I want that.",
+      "spanish": "Sí, quiero eso.",
+      "domain": "General",
+      "syntax": "Afirmación + verbo (querer) + demostrativo"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 46,
+    "sheet": "Aceptar",
+    "row_index": 1,
+    "phrase": "That's fine.",
+    "meta": {
+      "english": "That's fine.",
+      "spanish": "Está bien.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adverbio)"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 47,
+    "sheet": "Aceptar",
+    "row_index": 2,
+    "phrase": "All right.",
+    "meta": {
+      "english": "All right.",
+      "spanish": "De acuerdo.",
+      "domain": "General",
+      "syntax": "Locución adverbial"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 48,
+    "sheet": "Aceptar",
+    "row_index": 3,
+    "phrase": "I like that.",
+    "meta": {
+      "english": "I like that.",
+      "spanish": "Me gusta eso.",
+      "domain": "General",
+      "syntax": "Verbo (gustar) + demostrativo"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 49,
+    "sheet": "Aceptar",
+    "row_index": 4,
+    "phrase": "Yes, please.",
+    "meta": {
+      "english": "Yes, please.",
+      "spanish": "Sí, por favor.",
+      "domain": "General",
+      "syntax": "Afirmación + cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 50,
+    "sheet": "Aceptar",
+    "row_index": 5,
+    "phrase": "Thank you.",
+    "meta": {
+      "english": "Thank you.",
+      "spanish": "Gracias.",
+      "domain": "General",
+      "syntax": "Expresión de cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 51,
+    "sheet": "Aceptar",
+    "row_index": 6,
+    "phrase": "Sure.",
+    "meta": {
+      "english": "Sure.",
+      "spanish": "Claro.",
+      "domain": "General",
+      "syntax": "Expresión afirmativa"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 52,
+    "sheet": "Aceptar",
+    "row_index": 7,
+    "phrase": "That seems good.",
+    "meta": {
+      "english": "That seems good.",
+      "spanish": "Me parece bien.",
+      "domain": "General",
+      "syntax": "Verbo (parecer) + adjetivo"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 53,
+    "sheet": "Aceptar",
+    "row_index": 8,
+    "phrase": "Great!",
+    "meta": {
+      "english": "Great!",
+      "spanish": "¡Genial!",
+      "domain": "General",
+      "syntax": "Exclamación"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 54,
+    "sheet": "Aceptar",
+    "row_index": 9,
+    "phrase": "Good idea.",
+    "meta": {
+      "english": "Good idea.",
+      "spanish": "Buena idea.",
+      "domain": "General",
+      "syntax": "Frase nominal (adjetivo + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: YES. I THINK: THIS IS GOOD. I CAN DO IT.",
+      "primitives": [
+        "I",
+        "SAY",
+        "YES",
+        "THINK",
+        "THIS",
+        "GOOD",
+        "CAN",
+        "DO",
+        "IT"
+      ],
+      "frame": "ACCEPTING",
+      "roles": {
+        "AGENT": "I",
+        "THEME": "THIS"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 55,
+    "sheet": "Interacción social",
+    "row_index": 0,
+    "phrase": "Hello.",
+    "meta": {
+      "english": "Hello.",
+      "spanish": "Hola.",
+      "domain": "General",
+      "syntax": "Interjección (saludo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 56,
+    "sheet": "Interacción social",
+    "row_index": 1,
+    "phrase": "Good morning.",
+    "meta": {
+      "english": "Good morning.",
+      "spanish": "Buenos días.",
+      "domain": "General",
+      "syntax": "Frase nominal (saludo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 57,
+    "sheet": "Interacción social",
+    "row_index": 2,
+    "phrase": "Good afternoon.",
+    "meta": {
+      "english": "Good afternoon.",
+      "spanish": "Buenas tardes.",
+      "domain": "General",
+      "syntax": "Frase nominal (saludo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 58,
+    "sheet": "Interacción social",
+    "row_index": 3,
+    "phrase": "Good evening.",
+    "meta": {
+      "english": "Good evening.",
+      "spanish": "Buenas noches.",
+      "domain": "General",
+      "syntax": "Frase nominal (saludo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 59,
+    "sheet": "Interacción social",
+    "row_index": 4,
+    "phrase": "Goodbye.",
+    "meta": {
+      "english": "Goodbye.",
+      "spanish": "Adiós.",
+      "domain": "General",
+      "syntax": "Interjección (despedida)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 60,
+    "sheet": "Interacción social",
+    "row_index": 5,
+    "phrase": "See you later.",
+    "meta": {
+      "english": "See you later.",
+      "spanish": "Hasta luego.",
+      "domain": "General",
+      "syntax": "Locución de despedida"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 61,
+    "sheet": "Interacción social",
+    "row_index": 6,
+    "phrase": "How are you?",
+    "meta": {
+      "english": "How are you?",
+      "spanish": "¿Cómo estás?",
+      "domain": "General",
+      "syntax": "Pregunta WH (cómo + estar)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 62,
+    "sheet": "Interacción social",
+    "row_index": 7,
+    "phrase": "I'm fine, thank you.",
+    "meta": {
+      "english": "I'm fine, thank you.",
+      "spanish": "Estoy bien, gracias.",
+      "domain": "General",
+      "syntax": "Oración (estar + adverbio) + cortesía"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 63,
+    "sheet": "Interacción social",
+    "row_index": 8,
+    "phrase": "How's it going?",
+    "meta": {
+      "english": "How's it going?",
+      "spanish": "¿Qué tal?",
+      "domain": "General",
+      "syntax": "Pregunta coloquial"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 64,
+    "sheet": "Interacción social",
+    "row_index": 9,
+    "phrase": "Do you want to play?",
+    "meta": {
+      "english": "Do you want to play?",
+      "spanish": "¿Quieres jugar?",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Pregunta sí/no (querer + infinitivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 65,
+    "sheet": "Interacción social",
+    "row_index": 10,
+    "phrase": "Can I play?",
+    "meta": {
+      "english": "Can I play?",
+      "spanish": "¿Puedo jugar?",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Pregunta sí/no (poder + infinitivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 66,
+    "sheet": "Interacción social",
+    "row_index": 11,
+    "phrase": "I'm sorry.",
+    "meta": {
+      "english": "I'm sorry.",
+      "spanish": "Lo siento.",
+      "domain": "General",
+      "syntax": "Expresión de disculpa"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 67,
+    "sheet": "Interacción social",
+    "row_index": 12,
+    "phrase": "Pardon me.",
+    "meta": {
+      "english": "Pardon me.",
+      "spanish": "Perdón.",
+      "domain": "General",
+      "syntax": "Expresión de disculpa breve"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 68,
+    "sheet": "Interacción social",
+    "row_index": 13,
+    "phrase": "Well done.",
+    "meta": {
+      "english": "Well done.",
+      "spanish": "Bien hecho.",
+      "domain": "General",
+      "syntax": "Expresión de elogio"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 69,
+    "sheet": "Interacción social",
+    "row_index": 14,
+    "phrase": "Can I help you?",
+    "meta": {
+      "english": "Can I help you?",
+      "spanish": "¿Puedo ayudarte?",
+      "domain": "General",
+      "syntax": "Pregunta sí/no (poder + verbo + objeto)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING TO YOU NOW BECAUSE I WANT GOOD THINGS BETWEEN YOU AND ME.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "YOU",
+        "NOW",
+        "BECAUSE",
+        "WANT",
+        "GOOD",
+        "BETWEEN",
+        "ME",
+        "YOU"
+      ],
+      "frame": "SOCIAL_INTERACTION",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 70,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 0,
+    "phrase": "I love you.",
+    "meta": {
+      "english": "I love you.",
+      "spanish": "Te quiero.",
+      "domain": "Casa/Hogar",
+      "syntax": "Oración (pronombre + querer)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 71,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 1,
+    "phrase": "I miss you.",
+    "meta": {
+      "english": "I miss you.",
+      "spanish": "Te extraño.",
+      "domain": "Casa/Hogar",
+      "syntax": "Verbo (extrañar) + pronombre objeto"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 72,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 2,
+    "phrase": "I like being with you.",
+    "meta": {
+      "english": "I like being with you.",
+      "spanish": "Me gusta estar contigo.",
+      "domain": "Casa/Hogar",
+      "syntax": "Verbo (gustar) + infinitivo + complemento"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 73,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 3,
+    "phrase": "I am happy.",
+    "meta": {
+      "english": "I am happy.",
+      "spanish": "Estoy feliz.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 74,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 4,
+    "phrase": "I am sad.",
+    "meta": {
+      "english": "I am sad.",
+      "spanish": "Estoy triste.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 75,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 5,
+    "phrase": "I am angry.",
+    "meta": {
+      "english": "I am angry.",
+      "spanish": "Estoy enfadado.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 76,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 6,
+    "phrase": "I am tired.",
+    "meta": {
+      "english": "I am tired.",
+      "spanish": "Estoy cansado.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 77,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 7,
+    "phrase": "I am bored.",
+    "meta": {
+      "english": "I am bored.",
+      "spanish": "Estoy aburrido.",
+      "domain": "Casa/Hogar",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 78,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 8,
+    "phrase": "I am excited.",
+    "meta": {
+      "english": "I am excited.",
+      "spanish": "Estoy emocionado.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 79,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 9,
+    "phrase": "I am frustrated.",
+    "meta": {
+      "english": "I am frustrated.",
+      "spanish": "Estoy frustrado.",
+      "domain": "General",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 80,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 10,
+    "phrase": "I am scared.",
+    "meta": {
+      "english": "I am scared.",
+      "spanish": "Tengo miedo.",
+      "domain": "General",
+      "syntax": "Oración (tener + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 81,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 11,
+    "phrase": "I am cold.",
+    "meta": {
+      "english": "I am cold.",
+      "spanish": "Tengo frío.",
+      "domain": "General",
+      "syntax": "Oración (tener + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 82,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 12,
+    "phrase": "My tummy hurts.",
+    "meta": {
+      "english": "My tummy hurts.",
+      "spanish": "Me duele la barriga.",
+      "domain": "Higiene/Salud",
+      "syntax": "Verbo (doler) + objeto (parte del cuerpo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 83,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 13,
+    "phrase": "I am sick.",
+    "meta": {
+      "english": "I am sick.",
+      "spanish": "Estoy enfermo.",
+      "domain": "Higiene/Salud",
+      "syntax": "Copulativa (estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 84,
+    "sheet": "Expresar afecto emoción",
+    "row_index": 14,
+    "phrase": "I feel lonely.",
+    "meta": {
+      "english": "I feel lonely.",
+      "spanish": "Me siento solo.",
+      "domain": "General",
+      "syntax": "Oración reflexiva (sentirse + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I FEEL SOMETHING NOW. I THINK ABOUT SOMETHING. BECAUSE OF THIS, I WANT TO SAY SOMETHING.",
+      "primitives": [
+        "I",
+        "FEEL",
+        "SOMETHING",
+        "NOW",
+        "THINK",
+        "ABOUT",
+        "BECAUSE",
+        "WANT",
+        "SAY"
+      ],
+      "frame": "EXPRESSING_EMOTION",
+      "roles": {
+        "EXPERIENCER": "I"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 85,
+    "sheet": "Comentar",
+    "row_index": 0,
+    "phrase": "It's raining.",
+    "meta": {
+      "english": "It's raining.",
+      "spanish": "Está lloviendo.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Oración impersonal (estar + gerundio)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 86,
+    "sheet": "Comentar",
+    "row_index": 1,
+    "phrase": "It's cold.",
+    "meta": {
+      "english": "It's cold.",
+      "spanish": "Hace frío.",
+      "domain": "General",
+      "syntax": "Oración impersonal (hacer + sustantivo/adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 87,
+    "sheet": "Comentar",
+    "row_index": 2,
+    "phrase": "It's hot.",
+    "meta": {
+      "english": "It's hot.",
+      "spanish": "Hace calor.",
+      "domain": "General",
+      "syntax": "Oración impersonal (hacer + sustantivo/adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 88,
+    "sheet": "Comentar",
+    "row_index": 3,
+    "phrase": "It's time to eat.",
+    "meta": {
+      "english": "It's time to eat.",
+      "spanish": "Es hora de comer.",
+      "domain": "Casa/Hogar",
+      "syntax": "Oración impersonal (ser + sustantivo + infinitivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 89,
+    "sheet": "Comentar",
+    "row_index": 4,
+    "phrase": "I am hungry.",
+    "meta": {
+      "english": "I am hungry.",
+      "spanish": "Tengo hambre.",
+      "domain": "Casa/Hogar",
+      "syntax": "Oración (tener + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 90,
+    "sheet": "Comentar",
+    "row_index": 5,
+    "phrase": "I am sleepy.",
+    "meta": {
+      "english": "I am sleepy.",
+      "spanish": "Tengo sueño.",
+      "domain": "Casa/Hogar",
+      "syntax": "Oración (tener + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 91,
+    "sheet": "Comentar",
+    "row_index": 6,
+    "phrase": "This is delicious.",
+    "meta": {
+      "english": "This is delicious.",
+      "spanish": "Qué rico está esto.",
+      "domain": "Casa/Hogar",
+      "syntax": "Exclamativa (qué + adjetivo + estar)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 92,
+    "sheet": "Comentar",
+    "row_index": 7,
+    "phrase": "I like this song.",
+    "meta": {
+      "english": "I like this song.",
+      "spanish": "Me gusta esta canción.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Verbo (gustar) + objeto"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 93,
+    "sheet": "Comentar",
+    "row_index": 8,
+    "phrase": "It's broken.",
+    "meta": {
+      "english": "It's broken.",
+      "spanish": "Está roto.",
+      "domain": "Casa/Hogar",
+      "syntax": "Oración (estar + participio)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 94,
+    "sheet": "Comentar",
+    "row_index": 9,
+    "phrase": "It's fun.",
+    "meta": {
+      "english": "It's fun.",
+      "spanish": "Es divertido.",
+      "domain": "General",
+      "syntax": "Oración (ser + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 95,
+    "sheet": "Comentar",
+    "row_index": 10,
+    "phrase": "It's hard.",
+    "meta": {
+      "english": "It's hard.",
+      "spanish": "Es difícil.",
+      "domain": "Escuela",
+      "syntax": "Oración (ser + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 96,
+    "sheet": "Comentar",
+    "row_index": 11,
+    "phrase": "It's easy.",
+    "meta": {
+      "english": "It's easy.",
+      "spanish": "Es fácil.",
+      "domain": "Escuela",
+      "syntax": "Oración (ser + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 97,
+    "sheet": "Comentar",
+    "row_index": 12,
+    "phrase": "Today is Monday.",
+    "meta": {
+      "english": "Today is Monday.",
+      "spanish": "Hoy es lunes.",
+      "domain": "General",
+      "syntax": "Oración (ser + sustantivo – día)"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 98,
+    "sheet": "Comentar",
+    "row_index": 13,
+    "phrase": "The dog is big.",
+    "meta": {
+      "english": "The dog is big.",
+      "spanish": "El perro es grande.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Sujeto + verbo (ser) + adjetivo"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 99,
+    "sheet": "Comentar",
+    "row_index": 14,
+    "phrase": "We have to go.",
+    "meta": {
+      "english": "We have to go.",
+      "spanish": "Tenemos que irnos.",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Verbo (tener que) + infinitivo"
+    },
+    "nsm": {
+      "gloss": "I SAY SOMETHING ABOUT SOMETHING I THINK NOW. I WANT YOU TO KNOW THIS.",
+      "primitives": [
+        "I",
+        "SAY",
+        "SOMETHING",
+        "ABOUT",
+        "THINK",
+        "NOW",
+        "WANT",
+        "YOU",
+        "KNOW",
+        "THIS"
+      ],
+      "frame": "COMMENTING",
+      "roles": {
+        "SPEAKER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 100,
+    "sheet": "Preguntar",
+    "row_index": 0,
+    "phrase": "Where is the toilet?",
+    "meta": {
+      "english": "Where is the toilet?",
+      "spanish": "¿Dónde está el baño?",
+      "domain": "Higiene/Salud",
+      "syntax": "Pregunta WH (dónde + estar + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 101,
+    "sheet": "Preguntar",
+    "row_index": 1,
+    "phrase": "What is this?",
+    "meta": {
+      "english": "What is this?",
+      "spanish": "¿Qué es esto?",
+      "domain": "General",
+      "syntax": "Pregunta WH (qué + ser + pronombre)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 102,
+    "sheet": "Preguntar",
+    "row_index": 2,
+    "phrase": "Who is she?",
+    "meta": {
+      "english": "Who is she?",
+      "spanish": "¿Quién es ella?",
+      "domain": "Escuela",
+      "syntax": "Pregunta WH (quién + ser + pronombre)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 103,
+    "sheet": "Preguntar",
+    "row_index": 3,
+    "phrase": "When are we going to the park?",
+    "meta": {
+      "english": "When are we going to the park?",
+      "spanish": "¿Cuándo vamos al parque?",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Pregunta WH (cuándo + verbo + lugar)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 104,
+    "sheet": "Preguntar",
+    "row_index": 4,
+    "phrase": "Why are you sad?",
+    "meta": {
+      "english": "Why are you sad?",
+      "spanish": "¿Por qué estás triste?",
+      "domain": "Casa/Hogar",
+      "syntax": "Pregunta WH (por qué + estar + adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 105,
+    "sheet": "Preguntar",
+    "row_index": 5,
+    "phrase": "What is your name?",
+    "meta": {
+      "english": "What is your name?",
+      "spanish": "¿Cómo te llamas?",
+      "domain": "General",
+      "syntax": "Pregunta WH (cómo + verbo reflexivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 106,
+    "sheet": "Preguntar",
+    "row_index": 6,
+    "phrase": "How old are you?",
+    "meta": {
+      "english": "How old are you?",
+      "spanish": "¿Cuántos años tienes?",
+      "domain": "General",
+      "syntax": "Pregunta WH (cuántos + sustantivo + verbo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 107,
+    "sheet": "Preguntar",
+    "row_index": 7,
+    "phrase": "Are you okay?",
+    "meta": {
+      "english": "Are you okay?",
+      "spanish": "¿Estás bien?",
+      "domain": "General",
+      "syntax": "Pregunta sí/no (estar + adverbio/adjetivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 108,
+    "sheet": "Preguntar",
+    "row_index": 8,
+    "phrase": "Do you want help?",
+    "meta": {
+      "english": "Do you want help?",
+      "spanish": "¿Quieres ayuda?",
+      "domain": "Casa/Hogar",
+      "syntax": "Pregunta sí/no (querer + objeto)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 109,
+    "sheet": "Preguntar",
+    "row_index": 9,
+    "phrase": "Can I go with you?",
+    "meta": {
+      "english": "Can I go with you?",
+      "spanish": "¿Puedo ir contigo?",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Pregunta sí/no (poder + infinitivo + complemento)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 110,
+    "sheet": "Preguntar",
+    "row_index": 10,
+    "phrase": "What are we going to eat?",
+    "meta": {
+      "english": "What are we going to eat?",
+      "spanish": "¿Qué vamos a comer?",
+      "domain": "Casa/Hogar",
+      "syntax": "Pregunta WH (qué + ir a + infinitivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 111,
+    "sheet": "Preguntar",
+    "row_index": 11,
+    "phrase": "What happened?",
+    "meta": {
+      "english": "What happened?",
+      "spanish": "¿Qué pasó?",
+      "domain": "General",
+      "syntax": "Pregunta WH (qué + verbo en pasado)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 112,
+    "sheet": "Preguntar",
+    "row_index": 12,
+    "phrase": "Who is coming?",
+    "meta": {
+      "english": "Who is coming?",
+      "spanish": "¿Quién viene?",
+      "domain": "Ocio/Comunidad",
+      "syntax": "Pregunta WH (quién + verbo en presente continuo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 113,
+    "sheet": "Preguntar",
+    "row_index": 13,
+    "phrase": "Where is mum?",
+    "meta": {
+      "english": "Where is mum?",
+      "spanish": "¿Dónde está mamá?",
+      "domain": "Casa/Hogar",
+      "syntax": "Pregunta WH (dónde + estar + sustantivo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  },
+  {
+    "id": 114,
+    "sheet": "Preguntar",
+    "row_index": 14,
+    "phrase": "Why are you laughing?",
+    "meta": {
+      "english": "Why are you laughing?",
+      "spanish": "¿Por qué te ríes?",
+      "domain": "General",
+      "syntax": "Pregunta WH (por qué + verbo en presente continuo)"
+    },
+    "nsm": {
+      "gloss": "I SAY: I DON'T KNOW SOMETHING. I WANT TO KNOW IT. CAN YOU SAY SOMETHING?",
+      "primitives": [
+        "I",
+        "SAY",
+        "DON'T KNOW",
+        "SOMETHING",
+        "WANT",
+        "KNOW",
+        "IT",
+        "CAN",
+        "YOU"
+      ],
+      "frame": "QUESTIONING",
+      "roles": {
+        "QUESTIONER": "I",
+        "ADDRESSEE": "YOU"
+      },
+      "notes": "Template-filled from sheet category."
+    }
+  }
+]

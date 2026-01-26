@@ -26,18 +26,53 @@ Each file contains around 10–15 phrases, totalling approximately 100 core bili
 - **[Download the complete list](core-phrase-list-all.json)**
 
 
-## Current Unit of Analysis
+## Two Modes of Evaluation
 
-The VCSCI framework currently operates at the **model level**:
+The VCSCI framework supports two complementary evaluation approaches:
 
-- **Input**: A set of phrases (core phrase list)
-- **Process**: Model generates pictograms for each phrase
-- **Output**: Aggregated score across all generated pictograms
-- **Result**: Overall model performance assessment
+### 1. Model-Level Evaluation (Legacy Mode)
 
-This approach is designed to evaluate and compare different generative models or model versions based on their collective output quality.
+Evaluate and compare different generative models or pipeline versions based on collective output quality.
 
-Future versions will also support **pictogram-level evaluation** for individual case analysis and iterative refinement.
+**Use when:**
+
+- Comparing different AI models or versions
+- Assessing overall pipeline performance
+- Benchmarking against standards
+- Research and publication
+
+**Workflow:**
+
+1. Generate pictograms for a phrase set
+2. Collect evaluation ratings
+3. Aggregate scores across all pictograms
+4. Compare models/versions
+
+**Input:** Phrase set → **Output:** Aggregated VCSCI score per model
+
+See: [docs/pictogram-case.md](docs/pictogram-case.md#relationship-to-model-level-evaluation)
+
+### 2. Pictogram-Level Evaluation (New Mode)
+
+Evaluate individual pictograms for iterative refinement and production deployment decisions.
+
+**Use when:**
+
+- Deciding if a pictogram is ready for production
+- Identifying specific improvements needed
+- Iterating on individual pictograms
+- Quality control for AAC systems
+
+**Workflow:**
+
+1. Generate individual pictogram cases
+2. Evaluate using standardized instrument
+3. Get decision (accept/accept-with-edits/reject)
+4. Refine based on required edits
+
+**Input:** Single pictogram → **Output:** Individual assessment + decision
+
+See: [docs/evaluation-instrument.md](docs/evaluation-instrument.md)
 
 
 ## Methodology
@@ -86,10 +121,75 @@ python3 merge-core-phrases.py
 ```
 to produce an updated compiled JSON file.
 
-## Working with Google Spreadsheet: shared file 
-We have a shared spreadsheet for validating, updating and working [here](https://docs.google.com/spreadsheets/d/1gGF8FiW6n2mepbdyasWGiE2wf1b54ufhRWS23dUyiQM/edit?usp=sharing). 
+## Quick Start
+
+### For Model-Level Evaluation
+
+```bash
+# 1. Generate pictograms (using your model)
+node scripts/generate-cases.js --random 20
+
+# 2. Collect evaluations (export from Google Sheets)
+node scripts/import-ratings.js ratings-export.csv
+
+# 3. Compute scores
+node scripts/score-cases.js
+
+# 4. Aggregate by model/version
+node scripts/aggregate-scores.js
+
+# 5. View results
+cat analysis/results/pipeline-comparison.json
+```
+
+### For Pictogram-Level Evaluation
+
+```bash
+# 1. Generate a single pictogram case
+node scripts/generate-cases.js --phrases req-001
+
+# 2. Evaluate using the instrument (see docs/evaluation-instrument.md)
+
+# 3. Import rating
+node scripts/import-ratings.js single-rating.csv
+
+# 4. Get decision
+node scripts/score-cases.js
+cat analysis/results/case-scores.json | jq '.["req-001_v1.0.0_default-v1_01"]'
+
+# 5. Iterate if needed (regenerate with edits)
+```
+
+## Repository Structure
+
+```text
+├── core-phrase-list-*.json    # Phrase lists by function (with phrase_ids)
+├── cases/                     # Pictogram case definitions
+├── pictograms/                # Generated pictogram outputs
+├── ratings/                   # Evaluation records
+├── analysis/                  # Results and reports
+├── schemas/                   # JSON schemas for validation
+├── scripts/                   # Automation scripts
+├── style/                     # Style profile configurations
+└── docs/                      # Documentation
+```
+
+## Documentation
+
+- [Pictogram Case Definition](docs/pictogram-case.md) - What is a pictogram case
+- [Generation Workflow](docs/generation-workflow.md) - How to generate cases
+- [Evaluation Instrument](docs/evaluation-instrument.md) - How to evaluate
+- [Evaluation Rubric](docs/rubric.md) - Detailed rating criteria
+- [Data Schemas](schemas/README.md) - Data structure validation
+- [Data Handling](docs/data-handling.md) - Privacy and governance
+
+## Working with Google Spreadsheet
+
+We have a shared spreadsheet for validating, updating and working [here](https://docs.google.com/spreadsheets/d/1gGF8FiW6n2mepbdyasWGiE2wf1b54ufhRWS23dUyiQM/edit?usp=sharing).
 
 You can request editing access.
+
 Go to "Extensions > App Scripts" and use:
-- [import script](import.js) imports the current compiled file 
+
+- [import script](import.js) imports the current compiled file
 - [export script](export.js) exports all JSON files
