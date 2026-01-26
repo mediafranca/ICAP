@@ -8,6 +8,7 @@ It is based on the principle that pictograms should not only be visually clear b
 
 The repository provides a curated core phrases list in Spanish with British English (NZ) equivalents. These phrases cover multiple communicative functions and daily life domains, enabling a robust evaluation of generative pictogram models.
 
+[View graphical evaluations](examples/index.html)
 
 ## Core Phrase List
 
