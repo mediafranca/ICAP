@@ -2,17 +2,11 @@
 
 This directory contains interactive demos and example files for the VCSCI evaluation framework.
 
-## 🚀 Quick Start
+## Quick Start
 
-**[Open the Interactive Index](index.html)** - Navegación visual de todos los ejemplos con explicación completa de VCSCI.
+**See [Main README](../README.md#interactive-demos)** for a complete overview of all interactive demos and examples.
 
-The index provides:
-
-- Visual explanation of what VCSCI is
-- Interactive cards for all demos
-- Links to data examples
-- Complete workflow diagram
-- Quick access to all resources
+This directory contains interactive demos and example files demonstrating the VCSCI evaluation framework.
 
 ## Interactive Demos
 
