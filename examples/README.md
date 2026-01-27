@@ -1,160 +1,67 @@
-# VCSCI Examples
+# Ejemplos ICAP
 
-This directory contains interactive demos and example files for the VCSCI evaluation framework.
+Este directorio contiene herramientas interactivas y ejemplos de referencia para el Índice de Calidad Pictográfica.
 
-## Quick Start
+## Herramientas Interactivas
 
-**See [Main README](../README.md#interactive-demos)** for a complete overview of all interactive demos and examples.
+### Interfaz Hexagonal con Gradientes
 
-This directory contains interactive demos and example files demonstrating the VCSCI evaluation framework.
+**[hexagonal-rating-gradient.html](hexagonal-rating-gradient.html)**
 
-## Interactive Demos
+Herramienta principal para evaluar pictogramas usando las 6 dimensiones ICAP.
 
-### 1. Hexagonal Rating with Gradient Interpolation ✨ NEW
+**Características:**
 
-**File:** [hexagonal-rating-gradient.html](hexagonal-rating-gradient.html)
+* Visualización hexagonal con colores únicos por dimensión
+* Gradientes suaves con Canvas 2D
+* Descripciones de rúbrica en tiempo real
+* Evaluación compilada (texto narrativo automático)
+* Exportación JSON con metadatos completos
+* Tipografía Lexend para accesibilidad
+* Tema oscuro optimizado
 
-**Features:**
-- 🎨 **Gradient color interpolation** - Each vertex has its own color with radial gradients
-- ✨ Canvas 2D rendering with smooth color blending between dimensions
-- 📖 Live rubric descriptions as you rate (from centralized JSON)
-- 📝 Compiled evaluation (overall) showing all 6 paragraphs
-- 📥 JSON export with gradient metadata
-- 🌓 Dark theme optimized for visual impact
-- 🎭 Lexend typography for optimal readability
+**Uso:**
 
-**Unique color per dimension:**
+1. Abrir el archivo HTML en un navegador
+2. Ajustar los 6 sliders (1-5) para cada dimensión
+3. Revisar la evaluación compilada en tiempo real
+4. Exportar JSON con evaluación completa
 
-- Clarity: Red (#ff6b6b)
-- Semantic Transparency: Yellow (#ffd93d)
-- Pragmatic Fit: Green (#6bcf7f)
-- Cultural Adequacy: Blue (#4d96ff)
-- Cognitive Accessibility: Purple (#9b59b6)
-- Recognizability: Orange (#ff8c42)
+### Visualizador de Metadatos
 
-**Technical approach:**
-Uses Canvas 2D with radial gradients from center to simulate per-vertex color interpolation. Each triangular segment from the center to two adjacent vertices gets its own gradient, creating a smooth color blend effect across the hexagon.
+**[metadata-visualizer.html](metadata-visualizer.html)**
 
-### 2. Hexagonal Rating with Descriptions
+Herramienta para extraer y visualizar metadatos ICAP embebidos en archivos SVG.
 
-**File:** [hexagonal-rating-with-descriptions.html](hexagonal-rating-with-descriptions.html)
+**Características:**
 
-**Features:**
-- ✨ Real-time hexagonal visualization using SVG
-- 📖 Live rubric descriptions (from centralized JSON)
-- 📝 Compiled evaluation (overall) with all 6 paragraphs
-- 📥 One-click JSON export with complete transparency
-- 🎨 Lexend typography
-- 🌐 Bilingual support (Spanish/English)
-- 🌟 Light theme for professional environments
+* Drag & drop de archivos SVG
+* Extracción automática de metadatos
+* Visualización hexagonal de puntajes
+* Muestra cadena de pensamiento completa
+* Información de certificación y proveniencia
 
-**How to use:**
+**Uso:**
 
-1. Open HTML file in browser
-2. Adjust 6 rating sliders (1-5)
-3. Watch hexagon update in real-time
-4. See dimension descriptions on right
-5. Review compiled evaluation at bottom
-6. Export JSON with full rubric transparency
+1. Abrir el archivo HTML en un navegador
+2. Arrastrar un SVG con metadatos ICAP
+3. Ver visualización automática de la evaluación
 
-### 3. Original Hexagonal Demo
+## Ejemplo Canónico
 
-**File:** [hexagonal-rating-demo.html](hexagonal-rating-demo.html)
+**[toy-example/](toy-example/)**
 
-Basic hexagonal rating interface without rubric integration (legacy version).
+Ejemplo completo del flujo de trabajo ICAP para la frase **"Voy a hacer mi cama"**.
 
-### 3. Visualization Comparison
+Incluye:
 
-**File:** [visualization-comparison.html](visualization-comparison.html)
+* Análisis semántico completo (Frame Semantics + NSM)
+* Estructura visual jerárquica
+* Pictograma SVG con metadatos ICAP embebidos
+* Evaluación completa con puntajes perfectos (5.0/5.0)
 
-Compare 6 different visualization styles for multi-dimensional ratings:
-
-- Hexagon/radar (recommended)
-- Horizontal bars
-- Circle grid
-- Heatmap
-- Gauge meters
-- Star ratings
-
-### 4. Metadata Visualizer
-
-**File:** [metadata-visualizer.html](metadata-visualizer.html)
-
-Extract and visualize VCSCI metadata embedded in SVG pictograms.
-
-**Features:**
-
-- Drag & drop SVG files
-- Extract embedded metadata
-- Display hexagonal visualization
-- Show complete chain of thought
-
-## Example Data
-
-### Exported Evaluation Example
-
-**File:** [exported-evaluation-example.json](exported-evaluation-example.json)
-
-Complete example of JSON exported from the hexagonal interface, showing:
-
-- Metadata (date, version, source)
-- Individual scores for each dimension
-- VCSCI composite score
-- Overall assessment with label and description
-- Complete dimension evaluations (bilingual)
-- Compiled evaluation with all paragraphs
-- Full text narrative
-- Rubric transparency note
-
-**Use cases:**
-
-- Reference format for custom tools
-- Dataset publication template
-- Research reproducibility
-- API integration example
-
-### Toy Example
-
-**Directory:** [toy-example/](toy-example/)
-
-Complete working example demonstrating the full evaluation workflow:
-
-- Case definition JSON
-- SVG pictogram with embedded metadata
-- Sidecar metadata JSON
-- Demonstrates entire chain: input → generation → evaluation → storage
-
-## Development
-
-All examples load data from:
-
-- `../data/rubric-scale-descriptions.json` - Centralized rubric definitions
-- `../schemas/` - JSON schemas for validation
-- `../style/` - Style profile configurations
-
-## Browser Compatibility
-
-All HTML examples work in modern browsers:
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-
-No build step required - just open in a browser!
-
-## Contributing
-
-To add new examples:
-
-1. Create HTML/JSON file in this directory
-2. Document in this README
-3. Reference from main project README
-4. Add to CI validation if applicable
+Ver [docs/canonical-example.md](../docs/canonical-example.md) para documentación detallada.
 
 ---
 
-**For complete documentation**, see:
-
-- [Main README](../README.md)
-- [Hexagonal Interface Documentation](../docs/hexagonal-interface.md)
-- [Rubric Descriptions Usage](../docs/rubric-descriptions-usage.md)
+**Para más información, ver el [README principal](../README.md)**

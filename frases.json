@@ -1,0 +1,384 @@
+{
+  "project": "PictoNet / ICAP",
+  "corpus_name": "Corpus Base de Evaluación ICAP-50",
+  "version": "1.0.0",
+  "description": "Set de 50 frases concretas para evaluar la calidad generativa y accesibilidad cognitiva de pictogramas en CAA.",
+  "phrases": [
+    {
+      "id": "SOL-01",
+      "category": "Solicitar",
+      "phrase_es": "Quiero ir al baño",
+      "nsm_primitives": ["I", "WANT", "NOW", "GO", "PLACE", "BODY", "SOMETHING", "THIS"],
+      "semantic_role": "SPEAKER=I; PLACE=TOILET",
+      "domain": "Higiene/Salud"
+    },
+    {
+      "id": "SOL-02",
+      "category": "Solicitar",
+      "phrase_es": "Quiero comer pizza",
+      "nsm_primitives": ["I", "WANT", "NOW", "THIS", "BODY", "INSIDE", "BECAUSE", "DO", "SOMETHING"],
+      "semantic_role": "SPEAKER=I; FOOD=PIZZA",
+      "domain": "Casa/Hogar"
+    },
+    {
+      "id": "SOL-03",
+      "category": "Solicitar",
+      "phrase_es": "Necesito tomar mi medicina",
+      "nsm_primitives": ["I", "THIS", "NOW", "BODY", "INSIDE", "IF", "NOT", "SOMETHING", "BAD", "CAN", "HAPPEN"],
+      "semantic_role": "SPEAKER=I; SUBSTANCE=MEDICINE",
+      "domain": "Higiene/Salud"
+    },
+    {
+      "id": "SOL-04",
+      "category": "Solicitar",
+      "phrase_es": "Tengo sed, quiero beber agua",
+      "nsm_primitives": ["I", "WANT", "NOW", "SOME", "BODY", "INSIDE", "BECAUSE", "DO"],
+      "semantic_role": "SPEAKER=I; SUBSTANCE=WATER",
+      "domain": "Higiene/Salud"
+    },
+    {
+      "id": "SOL-05",
+      "category": "Solicitar",
+      "phrase_es": "Quiero jugar en el patio",
+      "nsm_primitives": ["I", "WANT", "NOW", "DO", "FOR SOME TIME", "GOOD", "PLACE", "NOT", "HERE"],
+      "semantic_role": "SPEAKER=I; PLACE=OUTSIDE",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "SOL-06",
+      "category": "Solicitar",
+      "phrase_es": "Ayúdame con la tarea",
+      "nsm_primitives": ["I", "WANT", "NOW", "YOU", "DO", "SOMETHING", "WITH", "ME", "BECAUSE", "CAN", "DO"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; TASK=HOMEWORK",
+      "domain": "Escuela"
+    },
+    {
+      "id": "REC-01",
+      "category": "Rechazar",
+      "phrase_es": "No quiero tomar la sopa",
+      "nsm_primitives": ["I", "THINK", "NOT", "WANT", "THIS", "NOW"],
+      "semantic_role": "SPEAKER=I; OBJECT=SOUP",
+      "domain": "General"
+    },
+    {
+      "id": "REC-02",
+      "category": "Rechazar",
+      "phrase_es": "No quiero usar la chaqueta",
+      "nsm_primitives": ["I", "NOT", "WANT", "BODY", "THINGS"],
+      "semantic_role": "SPEAKER=I; OBJECT=JACKET",
+      "domain": "General"
+    },
+    {
+      "id": "REC-03",
+      "category": "Rechazar",
+      "phrase_es": "No ahora",
+      "nsm_primitives": ["I", "SAY", "NOT", "THIS", "TIME", "NOW"],
+      "semantic_role": "SPEAKER=I; TIME=NOW",
+      "domain": "General"
+    },
+    {
+      "id": "REC-04",
+      "category": "Rechazar",
+      "phrase_es": "No necesito ayuda",
+      "nsm_primitives": ["I", "THINK", "NOT", "SOMEONE", "DO", "SOMETHING"],
+      "semantic_role": "SPEAKER=I; POTENTIAL-HELPER=SOMEONE",
+      "domain": "General"
+    },
+    {
+      "id": "REC-05",
+      "category": "Rechazar",
+      "phrase_es": "Basta ya",
+      "nsm_primitives": ["I", "NOT", "WANT", "THIS", "ANY MORE"],
+      "semantic_role": "SPEAKER=I; EVENT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "DIR-01",
+      "category": "Dirigir",
+      "phrase_es": "Ven aquí",
+      "nsm_primitives": ["I", "WANT", "THIS", "YOU", "GO", "PLACE", "THIS", "NEAR", "NOW"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; PLACE=HERE",
+      "domain": "General"
+    },
+    {
+      "id": "DIR-02",
+      "category": "Dirigir",
+      "phrase_es": "Mira esto",
+      "nsm_primitives": ["I", "WANT", "THIS", "YOU", "SEE", "THIS", "THING", "NOW"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; OBJECT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "DIR-03",
+      "category": "Dirigir",
+      "phrase_es": "Dame la mano",
+      "nsm_primitives": ["I", "WANT", "THIS", "BE", "CAN", "DO", "SOMETHING"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; BODY_PART=HAND",
+      "domain": "Casa/Hogar"
+    },
+    {
+      "id": "DIR-04",
+      "category": "Dirigir",
+      "phrase_es": "Pon el libro en la mesa",
+      "nsm_primitives": ["YOU", "DO", "PLACE", "THIS", "THING"],
+      "semantic_role": "OBJECT=BOOK; PLACE=TABLE",
+      "domain": "Escuela"
+    },
+    {
+      "id": "DIR-05",
+      "category": "Dirigir",
+      "phrase_es": "Vamos a jugar",
+      "nsm_primitives": ["I", "WANT", "THIS", "DO", "SOMETHING", "GOOD", "SOME", "TIME"],
+      "semantic_role": "SPEAKER+ADDRESSEE=WE; ACTIVITY=PLAY",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "DIR-06",
+      "category": "Dirigir",
+      "phrase_es": "No corras",
+      "nsm_primitives": ["I", "WANT", "THIS", "YOU", "NOT", "MOVE", "NOW"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; ACTION=RUN",
+      "domain": "Escuela/Ocio"
+    },
+    {
+      "id": "ACE-01",
+      "category": "Aceptar",
+      "phrase_es": "Sí, quiero eso",
+      "nsm_primitives": ["I", "SAY", "WANT", "THIS", "NOW"],
+      "semantic_role": "SPEAKER=I; OBJECT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "ACE-02",
+      "category": "Aceptar",
+      "phrase_es": "Está bien",
+      "nsm_primitives": ["I", "THINK", "THIS", "BE", "GOOD", "SAY"],
+      "semantic_role": "SPEAKER=I; OBJECT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "ACE-03",
+      "category": "Aceptar",
+      "phrase_es": "De acuerdo",
+      "nsm_primitives": ["I", "SAY", "THINK", "LIKE", "YOU", "THIS"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; OBJECT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "ACE-04",
+      "category": "Aceptar",
+      "phrase_es": "Me gusta eso",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "GOOD", "THINK", "THIS"],
+      "semantic_role": "SPEAKER=I; OBJECT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "ACE-05",
+      "category": "Aceptar",
+      "phrase_es": "Sí, por favor",
+      "nsm_primitives": ["I", "SAY", "WANT", "THIS", "SAY", "GOOD", "WORDS"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "General"
+    },
+    {
+      "id": "ACE-06",
+      "category": "Aceptar",
+      "phrase_es": "¡Genial!",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "VERY", "GOOD", "THIS", "NOW"],
+      "semantic_role": "SPEAKER=I; EVENT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "SOC-01",
+      "category": "Interacción Social",
+      "phrase_es": "Hola",
+      "nsm_primitives": ["I", "SAY", "GOOD", "WORDS", "YOU", "NOW"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "General"
+    },
+    {
+      "id": "SOC-02",
+      "category": "Interacción Social",
+      "phrase_es": "Adiós",
+      "nsm_primitives": ["I", "SAY", "GOOD", "WORDS", "YOU", "NOW", "AFTER", "NOT", "SAME", "PLACE"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "General"
+    },
+    {
+      "id": "SOC-03",
+      "category": "Interacción Social",
+      "phrase_es": "Por favor",
+      "nsm_primitives": ["I", "SAY", "GOOD", "WORDS", "WANT", "THIS"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "General"
+    },
+    {
+      "id": "SOC-04",
+      "category": "Interacción Social",
+      "phrase_es": "¿Quieres jugar?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "YOU", "WANT", "THIS", "NOW", "DO", "SOMETHING", "GOOD"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU; ACTIVITY=PLAY",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "SOC-05",
+      "category": "Interacción Social",
+      "phrase_es": "Lo siento",
+      "nsm_primitives": ["I", "SAY", "FEEL", "SOMETHING", "BAD", "BECAUSE", "DO"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "General"
+    },
+    {
+      "id": "SOC-06",
+      "category": "Interacción Social",
+      "phrase_es": "Bien hecho",
+      "nsm_primitives": ["I", "SAY", "GOOD", "WORDS", "YOU", "SOMETHING", "GOOD"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "General"
+    },
+    {
+      "id": "EMO-01",
+      "category": "Emoción",
+      "phrase_es": "Te quiero",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "VERY", "GOOD", "YOU", "WANT", "BE"],
+      "semantic_role": "SPEAKER=I; ADDRESSEE=YOU",
+      "domain": "Casa/Hogar"
+    },
+    {
+      "id": "EMO-02",
+      "category": "Emoción",
+      "phrase_es": "Estoy feliz",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "VERY", "GOOD", "NOW"],
+      "semantic_role": "SPEAKER=I",
+      "domain": "General"
+    },
+    {
+      "id": "EMO-03",
+      "category": "Emoción",
+      "phrase_es": "Estoy triste",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "BAD", "NOW"],
+      "semantic_role": "SPEAKER=I",
+      "domain": "General"
+    },
+    {
+      "id": "EMO-04",
+      "category": "Emoción",
+      "phrase_es": "Tengo miedo",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "BAD", "NOW", "BECAUSE", "THINK", "SOMETHING", "BAD", "CAN", "HAPPEN"],
+      "semantic_role": "SPEAKER=I",
+      "domain": "General"
+    },
+    {
+      "id": "EMO-05",
+      "category": "Emoción",
+      "phrase_es": "Me duele la barriga",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "BAD", "BODY", "PART", "THIS", "NOW"],
+      "semantic_role": "SPEAKER=I; BODY_PART=TUMMY",
+      "domain": "Higiene/Salud"
+    },
+    {
+      "id": "COM-01",
+      "category": "Comentar",
+      "phrase_es": "Está lloviendo",
+      "nsm_primitives": ["SOMETHING", "HAPPEN", "NOW", "WATER", "FALL", "SKY"],
+      "semantic_role": "SPEAKER=I; EVENT=RAIN",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "COM-02",
+      "category": "Comentar",
+      "phrase_es": "Hace frío",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "BAD", "BODY", "NOW", "AIR", "COLD"],
+      "semantic_role": "SPEAKER=I; ENVIRONMENT=AIR",
+      "domain": "General"
+    },
+    {
+      "id": "COM-03",
+      "category": "Comentar",
+      "phrase_es": "Es hora de comer",
+      "nsm_primitives": ["NOW", "GOOD", "TIME", "SOMEONE", "CAN", "SOMETHING"],
+      "semantic_role": "SPEAKER=I; PEOPLE=SOMEONE",
+      "domain": "Casa/Hogar"
+    },
+    {
+      "id": "COM-04",
+      "category": "Comentar",
+      "phrase_es": "Tengo hambre",
+      "nsm_primitives": ["I", "FEEL", "SOMETHING", "BAD", "BODY", "NOW", "WANT", "FOOD", "INSIDE"],
+      "semantic_role": "SPEAKER=I",
+      "domain": "Casa/Hogar"
+    },
+    {
+      "id": "COM-05",
+      "category": "Comentar",
+      "phrase_es": "El perro es grande",
+      "nsm_primitives": ["THIS", "ANIMAL", "BE", "BIG"],
+      "semantic_role": "SPEAKER=I; OBJECT=DOG",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "COM-06",
+      "category": "Comentar",
+      "phrase_es": "Está roto",
+      "nsm_primitives": ["SOMETHING", "HAPPEN", "THING", "NOT", "CAN", "DO"],
+      "semantic_role": "SPEAKER=I; OBJECT=THING",
+      "domain": "General"
+    },
+    {
+      "id": "PRE-01",
+      "category": "Preguntar",
+      "phrase_es": "¿Dónde está el baño?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "WHERE", "BE", "THIS", "PLACE"],
+      "semantic_role": "SPEAKER=I; PLACE=TOILET",
+      "domain": "Higiene/Salud"
+    },
+    {
+      "id": "PRE-02",
+      "category": "Preguntar",
+      "phrase_es": "¿Qué es esto?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "BE", "THIS", "THING"],
+      "semantic_role": "SPEAKER=I; OBJECT=THIS",
+      "domain": "General"
+    },
+    {
+      "id": "PRE-03",
+      "category": "Preguntar",
+      "phrase_es": "¿Quién es ella?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "BE", "THIS", "PERSON"],
+      "semantic_role": "SPEAKER=I; REFERENT=SHE",
+      "domain": "Escuela"
+    },
+    {
+      "id": "PRE-04",
+      "category": "Preguntar",
+      "phrase_es": "¿Cuándo vamos al parque?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "TIME", "GO", "THIS", "PLACE"],
+      "semantic_role": "SPEAKER=I; PLACE=PARK",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "PRE-05",
+      "category": "Preguntar",
+      "phrase_es": "¿Quién viene?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "WHO", "GO", "HERE", "NOW"],
+      "semantic_role": "SPEAKER=I; REFERENT=WHO",
+      "domain": "Ocio/Comunidad"
+    },
+    {
+      "id": "PRE-06",
+      "category": "Preguntar",
+      "phrase_es": "¿Dónde está mamá?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "WHERE", "BE", "THIS", "PERSON"],
+      "semantic_role": "SPEAKER=I; PERSON=MUM",
+      "domain": "Casa/Hogar"
+    },
+    {
+      "id": "PRE-07",
+      "category": "Preguntar",
+      "phrase_es": "¿Qué vamos a comer?",
+      "nsm_primitives": ["I", "WANT", "KNOW", "WHAT", "FOOD", "PUT", "INSIDE", "BODY"],
+      "semantic_role": "SPEAKER=I; GROUP=WE; ACTION=EAT",
+      "domain": "Casa/Hogar"
+    }
+  ]
+}

@@ -69,7 +69,7 @@ Cada dimensión se califica mediante una rúbrica de 5 niveles:
 
 El corpus de referencia consta de **50 frases** organizadas por función comunicativa siguiendo la taxonomía de actos de habla de Austin/Searle:
 
-**[style/frases.json](style/frases.json)**
+**[frases.json](frases.json)**
 
 ### Categorías
 
@@ -121,19 +121,19 @@ Cada frase incluye:
 
 **[examples/toy-example/](examples/toy-example/)**
 
-Ejemplo completo del flujo de trabajo:
+Ejemplo completo del flujo de trabajo: **"Voy a hacer mi cama"**
 
-1. **Frase:** "Voy a hacer mi cama"
-2. **Análisis semántico** con Frame Semantics y NSM
-3. **Estructura visual** jerárquica
-4. **Pictograma SVG** con metadatos ICAP embebidos
-5. **Evaluación completa** con puntajes perfectos (5.0/5.0)
+1. **Frase de entrada** con análisis semántico (Frame Semantics + NSM)
+2. **Estructura visual** jerárquica definida
+3. **Pictograma SVG** generado con metadatos ICAP embebidos
+4. **Evaluación ICAP completa** con puntajes perfectos (5.0/5.0)
 
 **Archivos incluidos:**
 
-* [semantic-analysis.json](examples/toy-example/semantic-analysis.json) - Descomposición semántica completa
-* [visual-structure.json](examples/toy-example/visual-structure.json) - Jerarquía de elementos visuales
-* [output.svg](examples/toy-example/pictograms/req-001_v1.0.0_default-v1_01/output.svg) - SVG con metadatos ICAP
+* [semantic-analysis.json](examples/toy-example/semantic-analysis.json) - Descomposición semántica con roles y primitivos NSM
+* [visual-structure.json](examples/toy-example/visual-structure.json) - Jerarquía de elementos visuales y prompt de generación
+* [output.svg](examples/toy-example/pictograms/req-001_v1.0.0_default-v1_01/output.svg) - Pictograma con metadatos ICAP completos
+* [Documentación completa](docs/canonical-example.md) - Explicación detallada del flujo
 
 ---
 
@@ -168,24 +168,21 @@ node scripts/compile-evaluation-text.js --case req-001_v1.0.0_default-v1_01
 ## Estructura del Repositorio
 
 ```text
-├── style/
-│   └── frases.json              # Corpus de 50 frases de referencia
+├── frases.json                  # Corpus de 50 frases de referencia
 ├── data/
 │   └── rubric-scale-descriptions.json  # Rúbrica centralizada
 ├── examples/
-│   ├── hexagonal-rating-gradient.html  # Interfaz recomendada
-│   ├── hexagonal-rating-with-descriptions.html
-│   ├── metadata-visualizer.html
-│   └── toy-example/             # Ejemplo canónico completo
+│   ├── hexagonal-rating-gradient.html  # Interfaz hexagonal interactiva
+│   ├── metadata-visualizer.html        # Visualizador de metadatos
+│   └── toy-example/                    # Ejemplo canónico completo
 ├── schemas/
 │   └── rubric-descriptions.schema.json  # Validación JSON Schema
 ├── scripts/
-│   ├── compile-evaluation-text.js
-│   └── generate-report.js
+│   ├── compile-evaluation-text.js      # Compilar evaluaciones
+│   └── generate-report.js              # Generar reportes
 └── docs/
-    ├── rubric.md                # Rúbrica detallada
-    ├── canonical-example.md     # Documentación del ejemplo
-    └── hexagonal-interface.md   # Documentación de interfaces
+    ├── rubric.md                        # Rúbrica detallada
+    └── canonical-example.md             # Documentación del ejemplo
 ```
 
 ---
@@ -211,7 +208,7 @@ node scripts/compile-evaluation-text.js --case req-001_v1.0.0_default-v1_01
 
 ```bash
 # Generar reporte agregado
-node scripts/generate-report.js --corpus style/frases.json
+node scripts/generate-report.js --corpus frases.json
 ```
 
 ---
