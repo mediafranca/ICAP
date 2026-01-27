@@ -155,46 +155,43 @@ node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4 --lang en
 
 Explore the VCSCI evaluation interface through interactive HTML demonstrations:
 
-### 1. Hexagonal Rating with Gradient Interpolation ✨ NEW
-
-**[examples/hexagonal-rating-gradient.html](examples/hexagonal-rating-gradient.html)**
-
-- Gradient color interpolation - Each vertex has its own color with radial gradients
-- Canvas 2D rendering with smooth color blending between dimensions
-- Live rubric descriptions as you rate (from centralized JSON)
-- Compiled evaluation (overall) showing all 6 paragraphs
-- JSON export with gradient metadata
-- Dark theme optimized for visual impact
-- Lexend typography for optimal readability
-
-### 2. Hexagonal Rating with Descriptions
+### Hexagonal Rating Interface (Bilingual) 🌐
 
 **[examples/hexagonal-rating-with-descriptions.html](examples/hexagonal-rating-with-descriptions.html)**
 
-- Real-time hexagonal visualization using SVG
-- Live rubric descriptions (from centralized JSON)
-- Compiled evaluation (overall) with all 6 paragraphs
-- One-click JSON export with complete transparency
-- Lexend typography
-- Bilingual support (Spanish/English)
-- Light theme for professional environments
+The primary evaluation interface for VCSCI pictogram assessment.
 
-### 3. Metadata Visualizer
+**Key Features:**
+
+- ✨ Real-time hexagonal visualization using SVG
+- 🌐 **Bilingual support** (Spanish/English)
+- 🎨 **Score-based colour system** - Colours assigned by performance level (1-5), not dimension
+  - 🔴 Red (1) = Not functional
+  - 🟠 Orange (2) = Insufficient
+  - 🟡 Yellow (3) = Works
+  - 🟢 Lime Green (4) = Good
+  - 🟢 Dark Green (5) = Excellent
+- 📖 Live rubric descriptions from centralized JSON
+- 📝 Compiled evaluation with all 6 dimension paragraphs
+- 📥 One-click JSON export with complete transparency
+- 🎭 Lexend typography for optimal readability
+- 🌟 Light theme for professional environments
+
+### Metadata Visualizer 🔍
 
 **[examples/metadata-visualizer.html](examples/metadata-visualizer.html)**
 
 Extract and visualize VCSCI metadata embedded in SVG pictograms.
 
-- Drag & drop SVG files
-- Extract embedded metadata
-- Display hexagonal visualization
-- Show complete chain of thought
+**Features:**
 
-### 4. Original Hexagonal Demo
+- 📤 Drag & drop SVG files
+- 🔍 Extract embedded metadata
+- 📊 Display hexagonal visualization
+- 🧠 Show complete chain of thought
+- 📋 Display provenance information
 
-**[examples/hexagonal-rating-demo.html](examples/hexagonal-rating-demo.html)**
-
-Basic hexagonal rating interface without rubric integration (legacy version).
+**For detailed documentation**, see [examples/README.md](examples/README.md)
 
 ## Example Data
 
