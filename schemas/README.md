@@ -1,102 +1,71 @@
-# VCSCI Data Schemas
+# Schemas ICAP
 
-This directory contains JSON Schema definitions for validating data structures in the VCSCI framework.
+Este directorio contiene definiciones JSON Schema para validar estructuras de datos en el framework ICAP.
 
-## Available Schemas
+## Schema Disponible
 
-### 1. CaseMeta Schema
-**File**: [case-meta.schema.json](case-meta.schema.json)
+### Rubric Descriptions Schema
 
-Defines the structure for pictogram case metadata, including:
-- Case identification (case_id, phrase_id)
-- Generation context (pipeline version, style profile, model)
-- Output artifacts (SVG, preview, logs)
-- Additional metadata
+**Archivo:** [rubric-descriptions.schema.json](rubric-descriptions.schema.json)
 
-### 2. RatingRecord Schema
-**File**: [rating-record.schema.json](rating-record.schema.json)
+Define la estructura para las descripciones de la rúbrica ICAP, incluyendo:
 
-Defines the structure for human evaluation records, including:
-- Evaluator information (anonymized role, date)
-- Ratings across dimensions (1-5 scale)
-- Decision (accept/accept-with-edits/reject)
-- Required edits with categories and priorities
+* Escala general (niveles 1-5)
+* 6 dimensiones de evaluación (Claridad, Reconocibilidad, Transparencia Semántica, Adecuación Pragmática, Adecuación Cultural, Accesibilidad Cognitiva)
+* Descripciones bilingües (español/inglés) para cada nivel
+* Texto compilable para evaluaciones narrativas
 
-## Usage
+## Uso
 
-### Validate JSON with Node.js
+### Validar con Node.js
 
 ```javascript
 const Ajv = require('ajv');
 const ajv = new Ajv();
 
-const caseMetaSchema = require('./schemas/case-meta.schema.json');
-const validate = ajv.compile(caseMetaSchema);
+const rubricSchema = require('./schemas/rubric-descriptions.schema.json');
+const validate = ajv.compile(rubricSchema);
 
-const myCase = require('./cases/req-001_v1.0.0_default-v1_01.json');
-const valid = validate(myCase);
+const rubricData = require('./data/rubric-scale-descriptions.json');
+const valid = validate(rubricData);
 
 if (!valid) {
   console.log(validate.errors);
 }
 ```
 
-### Validate with Python
+### Validar con Command Line
 
-```python
-import json
-import jsonschema
-
-with open('schemas/case-meta.schema.json') as f:
-    schema = json.load(f)
-
-with open('cases/req-001_v1.0.0_default-v1_01.json') as f:
-    instance = json.load(f)
-
-jsonschema.validate(instance=instance, schema=schema)
-```
-
-### Validate with Command Line
-
-Using `ajv-cli`:
+Usando `ajv-cli`:
 
 ```bash
 npm install -g ajv-cli
-ajv validate -s schemas/case-meta.schema.json -d "cases/*.json"
+ajv validate -s schemas/rubric-descriptions.schema.json -d data/rubric-scale-descriptions.json
 ```
 
-## Rating Dimensions
+## Dimensiones de Evaluación ICAP
 
-The **RatingRecord** schema includes these evaluation dimensions:
+| Dimensión | Descripción |
+|-----------|-------------|
+| **Claridad** | Nitidez visual, legibilidad y ausencia de ambigüedad visual |
+| **Reconocibilidad** | Facilidad de identificación sin contexto adicional |
+| **Transparencia Semántica** | Precisión en transmitir el significado de la frase objetivo |
+| **Adecuación Pragmática** | Utilidad en contextos reales de comunicación AAC |
+| **Adecuación Cultural** | Relevancia para contexto cultural y lingüístico hispanohablante |
+| **Accesibilidad Cognitiva** | Usabilidad para usuarios con diferencias cognitivas |
 
-| Dimension | Description | Scale |
-|-----------|-------------|-------|
-| **clarity** | Visual clarity and legibility | 1-5 |
-| **recognizability** | Ease of recognition without context | 1-5 |
-| **semantic_transparency** | How well it conveys intended meaning | 1-5 |
-| **pragmatic_fit** | Usefulness in real communication contexts | 1-5 |
-| **cultural_adequacy** | Cultural appropriateness and relevance | 1-5 |
-| **cognitive_accessibility** | Accessibility for users with cognitive differences | 1-5 |
+Cada dimensión se evalúa en escala 1-5:
 
-## Decision Types
+* **5 - Excelente:** Sin mejoras necesarias
+* **4 - Bien:** Funciona bien, mejoras menores opcionales
+* **3 - Funciona:** Aceptable, cumple mínimo AAC
+* **2 - Insuficiente:** Requiere mejoras significativas
+* **1 - No funcional:** Requiere rediseño completo
 
-- **accept**: Pictogram is ready for production use
-- **accept-with-edits**: Pictogram is acceptable but requires minor improvements
-- **reject**: Pictogram needs significant rework or regeneration
+## Versionado
 
-## Edit Categories
+Los schemas siguen versionado semántico. Cambios mayores incrementan la versión principal y requieren actualizar el campo `$id`.
 
-When `decision` is "accept-with-edits" or "reject", specify required edits:
+---
 
-- `color`: Color adjustments needed
-- `shape`: Shape or form modifications
-- `detail-level`: Simplification or detail enhancement
-- `composition`: Layout or arrangement changes
-- `symbolism`: Symbolic representation issues
-- `cultural-adaptation`: Cultural or linguistic adaptations
-- `accessibility`: Accessibility improvements
-- `other`: Other types of edits
-
-## Schema Versioning
-
-Schemas follow semantic versioning. Breaking changes increment the major version and require updating the `$id` field.
+**Ver también:** [data/rubric-scale-descriptions.json](../data/rubric-scale-descriptions.json) - Datos de rúbrica validados por este schema
