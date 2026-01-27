@@ -95,7 +95,7 @@ Cada frase incluye:
 
 ## Herramientas de Evaluación Interactivas
 
-### 1. Interfaz Hexagonal con Gradientes ✨ RECOMENDADA
+### Interfaz Hexagonal con Gradientes
 
 **[examples/hexagonal-rating-gradient.html](examples/hexagonal-rating-gradient.html)**
 
@@ -106,16 +106,7 @@ Cada frase incluye:
 * Exportación JSON con metadatos completos
 * Tipografía Lexend para accesibilidad
 
-### 2. Interfaz Hexagonal con Descripciones
-
-**[examples/hexagonal-rating-with-descriptions.html](examples/hexagonal-rating-with-descriptions.html)**
-
-* Visualización SVG limpia
-* Tema claro profesional
-* Descripciones de rúbrica centralizadas
-* Exportación completa con transparencia
-
-### 3. Visualizador de Metadatos
+### Visualizador de Metadatos
 
 **[examples/metadata-visualizer.html](examples/metadata-visualizer.html)**
 
@@ -225,12 +216,10 @@ node scripts/generate-report.js --corpus style/frases.json
 
 ---
 
-## Documentación Completa
+## Documentación
 
-* **[Rúbrica ICAP Detallada](docs/rubric.md)** - Descripciones extendidas de cada dimensión
-* **[Ejemplo Canónico](docs/canonical-example.md)** - Flujo completo documentado
-* **[Interfaz Hexagonal](docs/hexagonal-interface.md)** - Documentación técnica de interfaces
-* **[Uso de Rúbrica Centralizada](docs/rubric-descriptions-usage.md)** - Guía de implementación
+* **[Rúbrica ICAP Detallada](docs/rubric.md)** - Descripciones extendidas de cada dimensión con ejemplos
+* **[Ejemplo Canónico](docs/canonical-example.md)** - Flujo completo documentado: "Voy a hacer mi cama"
 
 ---
 
