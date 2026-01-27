@@ -16,12 +16,13 @@ The primary evaluation interface for VCSCI pictogram assessment.
 
 - ✨ Real-time hexagonal visualization using SVG
 - 📖 Live rubric descriptions from centralized JSON
-- 🌐 **Bilingual support** (Spanish/English)
+- 🌐 **Bilingual support** (Spanish/English with `_es`/`_en` structure)
 - 🎨 **Score-based colour system** (1-5 ratings mapped to colours)
-- 📝 Compiled evaluation with all 6 dimension paragraphs
-- 📥 One-click JSON export with complete transparency
+- 🔍 **Dimension definitions** displayed alongside score explanations
+- 📝 Compiled evaluation with all 6 dimension paragraphs (colour-coded)
+- 📥 One-click JSON export with complete bilingual transparency
 - 🎭 Lexend typography for optimal readability
-- 🌟 Light theme for professional environments
+- 🌟 Simplified, compact interface with soft background
 
 **Colour System (Score-Based):**
 
@@ -41,10 +42,10 @@ This creates a consistent visual language where lower scores are warm colours (r
 
 1. Open HTML file in browser
 2. Adjust 6 rating sliders (1-5) for each dimension
-3. Watch hexagon update in real-time with colour-coded vertices
-4. See dimension descriptions update on the right panel
-5. Review compiled evaluation at bottom
-6. Export JSON with full rubric transparency
+3. Watch hexagon update in real-time with colour-coded vertices and labels
+4. See dimension definition and score description update on the right panel
+5. Review compiled evaluation at bottom with colour-coded paragraphs
+6. Export JSON with full bilingual rubric transparency
 
 ---
 
