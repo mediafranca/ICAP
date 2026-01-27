@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VCSCI Hexagonal Rating - Con Descripciones del Rubric</title>
+  <title>VCSCI Hexagonal Rating - Interfaz Bilingüe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,10 +16,11 @@
 
     body {
       font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f5f6fa;
-      padding: 20px;
+      background: #fafbfc;
+      padding: 30px 20px;
       line-height: 1.6;
       font-weight: 400;
+      color: #2c3e50;
     }
 
     .container {
@@ -30,41 +31,34 @@
     h1 {
       text-align: center;
       color: #2c3e50;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 28px;
     }
 
     .subtitle {
       text-align: center;
       color: #7f8c8d;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       font-size: 14px;
     }
 
     .demo-wrapper {
       display: grid;
-      grid-template-columns: 400px 1fr 400px;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .panel {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .panel h2 {
-      font-size: 18px;
-      color: #34495e;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 10px;
+      grid-template-columns: 350px 1fr 450px;
+      gap: 25px;
+      margin-bottom: 25px;
     }
 
     /* Rating sliders */
+    .ratings-section h2 {
+      font-size: 16px;
+      color: #34495e;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
     .dimension-group {
-      margin-bottom: 25px;
+      margin-bottom: 22px;
     }
 
     .dimension-label {
@@ -72,90 +66,133 @@
       font-weight: 600;
       color: #2c3e50;
       margin-bottom: 8px;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .slider-container {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
     }
 
     .slider {
       flex: 1;
-      height: 8px;
-      border-radius: 5px;
+      height: 6px;
+      border-radius: 3px;
       outline: none;
       -webkit-appearance: none;
+      background: #e1e8ed;
     }
 
     .slider::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: #3498db;
       cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     .slider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: #3498db;
       cursor: pointer;
       border: none;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     .score-display {
-      min-width: 40px;
+      min-width: 35px;
       font-weight: 700;
       color: #2c3e50;
-      font-size: 16px;
+      font-size: 15px;
       text-align: center;
     }
 
     /* Hexagon visualization */
+    .viz-section h2 {
+      font-size: 16px;
+      color: #34495e;
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-align: center;
+    }
+
     #hexagonChart {
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 20px auto;
+    }
+
+    .vcsci-score {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 8px;
+    }
+
+    .vcsci-score-value {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .vcsci-score-label {
+      font-size: 16px;
+      opacity: 0.95;
+      font-weight: 500;
     }
 
     /* Description panel */
+    .description-section h2 {
+      font-size: 16px;
+      color: #34495e;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
     .description-content {
-      min-height: 400px;
+      min-height: 380px;
     }
 
     .current-dimension {
-      background: #ecf0f1;
+      background: #f0f3f7;
       padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      border-left: 4px solid #3498db;
+      border-radius: 6px;
+      margin-bottom: 15px;
     }
 
     .current-dimension h3 {
       color: #2c3e50;
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .current-dimension .score-label {
-      color: #7f8c8d;
-      font-size: 14px;
+      font-size: 15px;
+      margin-bottom: 6px;
       font-weight: 600;
     }
 
+    .current-dimension .score-label {
+      color: #5a6c7d;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .dimension-definition {
+      color: #7f8c8d;
+      font-size: 12px;
+      line-height: 1.5;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
     .description-text {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #e1e8ed;
       color: #2c3e50;
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.75;
+      text-align: left;
     }
 
     .no-selection {
@@ -165,54 +202,59 @@
       padding: 60px 20px;
     }
 
-    /* Summary panel */
-    .vcsci-score {
-      text-align: center;
-      padding: 25px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .vcsci-score-value {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .vcsci-score-label {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    .compiled-evaluation {
+    /* Compiled evaluation */
+    .compiled-section {
       margin-top: 20px;
     }
 
-    .compiled-evaluation h3 {
+    .compiled-section h2 {
       font-size: 16px;
       color: #34495e;
       margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .compiled-evaluation {
+      margin-top: 15px;
     }
 
     .evaluation-paragraph {
-      margin-bottom: 15px;
-      padding: 12px;
+      margin-bottom: 12px;
+      padding: 12px 15px;
       background: #f8f9fa;
-      border-radius: 6px;
+      border-radius: 5px;
+      border-left: 3px solid;
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.65;
+      text-align: left;
     }
 
     .evaluation-paragraph strong {
-      color: #2c3e50;
       font-weight: 600;
+    }
+
+    .overall-summary {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f0f3f7;
+      border-radius: 6px;
+    }
+
+    .overall-summary strong {
+      font-size: 15px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .overall-summary em {
+      font-size: 13px;
+      color: #5a6c7d;
     }
 
     /* Export section */
     .export-section {
-      margin-top: 30px;
+      margin-top: 25px;
       text-align: center;
     }
 
@@ -220,19 +262,19 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
-      padding: 15px 40px;
-      border-radius: 8px;
-      font-size: 16px;
+      padding: 14px 35px;
+      border-radius: 6px;
+      font-size: 15px;
       font-weight: 600;
       font-family: 'Lexend', sans-serif;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 3px 12px rgba(102, 126, 234, 0.35);
       transition: all 0.3s ease;
     }
 
     .export-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      box-shadow: 0 5px 18px rgba(102, 126, 234, 0.5);
     }
 
     .export-btn:active {
@@ -240,8 +282,8 @@
     }
 
     .export-info {
-      margin-top: 15px;
-      font-size: 13px;
+      margin-top: 12px;
+      font-size: 12px;
       color: #7f8c8d;
       font-style: italic;
     }
@@ -263,27 +305,27 @@
 <body>
   <div class="container">
     <h1>VCSCI Hexagonal Rating Interface</h1>
-    <p class="subtitle">Interfaz de evaluación con descripciones del rubric desde JSON centralizado</p>
+    <p class="subtitle">Interfaz de evaluación bilingüe con sistema de colores por puntaje</p>
 
     <div class="demo-wrapper">
-      <!-- Left panel: Rating sliders -->
-      <div class="panel">
+      <!-- Left: Rating sliders -->
+      <div class="ratings-section">
         <h2>Evaluación por Dimensiones</h2>
         <div id="ratingsContainer"></div>
       </div>
 
-      <!-- Center panel: Hexagon visualization -->
-      <div class="panel">
+      <!-- Center: Hexagon visualization -->
+      <div class="viz-section">
         <h2>Visualización Hexagonal</h2>
         <svg id="hexagonChart" width="400" height="400"></svg>
         <div class="vcsci-score">
-          <div class="vcsci-score-value" id="vcsc iScoreValue">0.00</div>
+          <div class="vcsci-score-value" id="vcsciScoreValue">0.00</div>
           <div class="vcsci-score-label">VCSCI Score</div>
         </div>
       </div>
 
-      <!-- Right panel: Descriptions -->
-      <div class="panel">
+      <!-- Right: Descriptions -->
+      <div class="description-section">
         <h2>Descripción del Puntaje</h2>
         <div class="description-content">
           <div id="descriptionDisplay" class="no-selection">
@@ -293,9 +335,9 @@
       </div>
     </div>
 
-    <!-- Bottom panel: Compiled evaluation -->
-    <div class="panel">
-      <h2>Evaluación Compilada (Overall)</h2>
+    <!-- Bottom: Compiled evaluation -->
+    <div class="compiled-section">
+      <h2>Evaluación Compilada</h2>
       <div class="compiled-evaluation">
         <div id="compiledEvaluation" class="no-selection">
           La evaluación completa aparecerá aquí como párrafos compilados
@@ -326,13 +368,13 @@
     };
     let activeDimension = 'clarity';
 
-    const dimensions = [
-      { key: 'clarity', label: 'Claridad', color: '#e74c3c' },
-      { key: 'recognizability', label: 'Reconocibilidad', color: '#f39c12' },
-      { key: 'semantic_transparency', label: 'Transparencia Semántica', color: '#f1c40f' },
-      { key: 'pragmatic_fit', label: 'Adecuación Pragmática', color: '#2ecc71' },
-      { key: 'cultural_adequacy', label: 'Adecuación Cultural', color: '#3498db' },
-      { key: 'cognitive_accessibility', label: 'Accesibilidad Cognitiva', color: '#9b59b6' }
+    const dimensionKeys = [
+      'clarity',
+      'recognizability',
+      'semantic_transparency',
+      'pragmatic_fit',
+      'cultural_adequacy',
+      'cognitive_accessibility'
     ];
 
     // Load rubric JSON
@@ -359,13 +401,15 @@
     function createRatingSliders() {
       const container = document.getElementById('ratingsContainer');
 
-      dimensions.forEach(dim => {
+      dimensionKeys.forEach(key => {
+        const dimData = rubricData.dimensions[key];
+
         const group = document.createElement('div');
         group.className = 'dimension-group';
 
         const label = document.createElement('label');
         label.className = 'dimension-label';
-        label.textContent = dim.label;
+        label.textContent = dimData.name_es;
 
         const sliderContainer = document.createElement('div');
         sliderContainer.className = 'slider-container';
@@ -374,25 +418,24 @@
         slider.type = 'range';
         slider.min = '1';
         slider.max = '5';
-        slider.value = currentScores[dim.key];
+        slider.value = currentScores[key];
         slider.className = 'slider';
-        slider.style.background = `linear-gradient(to right, ${dim.color}dd, ${dim.color}44)`;
 
         const scoreDisplay = document.createElement('span');
         scoreDisplay.className = 'score-display';
-        scoreDisplay.textContent = currentScores[dim.key];
+        scoreDisplay.textContent = currentScores[key];
 
         slider.addEventListener('input', (e) => {
-          currentScores[dim.key] = parseInt(e.target.value);
+          currentScores[key] = parseInt(e.target.value);
           scoreDisplay.textContent = e.target.value;
-          activeDimension = dim.key;
+          activeDimension = key;
           drawHexagon();
           updateDescription();
           updateCompiledEvaluation();
         });
 
         slider.addEventListener('focus', () => {
-          activeDimension = dim.key;
+          activeDimension = key;
           updateDescription();
         });
 
@@ -425,46 +468,51 @@
         circle.setAttribute('cy', centerY);
         circle.setAttribute('r', radius);
         circle.setAttribute('fill', 'none');
-        circle.setAttribute('stroke', level === 5 ? '#95a5a6' : '#ecf0f1');
+        circle.setAttribute('stroke', level === 5 ? '#bdc3c7' : '#ecf0f1');
         circle.setAttribute('stroke-width', level === 5 ? '2' : '1');
         circle.setAttribute('stroke-dasharray', level === 5 ? '0' : '5,5');
         svg.appendChild(circle);
       });
 
-      // Draw axes
-      dimensions.forEach((dim, i) => {
+      // Draw axes and labels
+      dimensionKeys.forEach((key, i) => {
+        const dimData = rubricData.dimensions[key];
+        const score = currentScores[key];
+        const scoreColor = rubricData.scale[score.toString()].color;
+
         const angle = (Math.PI / 2) - (i * Math.PI / 3);
         const x = centerX + maxRadius * Math.cos(angle);
         const y = centerY - maxRadius * Math.sin(angle);
 
+        // Axis line
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', centerX);
         line.setAttribute('y1', centerY);
         line.setAttribute('x2', x);
         line.setAttribute('y2', y);
-        line.setAttribute('stroke', '#bdc3c7');
+        line.setAttribute('stroke', '#d1d8e0');
         line.setAttribute('stroke-width', '1');
         svg.appendChild(line);
 
-        // Add labels
-        const labelX = centerX + (maxRadius + 30) * Math.cos(angle);
-        const labelY = centerY - (maxRadius + 30) * Math.sin(angle);
+        // Label with score-based color
+        const labelX = centerX + (maxRadius + 35) * Math.cos(angle);
+        const labelY = centerY - (maxRadius + 35) * Math.sin(angle);
 
         const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         text.setAttribute('x', labelX);
         text.setAttribute('y', labelY);
         text.setAttribute('text-anchor', 'middle');
         text.setAttribute('dominant-baseline', 'middle');
-        text.setAttribute('font-size', '12');
+        text.setAttribute('font-size', '11');
         text.setAttribute('font-weight', '600');
-        text.setAttribute('fill', dim.color);
-        text.textContent = dim.label;
+        text.setAttribute('fill', scoreColor);
+        text.textContent = dimData.name_es;
         svg.appendChild(text);
       });
 
       // Draw data hexagon
-      const points = dimensions.map((dim, i) => {
-        const score = currentScores[dim.key];
+      const points = dimensionKeys.map((key, i) => {
+        const score = currentScores[key];
         const radius = (score / 5) * maxRadius;
         const angle = (Math.PI / 2) - (i * Math.PI / 3);
         const x = centerX + radius * Math.cos(angle);
@@ -474,14 +522,15 @@
 
       const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
       polygon.setAttribute('points', points);
-      polygon.setAttribute('fill', 'rgba(52, 152, 219, 0.3)');
-      polygon.setAttribute('stroke', '#3498db');
+      polygon.setAttribute('fill', 'rgba(102, 126, 234, 0.15)');
+      polygon.setAttribute('stroke', '#667eea');
       polygon.setAttribute('stroke-width', '2');
       svg.appendChild(polygon);
 
-      // Draw data points
-      dimensions.forEach((dim, i) => {
-        const score = currentScores[dim.key];
+      // Draw data points with score-based colors
+      dimensionKeys.forEach((key, i) => {
+        const score = currentScores[key];
+        const scoreColor = rubricData.scale[score.toString()].color;
         const radius = (score / 5) * maxRadius;
         const angle = (Math.PI / 2) - (i * Math.PI / 3);
         const x = centerX + radius * Math.cos(angle);
@@ -490,10 +539,10 @@
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('cx', x);
         circle.setAttribute('cy', y);
-        circle.setAttribute('r', '6');
-        circle.setAttribute('fill', dim.color);
+        circle.setAttribute('r', '7');
+        circle.setAttribute('fill', scoreColor);
         circle.setAttribute('stroke', 'white');
-        circle.setAttribute('stroke-width', '2');
+        circle.setAttribute('stroke-width', '2.5');
         svg.appendChild(circle);
       });
 
@@ -505,7 +554,6 @@
     function updateDescription() {
       if (!rubricData) return;
 
-      const dim = dimensions.find(d => d.key === activeDimension);
       const score = currentScores[activeDimension];
       const dimData = rubricData.dimensions[activeDimension];
       const levelData = dimData.levels[score.toString()];
@@ -513,11 +561,12 @@
 
       const html = `
         <div class="current-dimension">
-          <h3>${dim.label}</h3>
-          <p class="score-label">Puntaje ${score}/5 - ${scaleData.label}</p>
+          <h3>${dimData.name_es}</h3>
+          <span class="score-label">Puntaje ${score}/5 - ${scaleData.label_es}</span>
+          <div class="dimension-definition">${dimData.description_es}</div>
         </div>
         <div class="description-text">
-          ${levelData.text}
+          ${levelData.text_es}
         </div>
       `;
 
@@ -532,20 +581,21 @@
       const scaleData = rubricData.scale[roundedScore.toString()];
 
       let html = `
-        <p style="text-align: center; margin-bottom: 20px; font-size: 16px;">
-          <strong>VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label})</strong><br>
-          <em>${scaleData.general}</em>
-        </p>
+        <div class="overall-summary">
+          <strong>VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label_es})</strong>
+          <em>${scaleData.general_es}</em>
+        </div>
       `;
 
-      dimensions.forEach(dim => {
-        const score = currentScores[dim.key];
-        const dimData = rubricData.dimensions[dim.key];
+      dimensionKeys.forEach(key => {
+        const score = currentScores[key];
+        const dimData = rubricData.dimensions[key];
         const levelData = dimData.levels[score.toString()];
+        const scoreColor = rubricData.scale[score.toString()].color;
 
         html += `
-          <div class="evaluation-paragraph">
-            <strong>${dim.label}:</strong> ${levelData.text}
+          <div class="evaluation-paragraph" style="border-left-color: ${scoreColor};">
+            <strong>${dimData.name_es}:</strong> ${levelData.text_es}
           </div>
         `;
       });
@@ -563,32 +613,34 @@
       const roundedScore = Math.round(avgScore);
       const scaleData = rubricData.scale[roundedScore.toString()];
 
-      // Build compiled paragraphs
-      const compiledParagraphs = [];
+      // Build dimension evaluations with colors
       const dimensionEvaluations = {};
+      const compiledParagraphs = [];
 
-      dimensions.forEach(dim => {
-        const score = currentScores[dim.key];
-        const dimData = rubricData.dimensions[dim.key];
+      dimensionKeys.forEach(key => {
+        const score = currentScores[key];
+        const dimData = rubricData.dimensions[key];
         const levelData = dimData.levels[score.toString()];
         const scaleLevel = rubricData.scale[score.toString()];
 
-        // Store full evaluation for each dimension
-        dimensionEvaluations[dim.key] = {
-          dimension_name: dim.label,
-          dimension_name_en: dimData.name,
+        dimensionEvaluations[key] = {
+          dimension_name_es: dimData.name_es,
+          dimension_name_en: dimData.name_en,
           score: score,
-          score_label: scaleLevel.label,
+          score_label_es: scaleLevel.label_es,
           score_label_en: scaleLevel.label_en,
-          description: levelData.text,
+          color: scaleLevel.color,
+          description_es: levelData.text_es,
           description_en: levelData.text_en
         };
 
-        // Add to compiled paragraphs
         compiledParagraphs.push({
-          dimension: dim.key,
-          dimension_label: dim.label,
-          text: `${dim.label}: ${levelData.text}`
+          dimension: key,
+          dimension_label_es: dimData.name_es,
+          dimension_label_en: dimData.name_en,
+          color: scaleLevel.color,
+          text_es: `${dimData.name_es}: ${levelData.text_es}`,
+          text_en: `${dimData.name_en}: ${levelData.text_en}`
         });
       });
 
@@ -598,25 +650,38 @@
           evaluation_date: new Date().toISOString(),
           rubric_version: rubricData.version,
           interface_type: 'hexagonal',
+          color_system: 'score-based',
           exported_from: 'hexagonal-rating-with-descriptions.html'
         },
         scores: currentScores,
         vcsci_score: parseFloat(avgScore.toFixed(2)),
         overall_assessment: {
           score: parseFloat(avgScore.toFixed(2)),
-          label: scaleData.label,
+          label_es: scaleData.label_es,
           label_en: scaleData.label_en,
-          general_description: scaleData.general,
+          general_description_es: scaleData.general_es,
           general_description_en: scaleData.general_en
         },
         dimension_evaluations: dimensionEvaluations,
         compiled_evaluation: {
           paragraphs: compiledParagraphs,
-          full_text: compiledParagraphs.map(p => p.text).join('\n\n'),
-          summary: `VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label}). ${scaleData.general}`
+          full_text_es: compiledParagraphs.map(p => p.text_es).join('\n\n'),
+          full_text_en: compiledParagraphs.map(p => p.text_en).join('\n\n'),
+          summary_es: `VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label_es}). ${scaleData.general_es}`,
+          summary_en: `VCSCI Score: ${avgScore.toFixed(2)}/5.0 (${scaleData.label_en}). ${scaleData.general_en}`
+        },
+        visualization: {
+          color_mapping: 'Colors assigned by score level (1-5), not by dimension',
+          score_colors: {
+            1: rubricData.scale['1'].color,
+            2: rubricData.scale['2'].color,
+            3: rubricData.scale['3'].color,
+            4: rubricData.scale['4'].color,
+            5: rubricData.scale['5'].color
+          }
         },
         rubric_transparency: {
-          note: 'This evaluation includes complete rubric descriptions for each score to ensure transparency and reproducibility',
+          note: 'This evaluation includes complete bilingual rubric descriptions for each score to ensure transparency and reproducibility',
           rubric_source: '../data/rubric-scale-descriptions.json'
         }
       };
