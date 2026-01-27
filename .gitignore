@@ -18,6 +18,7 @@ pictograms/*/preview.jpg
 # Analysis cache
 analysis/.cache/
 *.tmp.json
+*.backup
 
 # System files
 .DS_Store
