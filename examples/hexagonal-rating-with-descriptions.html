@@ -124,13 +124,14 @@
     #hexagonChart {
       display: block;
       margin: 0 auto 20px auto;
+      overflow: visible;
     }
 
     .vcsci-score {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: white;
+      border: 2px solid #e1e8ed;
       border-radius: 8px;
     }
 
@@ -138,12 +139,13 @@
       font-size: 42px;
       font-weight: 700;
       margin-bottom: 5px;
+      color: #2c3e50;
     }
 
     .vcsci-score-label {
       font-size: 16px;
-      opacity: 0.95;
       font-weight: 500;
+      color: #5a6c7d;
     }
 
     /* Description panel */
@@ -167,8 +169,8 @@
 
     .current-dimension h3 {
       color: #2c3e50;
-      font-size: 15px;
-      margin-bottom: 6px;
+      font-size: 17px;
+      margin-bottom: 8px;
       font-weight: 600;
     }
 
@@ -176,15 +178,15 @@
       color: #5a6c7d;
       font-size: 13px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       display: block;
     }
 
     .dimension-definition {
-      color: #7f8c8d;
-      font-size: 12px;
-      line-height: 1.5;
-      font-style: italic;
+      color: #5a6c7d;
+      font-size: 13px;
+      line-height: 1.6;
+      font-style: normal;
       margin-top: 8px;
     }
 
@@ -208,10 +210,12 @@
     }
 
     .compiled-section h2 {
-      font-size: 16px;
-      color: #34495e;
+      font-size: 18px;
+      color: #2c3e50;
       margin-bottom: 15px;
       font-weight: 600;
+      text-align: left;
+      font-style: normal;
     }
 
     .compiled-evaluation {
@@ -317,7 +321,7 @@
       <!-- Center: Hexagon visualization -->
       <div class="viz-section">
         <h2>Visualización Hexagonal</h2>
-        <svg id="hexagonChart" width="400" height="400"></svg>
+        <svg id="hexagonChart" width="500" height="500" viewBox="0 0 500 500"></svg>
         <div class="vcsci-score">
           <div class="vcsci-score-value" id="vcsciScoreValue">0.00</div>
           <div class="vcsci-score-label">VCSCI Score</div>
@@ -450,11 +454,11 @@
 
     function drawHexagon() {
       const svg = document.getElementById('hexagonChart');
-      const width = 400;
-      const height = 400;
+      const width = 500;
+      const height = 500;
       const centerX = width / 2;
       const centerY = height / 2;
-      const maxRadius = 150;
+      const maxRadius = 180;
 
       // Clear SVG
       svg.innerHTML = '';
@@ -494,19 +498,46 @@
         line.setAttribute('stroke-width', '1');
         svg.appendChild(line);
 
-        // Label with score-based color
-        const labelX = centerX + (maxRadius + 35) * Math.cos(angle);
-        const labelY = centerY - (maxRadius + 35) * Math.sin(angle);
+        // Label with fixed gray color (not score-based)
+        const labelX = centerX + (maxRadius + 50) * Math.cos(angle);
+        const labelY = centerY - (maxRadius + 50) * Math.sin(angle);
 
         const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         text.setAttribute('x', labelX);
         text.setAttribute('y', labelY);
         text.setAttribute('text-anchor', 'middle');
-        text.setAttribute('dominant-baseline', 'middle');
         text.setAttribute('font-size', '11');
         text.setAttribute('font-weight', '600');
-        text.setAttribute('fill', scoreColor);
-        text.textContent = dimData.name_es;
+        text.setAttribute('fill', '#5a6c7d');
+
+        // Split long labels into two lines
+        const labelText = dimData.name_es;
+        const words = labelText.split(' ');
+
+        if (words.length > 1 && labelText.length > 15) {
+          // Two-line label
+          const midPoint = Math.ceil(words.length / 2);
+          const line1 = words.slice(0, midPoint).join(' ');
+          const line2 = words.slice(midPoint).join(' ');
+
+          const tspan1 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+          tspan1.setAttribute('x', labelX);
+          tspan1.setAttribute('dy', '-0.6em');
+          tspan1.textContent = line1;
+
+          const tspan2 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+          tspan2.setAttribute('x', labelX);
+          tspan2.setAttribute('dy', '1.2em');
+          tspan2.textContent = line2;
+
+          text.appendChild(tspan1);
+          text.appendChild(tspan2);
+        } else {
+          // Single-line label
+          text.textContent = labelText;
+          text.setAttribute('dominant-baseline', 'middle');
+        }
+
         svg.appendChild(text);
       });
 
