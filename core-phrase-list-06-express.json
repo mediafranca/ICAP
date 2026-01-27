@@ -3,108 +3,138 @@
   "phrases": [
     {
       "phrase_id": "exp-001",
-      "spanish": "Te quiero.",
-      "english": "I love you.",
-      "domain": "Casa/Hogar",
-      "syntax": "Oración (pronombre + querer)"
+      "text_es": "Te quiero.",
+      "text_en": "I love you.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Oración (pronombre + querer)",
+      "syntax_en": "Oración (Pronoun + want)"
     },
     {
       "phrase_id": "exp-002",
-      "spanish": "Te extraño.",
-      "english": "I miss you.",
-      "domain": "Casa/Hogar",
-      "syntax": "Verbo (extrañar) + pronombre objeto"
+      "text_es": "Te extraño.",
+      "text_en": "I miss you.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Verbo (extrañar) + pronombre objeto",
+      "syntax_en": "Verb (extrañar) + Pronoun object"
     },
     {
       "phrase_id": "exp-003",
-      "spanish": "Me gusta estar contigo.",
-      "english": "I like being with you.",
-      "domain": "Casa/Hogar",
-      "syntax": "Verbo (gustar) + infinitivo + complemento"
+      "text_es": "Me gusta estar contigo.",
+      "text_en": "I like being with you.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Verbo (gustar) + infinitivo + complemento",
+      "syntax_en": "Verb (gustar) + infinitive + complemento"
     },
     {
       "phrase_id": "exp-004",
-      "spanish": "Estoy feliz.",
-      "english": "I am happy.",
-      "domain": "General",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy feliz.",
+      "text_en": "I am happy.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-005",
-      "spanish": "Estoy triste.",
-      "english": "I am sad.",
-      "domain": "General",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy triste.",
+      "text_en": "I am sad.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-006",
-      "spanish": "Estoy enfadado.",
-      "english": "I am angry.",
-      "domain": "General",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy enfadado.",
+      "text_en": "I am angry.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-007",
-      "spanish": "Estoy cansado.",
-      "english": "I am tired.",
-      "domain": "General",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy cansado.",
+      "text_en": "I am tired.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-008",
-      "spanish": "Estoy aburrido.",
-      "english": "I am bored.",
-      "domain": "Casa/Hogar",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy aburrido.",
+      "text_en": "I am bored.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-009",
-      "spanish": "Estoy emocionado.",
-      "english": "I am excited.",
-      "domain": "General",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy emocionado.",
+      "text_en": "I am excited.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-010",
-      "spanish": "Estoy frustrado.",
-      "english": "I am frustrated.",
-      "domain": "General",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy frustrado.",
+      "text_en": "I am frustrated.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-011",
-      "spanish": "Tengo miedo.",
-      "english": "I am scared.",
-      "domain": "General",
-      "syntax": "Oración (tener + sustantivo)"
+      "text_es": "Tengo miedo.",
+      "text_en": "I am scared.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración (tener + sustantivo)",
+      "syntax_en": "Oración (have + Noun)"
     },
     {
       "phrase_id": "exp-012",
-      "spanish": "Tengo frío.",
-      "english": "I am cold.",
-      "domain": "General",
-      "syntax": "Oración (tener + sustantivo)"
+      "text_es": "Tengo frío.",
+      "text_en": "I am cold.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración (tener + sustantivo)",
+      "syntax_en": "Oración (have + Noun)"
     },
     {
       "phrase_id": "exp-013",
-      "spanish": "Me duele la barriga.",
-      "english": "My tummy hurts.",
-      "domain": "Higiene/Salud",
-      "syntax": "Verbo (doler) + objeto (parte del cuerpo)"
+      "text_es": "Me duele la barriga.",
+      "text_en": "My tummy hurts.",
+      "domain_es": "Higiene/Salud",
+      "domain_en": "Health/Hygiene",
+      "syntax_es": "Verbo (doler) + objeto (parte del cuerpo)",
+      "syntax_en": "Verb (doler) + object (parte del cuerpo)"
     },
     {
       "phrase_id": "exp-014",
-      "spanish": "Estoy enfermo.",
-      "english": "I am sick.",
-      "domain": "Higiene/Salud",
-      "syntax": "Copulativa (estar + adjetivo)"
+      "text_es": "Estoy enfermo.",
+      "text_en": "I am sick.",
+      "domain_es": "Higiene/Salud",
+      "domain_en": "Health/Hygiene",
+      "syntax_es": "Copulativa (estar + adjetivo)",
+      "syntax_en": "Copulativa (be + Adjective)"
     },
     {
       "phrase_id": "exp-015",
-      "spanish": "Me siento solo.",
-      "english": "I feel lonely.",
-      "domain": "General",
-      "syntax": "Oración reflexiva (sentirse + adjetivo)"
+      "text_es": "Me siento solo.",
+      "text_en": "I feel lonely.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración reflexiva (sentirse + adjetivo)",
+      "syntax_en": "Oración reflexiva (sentgose + Adjective)"
     }
   ]
 }

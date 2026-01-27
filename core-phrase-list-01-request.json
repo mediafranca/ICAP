@@ -3,108 +3,138 @@
   "phrases": [
     {
       "phrase_id": "req-001",
-      "spanish": "Quiero ir al baño.",
-      "english": "I want to go to the toilet.",
-      "domain": "Higiene/Salud",
-      "syntax": "Verbo (querer) + infinitivo + lugar"
+      "text_es": "Quiero ir al baño.",
+      "text_en": "I want to go to the toilet.",
+      "domain_es": "Higiene/Salud",
+      "domain_en": "Health/Hygiene",
+      "syntax_es": "Verbo (querer) + infinitivo + lugar",
+      "syntax_en": "Verb (want) + infinitive + place"
     },
     {
       "phrase_id": "req-002",
-      "spanish": "Quiero jugar afuera.",
-      "english": "I want to play outside.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Verbo (querer) + infinitivo + adverbio"
+      "text_es": "Quiero jugar afuera.",
+      "text_en": "I want to play outside.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Verbo (querer) + infinitivo + adverbio",
+      "syntax_en": "Verb (want) + infinitive + Adverb"
     },
     {
       "phrase_id": "req-003",
-      "spanish": "Quiero comer pizza.",
-      "english": "I want to eat pizza.",
-      "domain": "Casa/Hogar",
-      "syntax": "Verbo (querer) + infinitivo + objeto"
+      "text_es": "Quiero comer pizza.",
+      "text_en": "I want to eat pizza.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Verbo (querer) + infinitivo + objeto",
+      "syntax_en": "Verb (want) + infinitive + object"
     },
     {
       "phrase_id": "req-004",
-      "spanish": "Necesito ayuda.",
-      "english": "I need help.",
-      "domain": "General",
-      "syntax": "Verbo (necesitar) + objeto"
+      "text_es": "Necesito ayuda.",
+      "text_en": "I need help.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Verbo (necesitar) + objeto",
+      "syntax_en": "Verb (need) + object"
     },
     {
       "phrase_id": "req-005",
-      "spanish": "¿Me pasas el agua?",
-      "english": "Can you pass me the water?",
-      "domain": "Casa/Hogar",
-      "syntax": "Interrogativa (pasar + objeto)"
+      "text_es": "¿Me pasas el agua?",
+      "text_en": "Can you pass me the water?",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Interrogativa (pasar + objeto)",
+      "syntax_en": "Interrogativa (pasar + object)"
     },
     {
       "phrase_id": "req-006",
-      "spanish": "Quiero ver la tele.",
-      "english": "I want to watch TV.",
-      "domain": "Casa/Hogar",
-      "syntax": "Verbo (querer) + infinitivo + objeto"
+      "text_es": "Quiero ver la tele.",
+      "text_en": "I want to watch TV.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Verbo (querer) + infinitivo + objeto",
+      "syntax_en": "Verb (want) + infinitive + object"
     },
     {
       "phrase_id": "req-007",
-      "spanish": "Necesito un descanso.",
-      "english": "I need a break.",
-      "domain": "Escuela",
-      "syntax": "Verbo (necesitar) + objeto"
+      "text_es": "Necesito un descanso.",
+      "text_en": "I need a break.",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Verbo (necesitar) + objeto",
+      "syntax_en": "Verb (need) + object"
     },
     {
       "phrase_id": "req-008",
-      "spanish": "Quiero ese juguete.",
-      "english": "I want that toy.",
-      "domain": "Casa/Hogar",
-      "syntax": "Verbo (querer) + objeto (demostrativo)"
+      "text_es": "Quiero ese juguete.",
+      "text_en": "I want that toy.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Verbo (querer) + objeto (demostrativo)",
+      "syntax_en": "Verb (want) + object (demostrativo)"
     },
     {
       "phrase_id": "req-009",
-      "spanish": "Quiero ir a casa.",
-      "english": "I want to go home.",
-      "domain": "Escuela",
-      "syntax": "Verbo (querer) + infinitivo + lugar"
+      "text_es": "Quiero ir a casa.",
+      "text_en": "I want to go home.",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Verbo (querer) + infinitivo + lugar",
+      "syntax_en": "Verb (want) + infinitive + place"
     },
     {
       "phrase_id": "req-010",
-      "spanish": "¿Puedo tener un caramelo?",
-      "english": "Can I have a sweet?",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Interrogativa (poder + inf + objeto)"
+      "text_es": "¿Puedo tener un caramelo?",
+      "text_en": "Can I have a sweet?",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Interrogativa (poder + inf + objeto)",
+      "syntax_en": "Interrogativa (poder + inf + object)"
     },
     {
       "phrase_id": "req-011",
-      "spanish": "Quiero salir a caminar.",
-      "english": "I want to go for a walk.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Verbo (querer) + infinitivo + finalidad"
+      "text_es": "Quiero salir a caminar.",
+      "text_en": "I want to go for a walk.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Verbo (querer) + infinitivo + finalidad",
+      "syntax_en": "Verb (want) + infinitive + finalidad"
     },
     {
       "phrase_id": "req-012",
-      "spanish": "Quiero hablar contigo.",
-      "english": "I want to talk with you.",
-      "domain": "General",
-      "syntax": "Verbo (querer) + infinitivo + complemento"
+      "text_es": "Quiero hablar contigo.",
+      "text_en": "I want to talk with you.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Verbo (querer) + infinitivo + complemento",
+      "syntax_en": "Verb (want) + infinitive + complemento"
     },
     {
       "phrase_id": "req-013",
-      "spanish": "Necesito mi medicina.",
-      "english": "I need my medicine.",
-      "domain": "Higiene/Salud",
-      "syntax": "Verbo (necesitar) + objeto (posesivo)"
+      "text_es": "Necesito mi medicina.",
+      "text_en": "I need my medicine.",
+      "domain_es": "Higiene/Salud",
+      "domain_en": "Health/Hygiene",
+      "syntax_es": "Verbo (necesitar) + objeto (posesivo)",
+      "syntax_en": "Verb (need) + object (posesivo)"
     },
     {
       "phrase_id": "req-014",
-      "spanish": "Quiero beber agua.",
-      "english": "I want to drink water.",
-      "domain": "Higiene/Salud",
-      "syntax": "Verbo (querer) + infinitivo + objeto"
+      "text_es": "Quiero beber agua.",
+      "text_en": "I want to drink water.",
+      "domain_es": "Higiene/Salud",
+      "domain_en": "Health/Hygiene",
+      "syntax_es": "Verbo (querer) + infinitivo + objeto",
+      "syntax_en": "Verb (want) + infinitive + object"
     },
     {
       "phrase_id": "req-015",
-      "spanish": "¿Me ayudas con la tarea?",
-      "english": "Can you help me with homework?",
-      "domain": "Escuela",
-      "syntax": "Interrogativa (poder + verbo + objeto)"
+      "text_es": "¿Me ayudas con la tarea?",
+      "text_en": "Can you help me with homework?",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Interrogativa (poder + verbo + objeto)",
+      "syntax_en": "Interrogativa (poder + Verb + object)"
     }
   ]
 }

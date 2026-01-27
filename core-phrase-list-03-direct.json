@@ -3,108 +3,138 @@
   "phrases": [
     {
       "phrase_id": "dir-001",
-      "spanish": "Ven aquí.",
-      "english": "Come here.",
-      "domain": "General",
-      "syntax": "Imperativo (venir) + adverbio"
+      "text_es": "Ven aquí.",
+      "text_en": "Come here.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Imperativo (venir) + adverbio",
+      "syntax_en": "imperative (vengo) + Adverb"
     },
     {
       "phrase_id": "dir-002",
-      "spanish": "Mira esto.",
-      "english": "Look at this.",
-      "domain": "General",
-      "syntax": "Imperativo (mirar) + demostrativo"
+      "text_es": "Mira esto.",
+      "text_en": "Look at this.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Imperativo (mirar) + demostrativo",
+      "syntax_en": "imperative (mgoar) + demostrativo"
     },
     {
       "phrase_id": "dir-003",
-      "spanish": "Escucha.",
-      "english": "Listen.",
-      "domain": "General",
-      "syntax": "Imperativo (verbo simple)"
+      "text_es": "Escucha.",
+      "text_en": "Listen.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Imperativo (verbo simple)",
+      "syntax_en": "imperative (Verb simple)"
     },
     {
       "phrase_id": "dir-004",
-      "spanish": "Sígueme.",
-      "english": "Follow me.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Imperativo + pronombre enclítico"
+      "text_es": "Sígueme.",
+      "text_en": "Follow me.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Imperativo + pronombre enclítico",
+      "syntax_en": "imperative + Pronoun enclítico"
     },
     {
       "phrase_id": "dir-005",
-      "spanish": "Dame la mano.",
-      "english": "Give me your hand.",
-      "domain": "Casa/Hogar",
-      "syntax": "Imperativo (dar) + objeto + pronombre"
+      "text_es": "Dame la mano.",
+      "text_en": "Give me your hand.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Imperativo (dar) + objeto + pronombre",
+      "syntax_en": "imperative (dar) + object + Pronoun"
     },
     {
       "phrase_id": "dir-006",
-      "spanish": "Ponlo allí.",
-      "english": "Put it there.",
-      "domain": "Casa/Hogar",
-      "syntax": "Imperativo (poner) + pronombre enclítico + adverbio"
+      "text_es": "Ponlo allí.",
+      "text_en": "Put it there.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Imperativo (poner) + pronombre enclítico + adverbio",
+      "syntax_en": "imperative (poner) + Pronoun enclítico + Adverb"
     },
     {
       "phrase_id": "dir-007",
-      "spanish": "Abre la puerta.",
-      "english": "Open the door.",
-      "domain": "Casa/Hogar",
-      "syntax": "Imperativo (abrir) + objeto"
+      "text_es": "Abre la puerta.",
+      "text_en": "Open the door.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Imperativo (abrir) + objeto",
+      "syntax_en": "imperative (abrgo) + object"
     },
     {
       "phrase_id": "dir-008",
-      "spanish": "Cierra la ventana.",
-      "english": "Close the window.",
-      "domain": "Casa/Hogar",
-      "syntax": "Imperativo (cerrar) + objeto"
+      "text_es": "Cierra la ventana.",
+      "text_en": "Close the window.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Imperativo (cerrar) + objeto",
+      "syntax_en": "imperative (cerrar) + object"
     },
     {
       "phrase_id": "dir-009",
-      "spanish": "Siéntate, por favor.",
-      "english": "Sit down, please.",
-      "domain": "Escuela",
-      "syntax": "Imperativo reflexivo + cortesía"
+      "text_es": "Siéntate, por favor.",
+      "text_en": "Sit down, please.",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Imperativo reflexivo + cortesía",
+      "syntax_en": "imperative reflexivo + politeness"
     },
     {
       "phrase_id": "dir-010",
-      "spanish": "Levántate.",
-      "english": "Stand up.",
-      "domain": "General",
-      "syntax": "Imperativo reflexivo"
+      "text_es": "Levántate.",
+      "text_en": "Stand up.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Imperativo reflexivo",
+      "syntax_en": "imperative reflexivo"
     },
     {
       "phrase_id": "dir-011",
-      "spanish": "Vamos a casa.",
-      "english": "Let's go home.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Imperativo inclusivo (ir) + lugar"
+      "text_es": "Vamos a casa.",
+      "text_en": "Let's go home.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Imperativo inclusivo (ir) + lugar",
+      "syntax_en": "imperative inclusivo (go) + place"
     },
     {
       "phrase_id": "dir-012",
-      "spanish": "Vamos a jugar.",
-      "english": "Let's play.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Imperativo inclusivo (ir) + infinitivo"
+      "text_es": "Vamos a jugar.",
+      "text_en": "Let's play.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Imperativo inclusivo (ir) + infinitivo",
+      "syntax_en": "imperative inclusivo (go) + infinitive"
     },
     {
       "phrase_id": "dir-013",
-      "spanish": "Hazlo otra vez.",
-      "english": "Do it again.",
-      "domain": "Escuela",
-      "syntax": "Imperativo (hacer) + pronombre enclítico + adverbio"
+      "text_es": "Hazlo otra vez.",
+      "text_en": "Do it again.",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Imperativo (hacer) + pronombre enclítico + adverbio",
+      "syntax_en": "imperative (do/make) + Pronoun enclítico + Adverb"
     },
     {
       "phrase_id": "dir-014",
-      "spanish": "No corras.",
-      "english": "Don't run.",
-      "domain": "Escuela/Ocio",
-      "syntax": "Imperativo negativo (no + verbo)"
+      "text_es": "No corras.",
+      "text_en": "Don't run.",
+      "domain_es": "Escuela/Ocio",
+      "domain_en": "School/Leisure",
+      "syntax_es": "Imperativo negativo (no + verbo)",
+      "syntax_en": "imperative negativo (no + Verb)"
     },
     {
       "phrase_id": "dir-015",
-      "spanish": "Habla más despacio, por favor.",
-      "english": "Speak more slowly, please.",
-      "domain": "General",
-      "syntax": "Imperativo + complemento + cortesía"
+      "text_es": "Habla más despacio, por favor.",
+      "text_en": "Speak more slowly, please.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Imperativo + complemento + cortesía",
+      "syntax_en": "imperative + complemento + politeness"
     }
   ]
 }

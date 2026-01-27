@@ -3,108 +3,138 @@
   "phrases": [
     {
       "phrase_id": "int-001",
-      "spanish": "Hola.",
-      "english": "Hello.",
-      "domain": "General",
-      "syntax": "Interjección (saludo)"
+      "text_es": "Hola.",
+      "text_en": "Hello.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Interjección (saludo)",
+      "syntax_en": "Interjection (greeting)"
     },
     {
       "phrase_id": "int-002",
-      "spanish": "Buenos días.",
-      "english": "Good morning.",
-      "domain": "General",
-      "syntax": "Frase nominal (saludo)"
+      "text_es": "Buenos días.",
+      "text_en": "Good morning.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Frase nominal (saludo)",
+      "syntax_en": "Noun phrase (greeting)"
     },
     {
       "phrase_id": "int-003",
-      "spanish": "Buenas tardes.",
-      "english": "Good afternoon.",
-      "domain": "General",
-      "syntax": "Frase nominal (saludo)"
+      "text_es": "Buenas tardes.",
+      "text_en": "Good afternoon.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Frase nominal (saludo)",
+      "syntax_en": "Noun phrase (greeting)"
     },
     {
       "phrase_id": "int-004",
-      "spanish": "Buenas noches.",
-      "english": "Good evening.",
-      "domain": "General",
-      "syntax": "Frase nominal (saludo)"
+      "text_es": "Buenas noches.",
+      "text_en": "Good evening.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Frase nominal (saludo)",
+      "syntax_en": "Noun phrase (greeting)"
     },
     {
       "phrase_id": "int-005",
-      "spanish": "Adiós.",
-      "english": "Goodbye.",
-      "domain": "General",
-      "syntax": "Interjección (despedida)"
+      "text_es": "Adiós.",
+      "text_en": "Goodbye.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Interjección (despedida)",
+      "syntax_en": "Interjection (farewell)"
     },
     {
       "phrase_id": "int-006",
-      "spanish": "Hasta luego.",
-      "english": "See you later.",
-      "domain": "General",
-      "syntax": "Locución de despedida"
+      "text_es": "Hasta luego.",
+      "text_en": "See you later.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Locución de despedida",
+      "syntax_en": "Phrase de farewell"
     },
     {
       "phrase_id": "int-007",
-      "spanish": "¿Cómo estás?",
-      "english": "How are you?",
-      "domain": "General",
-      "syntax": "Pregunta WH (cómo + estar)"
+      "text_es": "¿Cómo estás?",
+      "text_en": "How are you?",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Pregunta WH (cómo + estar)",
+      "syntax_en": "question WH (cómo + be)"
     },
     {
       "phrase_id": "int-008",
-      "spanish": "Estoy bien, gracias.",
-      "english": "I'm fine, thank you.",
-      "domain": "General",
-      "syntax": "Oración (estar + adverbio) + cortesía"
+      "text_es": "Estoy bien, gracias.",
+      "text_en": "I'm fine, thank you.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración (estar + adverbio) + cortesía",
+      "syntax_en": "Oración (be + Adverb) + politeness"
     },
     {
       "phrase_id": "int-009",
-      "spanish": "¿Qué tal?",
-      "english": "How's it going?",
-      "domain": "General",
-      "syntax": "Pregunta coloquial"
+      "text_es": "¿Qué tal?",
+      "text_en": "How's it going?",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Pregunta coloquial",
+      "syntax_en": "question coloquial"
     },
     {
       "phrase_id": "int-010",
-      "spanish": "¿Quieres jugar?",
-      "english": "Do you want to play?",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Pregunta sí/no (querer + infinitivo)"
+      "text_es": "¿Quieres jugar?",
+      "text_en": "Do you want to play?",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Pregunta sí/no (querer + infinitivo)",
+      "syntax_en": "question sí/no (want + infinitive)"
     },
     {
       "phrase_id": "int-011",
-      "spanish": "¿Puedo jugar?",
-      "english": "Can I play?",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Pregunta sí/no (poder + infinitivo)"
+      "text_es": "¿Puedo jugar?",
+      "text_en": "Can I play?",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Pregunta sí/no (poder + infinitivo)",
+      "syntax_en": "question sí/no (poder + infinitive)"
     },
     {
       "phrase_id": "int-012",
-      "spanish": "Lo siento.",
-      "english": "I'm sorry.",
-      "domain": "General",
-      "syntax": "Expresión de disculpa"
+      "text_es": "Lo siento.",
+      "text_en": "I'm sorry.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Expresión de disculpa",
+      "syntax_en": "Expression de apology"
     },
     {
       "phrase_id": "int-013",
-      "spanish": "Perdón.",
-      "english": "Pardon me.",
-      "domain": "General",
-      "syntax": "Expresión de disculpa breve"
+      "text_es": "Perdón.",
+      "text_en": "Pardon me.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Expresión de disculpa breve",
+      "syntax_en": "Expression de apology breve"
     },
     {
       "phrase_id": "int-014",
-      "spanish": "Bien hecho.",
-      "english": "Well done.",
-      "domain": "General",
-      "syntax": "Expresión de elogio"
+      "text_es": "Bien hecho.",
+      "text_en": "Well done.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Expresión de elogio",
+      "syntax_en": "Expression de praise"
     },
     {
       "phrase_id": "int-015",
-      "spanish": "¿Puedo ayudarte?",
-      "english": "Can I help you?",
-      "domain": "General",
-      "syntax": "Pregunta sí/no (poder + verbo + objeto)"
+      "text_es": "¿Puedo ayudarte?",
+      "text_en": "Can I help you?",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Pregunta sí/no (poder + verbo + objeto)",
+      "syntax_en": "question sí/no (poder + Verb + object)"
     }
   ]
 }

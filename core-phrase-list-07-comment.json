@@ -3,108 +3,138 @@
   "phrases": [
     {
       "phrase_id": "com-001",
-      "spanish": "Está lloviendo.",
-      "english": "It's raining.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Oración impersonal (estar + gerundio)"
+      "text_es": "Está lloviendo.",
+      "text_en": "It's raining.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Oración impersonal (estar + gerundio)",
+      "syntax_en": "Oración impersonl (be + gerundio)"
     },
     {
       "phrase_id": "com-002",
-      "spanish": "Hace frío.",
-      "english": "It's cold.",
-      "domain": "General",
-      "syntax": "Oración impersonal (hacer + sustantivo/adjetivo)"
+      "text_es": "Hace frío.",
+      "text_en": "It's cold.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración impersonal (hacer + sustantivo/adjetivo)",
+      "syntax_en": "Oración impersonl (do/make + Noun/Adjective)"
     },
     {
       "phrase_id": "com-003",
-      "spanish": "Hace calor.",
-      "english": "It's hot.",
-      "domain": "General",
-      "syntax": "Oración impersonal (hacer + sustantivo/adjetivo)"
+      "text_es": "Hace calor.",
+      "text_en": "It's hot.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración impersonal (hacer + sustantivo/adjetivo)",
+      "syntax_en": "Oración impersonl (do/make + Noun/Adjective)"
     },
     {
       "phrase_id": "com-004",
-      "spanish": "Es hora de comer.",
-      "english": "It's time to eat.",
-      "domain": "Casa/Hogar",
-      "syntax": "Oración impersonal (ser + sustantivo + infinitivo)"
+      "text_es": "Es hora de comer.",
+      "text_en": "It's time to eat.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Oración impersonal (ser + sustantivo + infinitivo)",
+      "syntax_en": "Oración impersonl (ser + Noun + infinitive)"
     },
     {
       "phrase_id": "com-005",
-      "spanish": "Tengo hambre.",
-      "english": "I am hungry.",
-      "domain": "Casa/Hogar",
-      "syntax": "Oración (tener + sustantivo)"
+      "text_es": "Tengo hambre.",
+      "text_en": "I am hungry.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Oración (tener + sustantivo)",
+      "syntax_en": "Oración (have + Noun)"
     },
     {
       "phrase_id": "com-006",
-      "spanish": "Tengo sueño.",
-      "english": "I am sleepy.",
-      "domain": "Casa/Hogar",
-      "syntax": "Oración (tener + sustantivo)"
+      "text_es": "Tengo sueño.",
+      "text_en": "I am sleepy.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Oración (tener + sustantivo)",
+      "syntax_en": "Oración (have + Noun)"
     },
     {
       "phrase_id": "com-007",
-      "spanish": "Qué rico está esto.",
-      "english": "This is delicious.",
-      "domain": "Casa/Hogar",
-      "syntax": "Exclamativa (qué + adjetivo + estar)"
+      "text_es": "Qué rico está esto.",
+      "text_en": "This is delicious.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Exclamativa (qué + adjetivo + estar)",
+      "syntax_en": "Exclamativa (qué + Adjective + be)"
     },
     {
       "phrase_id": "com-008",
-      "spanish": "Me gusta esta canción.",
-      "english": "I like this song.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Verbo (gustar) + objeto"
+      "text_es": "Me gusta esta canción.",
+      "text_en": "I like this song.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Verbo (gustar) + objeto",
+      "syntax_en": "Verb (gustar) + object"
     },
     {
       "phrase_id": "com-009",
-      "spanish": "Está roto.",
-      "english": "It's broken.",
-      "domain": "Casa/Hogar",
-      "syntax": "Oración (estar + participio)"
+      "text_es": "Está roto.",
+      "text_en": "It's broken.",
+      "domain_es": "Casa/Hogar",
+      "domain_en": "Home",
+      "syntax_es": "Oración (estar + participio)",
+      "syntax_en": "Oración (be + participio)"
     },
     {
       "phrase_id": "com-010",
-      "spanish": "Es divertido.",
-      "english": "It's fun.",
-      "domain": "General",
-      "syntax": "Oración (ser + adjetivo)"
+      "text_es": "Es divertido.",
+      "text_en": "It's fun.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración (ser + adjetivo)",
+      "syntax_en": "Oración (ser + Adjective)"
     },
     {
       "phrase_id": "com-011",
-      "spanish": "Es difícil.",
-      "english": "It's hard.",
-      "domain": "Escuela",
-      "syntax": "Oración (ser + adjetivo)"
+      "text_es": "Es difícil.",
+      "text_en": "It's hard.",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Oración (ser + adjetivo)",
+      "syntax_en": "Oración (ser + Adjective)"
     },
     {
       "phrase_id": "com-012",
-      "spanish": "Es fácil.",
-      "english": "It's easy.",
-      "domain": "Escuela",
-      "syntax": "Oración (ser + adjetivo)"
+      "text_es": "Es fácil.",
+      "text_en": "It's easy.",
+      "domain_es": "Escuela",
+      "domain_en": "School",
+      "syntax_es": "Oración (ser + adjetivo)",
+      "syntax_en": "Oración (ser + Adjective)"
     },
     {
       "phrase_id": "com-013",
-      "spanish": "Hoy es lunes.",
-      "english": "Today is Monday.",
-      "domain": "General",
-      "syntax": "Oración (ser + sustantivo – día)"
+      "text_es": "Hoy es lunes.",
+      "text_en": "Today is Monday.",
+      "domain_es": "General",
+      "domain_en": "General",
+      "syntax_es": "Oración (ser + sustantivo – día)",
+      "syntax_en": "Oración (ser + Noun – día)"
     },
     {
       "phrase_id": "com-014",
-      "spanish": "El perro es grande.",
-      "english": "The dog is big.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Sujeto + verbo (ser) + adjetivo"
+      "text_es": "El perro es grande.",
+      "text_en": "The dog is big.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Sujeto + verbo (ser) + adjetivo",
+      "syntax_en": "Sujeto + Verb (ser) + Adjective"
     },
     {
       "phrase_id": "com-015",
-      "spanish": "Tenemos que irnos.",
-      "english": "We have to go.",
-      "domain": "Ocio/Comunidad",
-      "syntax": "Verbo (tener que) + infinitivo"
+      "text_es": "Tenemos que irnos.",
+      "text_en": "We have to go.",
+      "domain_es": "Ocio/Comunidad",
+      "domain_en": "Leisure/Community",
+      "syntax_es": "Verbo (tener que) + infinitivo",
+      "syntax_en": "Verb (have que) + infinitive"
     }
   ]
 }

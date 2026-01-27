@@ -24,10 +24,13 @@ const DOMAIN_TRANSLATIONS = {
   'Higiene/Salud': 'Health/Hygiene',
   'Salud/Higiene': 'Health/Hygiene',
   'Hogar': 'Home',
+  'Casa/Hogar': 'Home',
   'Escuela': 'School',
   'Comida': 'Food',
   'Comunidad': 'Community',
   'Ocio': 'Leisure',
+  'Ocio/Comunidad': 'Leisure/Community',
+  'Escuela/Ocio': 'School/Leisure',
   'Emociones': 'Emotions',
   'Interacción Social': 'Social Interaction',
   'Actividades Cotidianas': 'Daily Activities',
@@ -38,7 +41,8 @@ const DOMAIN_TRANSLATIONS = {
   'Lugar': 'Place',
   'Personas': 'People',
   'Objetos': 'Objects',
-  'Acciones': 'Actions'
+  'Acciones': 'Actions',
+  'General': 'General'
 };
 
 // Syntax pattern translations (partial matches)
@@ -48,6 +52,13 @@ const SYNTAX_PATTERNS = {
   'Adjetivo': 'Adjective',
   'Adverbio': 'Adverb',
   'Pronombre': 'Pronoun',
+  'Negación': 'Negation',
+  'Exclamación': 'Exclamation',
+  'Interjección': 'Interjection',
+  'Locución': 'Phrase',
+  'Frase nominal': 'Noun phrase',
+  'Fórmula fija': 'Fixed formula',
+  'Expresión': 'Expression',
   'querer': 'want',
   'necesitar': 'need',
   'tener': 'have',
@@ -66,7 +77,15 @@ const SYNTAX_PATTERNS = {
   'tiempo': 'time',
   'modo': 'manner',
   'cantidad': 'quantity',
-  'pregunta': 'question'
+  'pregunta': 'question',
+  'cortesía': 'politeness',
+  'rechazo': 'rejection',
+  'cuantificador': 'quantifier',
+  'adverbial': 'adverbial',
+  'saludo': 'greeting',
+  'despedida': 'farewell',
+  'disculpa': 'apology',
+  'elogio': 'praise'
 };
 
 /**
