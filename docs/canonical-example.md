@@ -10,8 +10,32 @@ This document illustrates the complete chain of thought from initial utterance t
 1. Utterance → Semantic Analysis
 2. Semantic Analysis → Visual Structure
 3. Visual Structure → SVG Pictogram
-4. SVG Pictogram → VCSCI Evaluation
+4. SVG Pictogram → ICAP Evaluation
 5. Evaluation → Embedded Metadata (SSOT)
+
+## Modular Architecture
+
+Este ejemplo integra componentes de tres repositorios modulares del ecosistema **MediaFranca**:
+
+* **[nlu-schema](https://github.com/mediafranca/nlu-schema)** - Define el análisis semántico (Step 1)
+  * Frame Semantics (FrameNet-style)
+  * Natural Semantic Metalanguage (NSM)
+  * Logical Form y Pragmática
+  * Visual Guidelines
+
+* **[mf-svg-schema](https://github.com/mediafranca/mf-svg-schema)** - Define el formato SVG pictográfico (Step 3)
+  * Estructura de elementos semánticos
+  * Metadatos embebidos
+  * Accesibilidad (ARIA, roles semánticos)
+  * Chain of thought completo
+
+* **ICAP** (este repositorio) - Define la evaluación de calidad (Step 4)
+  * 6 dimensiones de evaluación
+  * Rúbrica centralizada
+  * Puntajes y decisiones
+  * Texto narrativo compilado
+
+Los archivos en `examples/toy-example/` son **ejemplos de referencia** que siguen los schemas de estos repositorios modulares.
 
 ---
 
@@ -408,44 +432,44 @@ The evaluation is embedded back into the SVG as the single source of truth:
 ### 1. Complete Traceability
 
 Every decision from utterance to final pictogram is documented:
-- Linguistic analysis
-- Visual composition
-- Generation parameters
-- Evaluation ratings
-- Quality decision
+* Linguistic analysis
+* Visual composition
+* Generation parameters
+* Evaluation ratings
+* Quality decision
 
 ### 2. Single Source of Truth
 
 The SVG file contains everything:
-- Visual representation
-- Semantic metadata
-- Accessibility information
-- Evaluation results
-- Provenance data
+* Visual representation
+* Semantic metadata
+* Accessibility information
+* Evaluation results
+* Provenance data
 
 ### 3. Accessibility First
 
-- ARIA labels for screen readers
-- Keyboard navigation
-- High contrast support
-- Semantic grouping
-- Reading order specification
+* ARIA labels for screen readers
+* Keyboard navigation
+* High contrast support
+* Semantic grouping
+* Reading order specification
 
 ### 4. Research Reproducibility
 
 Complete chain of thought enables:
-- Citation of specific decisions
-- Replication of methodology
-- Validation of results
-- Dataset publication
+* Citation of specific decisions
+* Replication of methodology
+* Validation of results
+* Dataset publication
 
 ### 5. Production Ready
 
 Embedded metadata supports:
-- AAC system integration
-- Quality assurance
-- Version control
-- License compliance
+* AAC system integration
+* Quality assurance
+* Version control
+* License compliance
 
 ---
 
@@ -453,19 +477,19 @@ Embedded metadata supports:
 
 **Complete example available at:**
 
-- SVG: [examples/toy-example/canonical.svg](../examples/toy-example/canonical.svg)
-- Semantic analysis: [examples/toy-example/semantic-analysis.json](../examples/toy-example/semantic-analysis.json)
-- Visual structure: [examples/toy-example/visual-structure.json](../examples/toy-example/visual-structure.json)
-- Evaluation: [examples/toy-example/vcsci-evaluation.json](../examples/toy-example/vcsci-evaluation.json)
+* SVG: [examples/toy-example/canonical.svg](../examples/toy-example/canonical.svg)
+* Semantic analysis: [examples/toy-example/semantic-analysis.json](../examples/toy-example/semantic-analysis.json)
+* Visual structure: [examples/toy-example/visual-structure.json](../examples/toy-example/visual-structure.json)
+* Evaluation: [examples/toy-example/vcsci-evaluation.json](../examples/toy-example/vcsci-evaluation.json)
 
 ---
 
 ## References
 
-- **Frame Semantics**: Fillmore, C. J. (1982). Frame semantics. In Linguistics in the Morning Calm.
-- **NSM**: Wierzbicka, A. (1996). Semantics: Primes and Universals.
-- **SVG Accessibility**: W3C SVG Accessibility API Mappings
-- **AAC Standards**: ISO 24751 - Individualized adaptability and accessibility in e-learning
+* **Frame Semantics**: Fillmore, C. J. (1982). Frame semantics. In Linguistics in the Morning Calm.
+* **NSM**: Wierzbicka, A. (1996). Semantics: Primes and Universals.
+* **SVG Accessibility**: W3C SVG Accessibility API Mappings
+* **AAC Standards**: ISO 24751 - Individualized adaptability and accessibility in e-learning
 
 ---
 

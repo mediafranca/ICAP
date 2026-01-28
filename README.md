@@ -130,10 +130,18 @@ Ejemplo completo del flujo de trabajo: **"Voy a hacer mi cama"**
 
 **Archivos incluidos:**
 
-* [semantic-analysis.json](examples/toy-example/semantic-analysis.json) - Descomposición semántica con roles y primitivos NSM
+* [semantic-analysis.json](examples/toy-example/semantic-analysis.json) - Descomposición semántica (sigue [nlu-schema](https://github.com/mediafranca/nlu-schema))
 * [visual-structure.json](examples/toy-example/visual-structure.json) - Jerarquía de elementos visuales y prompt de generación
-* [output.svg](examples/toy-example/pictograms/req-001_v1.0.0_default-v1_01/output.svg) - Pictograma con metadatos ICAP completos
+* [output.svg](examples/toy-example/pictograms/req-001_v1.0.0_default-v1_01/output.svg) - Pictograma con metadatos (sigue [mf-svg-schema](https://github.com/mediafranca/mf-svg-schema))
 * [Documentación completa](docs/canonical-example.md) - Explicación detallada del flujo
+
+### Arquitectura Modular
+
+ICAP es parte del ecosistema **MediaFranca** con separación de responsabilidades:
+
+* **[nlu-schema](https://github.com/mediafranca/nlu-schema)** - Análisis semántico (Frame Semantics, NSM, roles semánticos)
+* **[mf-svg-schema](https://github.com/mediafranca/mf-svg-schema)** - Especificación de SVGs pictográficos con metadatos embebidos
+* **ICAP** (este repositorio) - Marco de evaluación de calidad pictográfica para CAA
 
 ---
 
