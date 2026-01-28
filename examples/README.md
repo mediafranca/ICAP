@@ -1,217 +1,67 @@
-# VCSCI Examples
+# Ejemplos ICAP
 
-This directory contains interactive demonstrations and example files for the VCSCI evaluation framework.
+Este directorio contiene herramientas interactivas y ejemplos de referencia para el Índice de Calidad Pictográfica.
 
----
+## Herramientas Interactivas
 
-## 🌐 Interactive Demos
+### Interfaz Hexagonal con Gradientes
 
-### Hexagonal Rating Interface (Bilingual)
+**[hexagonal-rating-gradient.html](hexagonal-rating-gradient.html)**
 
-**File:** [hexagonal-rating-with-descriptions.html](hexagonal-rating-with-descriptions.html)
+Herramienta principal para evaluar pictogramas usando las 6 dimensiones ICAP.
 
-The primary evaluation interface for VCSCI pictogram assessment.
+**Características:**
 
-**Features:**
+* Visualización hexagonal con colores únicos por dimensión
+* Gradientes suaves con Canvas 2D
+* Descripciones de rúbrica en tiempo real
+* Evaluación compilada (texto narrativo automático)
+* Exportación JSON con metadatos completos
+* Tipografía Lexend para accesibilidad
+* Tema oscuro optimizado
 
-- ✨ Real-time hexagonal visualization using SVG
-- 📖 Live rubric descriptions from centralized JSON
-- 🌐 **Bilingual support** (Spanish/English with `_es`/`_en` structure)
-- 🎨 **Score-based colour system** (1-5 ratings mapped to colours)
-- 🔍 **Dimension definitions** displayed alongside score explanations
-- 📝 Compiled evaluation with all 6 dimension paragraphs (colour-coded)
-- 📥 One-click JSON export with complete bilingual transparency
-- 🎭 Lexend typography for optimal readability
-- 🌟 Simplified, compact interface with soft background
+**Uso:**
 
-**Colour System (Score-Based):**
+1. Abrir el archivo HTML en un navegador
+2. Ajustar los 6 sliders (1-5) para cada dimensión
+3. Revisar la evaluación compilada en tiempo real
+4. Exportar JSON con evaluación completa
 
-Colours are assigned by **score level** (1-5), not by dimension:
+### Visualizador de Metadatos
 
-| Score | Label (EN)     | Label (ES)   | Colour     | Hex     |
-| ----- | -------------- | ------------ | ---------- | ------- |
-| 1     | Not Functional | No funcional | Red        | #dc2626 |
-| 2     | Insufficient   | Insuficiente | Orange     | #ea580c |
-| 3     | Works          | Funciona     | Yellow     | #ffd93d |
-| 4     | Good           | Bien         | Lime Green | #84cc16 |
-| 5     | Excellent      | Excelente    | Dark Green | #16a34a |
+**[metadata-visualizer.html](metadata-visualizer.html)**
 
-This creates a consistent visual language where lower scores are warm colours (red/orange) and higher scores are cool colours (green).
+Herramienta para extraer y visualizar metadatos ICAP embebidos en archivos SVG.
 
-**How to use:**
+**Características:**
 
-1. Open HTML file in browser
-2. Adjust 6 rating sliders (1-5) for each dimension
-3. Watch hexagon update in real-time with colour-coded vertices and labels
-4. See dimension definition and score description update on the right panel
-5. Review compiled evaluation at bottom with colour-coded paragraphs
-6. Export JSON with full bilingual rubric transparency
+* Drag & drop de archivos SVG
+* Extracción automática de metadatos
+* Visualización hexagonal de puntajes
+* Muestra cadena de pensamiento completa
+* Información de certificación y proveniencia
 
----
+**Uso:**
 
-### Metadata Visualizer
+1. Abrir el archivo HTML en un navegador
+2. Arrastrar un SVG con metadatos ICAP
+3. Ver visualización automática de la evaluación
 
-**File:** [metadata-visualizer.html](metadata-visualizer.html)
+## Ejemplo Canónico
 
-Extract and visualize VCSCI metadata embedded in SVG pictograms.
+**[toy-example/](toy-example/)**
 
-**Features:**
+Ejemplo completo del flujo de trabajo ICAP para la frase **"Voy a hacer mi cama"**.
 
-- 📤 Drag & drop SVG files
-- 🔍 Extract embedded metadata
-- 📊 Display hexagonal visualization
-- 🧠 Show complete chain of thought
-- 📋 Display provenance information
+Incluye:
 
-**How to use:**
+* Análisis semántico completo (Frame Semantics + NSM)
+* Estructura visual jerárquica
+* Pictograma SVG con metadatos ICAP embebidos
+* Evaluación completa con puntajes perfectos (5.0/5.0)
 
-1. Open HTML file in browser
-2. Drag an SVG file with embedded VCSCI metadata onto the drop zone
-3. View extracted scores and complete evaluation
-4. Inspect the full chain of thought and generation process
+Ver [docs/canonical-example.md](../docs/canonical-example.md) para documentación detallada.
 
 ---
 
-## 📂 Example Data
-
-### Exported Evaluation Example
-
-**File:** [exported-evaluation-example.json](exported-evaluation-example.json)
-
-Complete example of JSON exported from the hexagonal interface.
-
-**Contains:**
-
-- Metadata (evaluation date, version, interface type, case ID)
-- Individual scores for each of 6 dimensions
-- VCSCI composite score (0-5)
-- Overall assessment with bilingual labels and descriptions
-- Complete dimension evaluations (Spanish and English)
-- Compiled evaluation with coloured paragraphs
-- Full text narrative
-- Visualization metadata (colour system)
-- Rubric transparency note
-
-**Use cases:**
-
-- Reference format for custom evaluation tools
-- Dataset publication template
-- Research reproducibility standard
-- API integration example
-
----
-
-### Canonical SVG with Varied Scores
-
-**File:** [test-canonical-varied-scores.svg](test-canonical-varied-scores.svg)
-
-Test SVG pictogram with embedded VCSCI metadata.
-
-**Scores:** 5, 4, 4, 5, 4, 5 (VCSCI: 4.5)
-
-**Purpose:**
-
-- Validate metadata visualizer functionality
-- Test metadata extraction
-- Demonstrate SVG embedding format
-- Serve as integration test case
-
----
-
-### Toy Example (Complete Workflow)
-
-**Directory:** [toy-example/](toy-example/)
-
-Complete working example demonstrating the full VCSCI evaluation workflow for the phrase **"Voy a hacer mi cama"** (I'm going to make my bed).
-
-**Contains:**
-
-- `case.json` - Case definition with phrase and metadata
-- `semantic-analysis.json` - Semantic breakdown and NSM analysis
-- `visual-structure.json` - Visual composition elements
-- `pictogram.svg` - Generated SVG with embedded metadata
-- `metadata.json` - Sidecar metadata file
-- `vcsci-evaluation.json` - Complete evaluation with perfect scores (5.0/5.0)
-- `README.md` - Detailed explanation of the workflow
-
-**Demonstrates:**
-
-- Input → Generation → Evaluation → Storage chain
-- Metadata embedding in SVG
-- Bilingual evaluation structure
-- Score-based colour system
-- Rubric transparency
-
----
-
-## 🛠 Technical Details
-
-### Data Sources
-
-All examples load data from:
-
-- `../data/rubric-scale-descriptions.json` - Centralized bilingual rubric definitions
-- `../locales/es.json` - Spanish translations
-- `../locales/en.json` - English translations
-- `../schemas/` - JSON schemas for validation
-- `../style/` - Style profile configurations
-
-### Colour System
-
-The new **score-based colour system** applies colours to scores (1-5) rather than dimensions:
-
-```javascript
-// Get colour for a score
-const score = 5;
-const rubric = loadRubric();
-const color = rubric.scale[score].color;  // "#16a34a" (dark green)
-```
-
-This ensures consistent visual feedback where performance level is immediately apparent from colour:
-
-- 🔴 Red (1) = Not functional
-- 🟠 Orange (2) = Insufficient
-- 🟡 Yellow (3) = Works
-- 🟢 Lime (4) = Good
-- 🟢 Dark green (5) = Excellent
-
-### Browser Compatibility
-
-All HTML examples work in modern browsers:
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-
-No build step required - just open in a browser!
-
----
-
-## 📚 Documentation
-
-For complete documentation, see:
-
-- [Main README](../README.md) - Project overview and quick start
-- [Hexagonal Interface Documentation](../docs/hexagonal-interface.md) - Interface design details
-- [Rubric Documentation](../docs/rubric.md) - Evaluation criteria and scale definitions
-- [Rubric Descriptions Usage](../docs/rubric-descriptions-usage.md) - How to use centralized rubric
-- [Canonical Example](../docs/canonical-example.md) - Detailed walkthrough
-- [i18n Guide](../locales/README.md) - Internationalisation guidelines
-
----
-
-## 🤝 Contributing
-
-To add new examples:
-
-1. Create HTML/JSON file in this directory
-2. Follow existing naming conventions
-3. Document thoroughly in this README
-4. Reference from main project README
-5. Ensure bilingual support where applicable
-6. Add to CI validation if applicable
-
----
-
-**Version:** 1.0.0 (Updated 2026-01-27)
-**Colour System:** Score-based (v2.0)
+**Para más información, ver el [README principal](../README.md)**

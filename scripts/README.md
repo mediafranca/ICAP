@@ -1,72 +1,97 @@
-# Scripts Directory
+# Scripts ICAP
 
-This directory contains automation scripts for the VCSCI workflow.
+Este directorio contiene scripts de automatización para el workflow de evaluación ICAP.
 
-## Available Scripts
+## Scripts Disponibles
 
-### Generation
+### 1. compile-evaluation-text.js
 
-- `generate-cases.js` - Generate pictogram cases from phrase list
-- `render-previews.js` - Create PNG previews from SVG files
+Compila evaluaciones ICAP a partir de puntajes numéricos, generando texto narrativo automático usando la rúbrica centralizada.
 
-### Data Import/Export
-
-- `import-ratings.js` - Import ratings from Google Sheets CSV export
-- `export-cases.js` - Export case definitions to various formats
-
-### Analysis
-
-- `score-cases.js` - Compute VCSCI scores for individual cases
-- `aggregate-by-phrase.js` - Aggregate scores by phrase_id
-- `aggregate-by-pipeline.js` - Compare pipeline versions
-- `generate-report.js` - Create markdown evaluation reports
-
-### Validation
-
-- `validate-schema.js` - Validate all JSON files against schemas
-- `check-consistency.js` - Check referential integrity (case_id references)
-
-## Usage
-
-Run scripts from the project root:
+**Uso:**
 
 ```bash
-node scripts/script-name.js [arguments]
+# Compilar evaluación desde puntajes
+node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4
+
+# Formato HTML
+node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4 --format html
+
+# Inglés
+node scripts/compile-evaluation-text.js --scores 5,4,3,4,5,4 --lang en
+
+# Evaluar caso específico
+node scripts/compile-evaluation-text.js --case req-001_v1.0.0_default-v1_01
 ```
 
-### Examples
+**Parámetros:**
+
+* `--scores` - 6 puntajes separados por comas (1-5) para: Claridad, Reconocibilidad, Transparencia Semántica, Adecuación Pragmática, Adecuación Cultural, Accesibilidad Cognitiva
+* `--format` - Formato de salida: `text` (default) o `html`
+* `--lang` - Idioma: `es` (default) o `en`
+* `--case` - ID de caso para cargar puntajes desde metadata
+
+**Salida:**
+
+* Puntaje ICAP compuesto (promedio)
+* Evaluación general
+* Párrafos narrativos para cada dimensión
+* Texto compilado completo
+
+### 2. generate-report.js
+
+Genera reportes de evaluación en formato markdown o JSON, agregando resultados de múltiples evaluaciones.
+
+**Uso:**
 
 ```bash
-# Import ratings from CSV
-node scripts/import-ratings.js data/ratings-export.csv
+# Generar reporte desde corpus
+node scripts/generate-report.js --corpus frases.json
 
-# Compute scores for all cases
-node scripts/score-cases.js
+# Especificar directorio de evaluaciones
+node scripts/generate-report.js --input evaluations/ --output report.md
 
-# Generate evaluation report
-node scripts/generate-report.js --output analysis/reports/2025-01-15.md
-
-# Validate all schemas
-node scripts/validate-schema.js
+# Formato JSON
+node scripts/generate-report.js --corpus frases.json --format json
 ```
 
-## Dependencies
+**Parámetros:**
 
-Scripts require Node.js 16+ and the following packages:
+* `--corpus` - Archivo de corpus (frases.json)
+* `--input` - Directorio con evaluaciones JSON
+* `--output` - Archivo de salida (default: stdout)
+* `--format` - Formato: `markdown` (default) o `json`
+
+**Salida:**
+
+* Puntajes ICAP agregados por modelo/versión
+* Estadísticas por dimensión
+* Identificación de fortalezas y debilidades
+* Comparación entre modelos
+
+## Requisitos
+
+Los scripts requieren Node.js 16+ y las siguientes dependencias:
 
 ```bash
-npm install ajv uuid fast-csv
+npm install ajv
 ```
 
-Or use the provided package.json if available.
+## Integración con Rúbrica Centralizada
 
-## Script Guidelines
+Ambos scripts consultan la rúbrica centralizada en:
 
-When creating new scripts:
+* `data/rubric-scale-descriptions.json`
 
-1. Use clear, descriptive names
-2. Include usage instructions at the top of the file
-3. Handle errors gracefully
-4. Log progress for long-running operations
-5. Output structured data (JSON) or markdown reports
-6. Follow existing naming conventions
+Esto asegura que las evaluaciones usen descripciones consistentes y actualizadas.
+
+## Flujo de Trabajo Típico
+
+1. **Evaluar pictogramas** usando la interfaz hexagonal
+2. **Exportar JSON** con evaluaciones
+3. **Compilar texto narrativo** con `compile-evaluation-text.js`
+4. **Generar reporte agregado** con `generate-report.js` para benchmark de modelos
+
+---
+
+**Ver también:** [README principal](../README.md) para documentación completa del framework ICAP
