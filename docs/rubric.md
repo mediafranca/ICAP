@@ -1,4 +1,4 @@
-# VCSCI Evaluation Rubric
+# ICAP Evaluation Rubric
 
 This rubric provides operational definitions and anchoring examples for each evaluation dimension.
 

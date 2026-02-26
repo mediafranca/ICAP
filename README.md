@@ -95,16 +95,36 @@ Cada frase incluye:
 
 ## Herramientas de Evaluación Interactivas
 
-### Interfaz Hexagonal con Gradientes
+### Evaluador de Bibliotecas Completas (GitHub Pages)
 
-**[examples/hexagonal-rating-gradient.html](examples/hexagonal-rating-gradient.html)**
+**[index.html](index.html)**
 
-* Visualización hexagonal con interpolación de colores por dimensión
-* Renderizado Canvas 2D con gradientes suaves
+* Carga directa de `library dump` JSON exportado desde pictos.net
+* Evaluación item por item con escala Likert 1-5 (6 dimensiones ICAP)
+* Visualización hexagonal Canvas (ejes CLA, REC, SEM, PRA, CUL, COG)
 * Descripciones de rúbrica en tiempo real
-* Evaluación compilada (texto narrativo automático)
-* Exportación JSON con metadatos completos
-* Tipografía Lexend para accesibilidad
+* Resumen narrativo dinámico que cambia al mover sliders
+* Datos socio-demográficos del evaluador (una sola vez, persistidos localmente)
+* Exportación JSON consolidada de toda la biblioteca evaluada
+
+#### Vista local rápida
+
+```bash
+cd /Users/hspencer/Sites/ICAP
+python3 -m http.server 4173
+```
+
+Abrir: `http://localhost:4173`
+
+#### Publicación en GitHub Pages (rama `main`)
+
+1. Ir a **Settings > Pages**
+2. En **Build and deployment**, elegir:
+   - **Source**: Deploy from a branch
+   - **Branch**: `main`
+   - **Folder**: `/ (root)`
+3. Guardar y esperar el deploy
+4. URL esperada: `https://mediafranca.github.io/ICAP/` (o la URL equivalente del repo)
 
 ### Visualizador de Metadatos
 
@@ -176,11 +196,15 @@ node scripts/compile-evaluation-text.js --case req-001_v1.0.0_default-v1_01
 ## Estructura del Repositorio
 
 ```text
+├── index.html                  # App principal para evaluar library dumps
+├── web/
+│   ├── app.js                  # Lógica de evaluación, chart y exportación
+│   └── styles.css              # Estilos de la app
 ├── frases.json                  # Corpus de 50 frases de referencia
 ├── data/
 │   └── rubric-scale-descriptions.json  # Rúbrica centralizada
 ├── examples/
-│   ├── hexagonal-rating-gradient.html  # Interfaz hexagonal interactiva
+│   ├── icap_50_v1_graph_2026-02-11.json # Biblioteca ICAP-50 de ejemplo (bitmaps)
 │   ├── metadata-visualizer.html        # Visualizador de metadatos
 │   └── toy-example/                    # Ejemplo canónico completo
 ├── schemas/
@@ -198,10 +222,12 @@ node scripts/compile-evaluation-text.js --case req-001_v1.0.0_default-v1_01
 ## Flujo de Trabajo: Evaluación Individual
 
 1. **Generar pictograma** usando PictoNet u otro modelo generativo
-2. **Abrir interfaz hexagonal** ([hexagonal-rating-gradient.html](examples/hexagonal-rating-gradient.html))
-3. **Evaluar cada dimensión** (1-5) usando la rúbrica como guía
-4. **Revisar evaluación compilada** (texto narrativo automático)
-5. **Exportar JSON** con metadatos completos
+2. **Abrir el evaluador** ([index.html](index.html))
+3. **Cargar biblioteca JSON** (`library dump`)
+4. **Completar datos del evaluador** (una vez)
+5. **Evaluar cada dimensión** (1-5) por item
+6. **Revisar evaluación compilada** (texto narrativo automático)
+7. **Exportar JSON** consolidado de la biblioteca completa
 6. **Embeber metadatos en SVG** como SSOT para auditoría
 
 ---

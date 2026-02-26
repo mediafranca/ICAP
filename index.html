@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICAP Evaluador de Bibliotecas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./web/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>ICAP Evaluación de Bibliotecas</h1>
+        <p class="lead">Flujo en 3 pasos para evaluar dumps completos de pictogramas con escala Likert 1-5.</p>
+      </header>
+
+      <nav class="stepper" aria-label="Pasos">
+        <button id="stepBtn1" class="step-pill active" type="button">Paso 1: Biblioteca</button>
+        <button id="stepBtn2" class="step-pill" type="button" disabled>Paso 2: Evaluador</button>
+        <button id="stepBtn3" class="step-pill" type="button" disabled>Paso 3: Evaluación</button>
+      </nav>
+
+      <section id="step1" class="screen">
+        <h2>Paso 1. Cargar biblioteca</h2>
+        <p class="muted">
+          Desde
+          <a href="https://pictos.net" target="_blank" rel="noopener noreferrer">pictos.net</a>
+          puedes descargar la biblioteca en formato <code>library dump</code> JSON.
+          En este evaluador se usarán solo los <strong>bitmaps raster</strong> (<code>row.bitmap</code>), no SVG/XML.
+        </p>
+
+        <div class="step1-grid">
+          <div class="step1-left">
+            <div class="load-row">
+              <input id="libraryFileInput" type="file" accept=".json,application/json" />
+              <button id="loadSampleBtn" class="secondary-btn" type="button">Cargar ejemplo mínimo</button>
+              <button id="loadICAP50Btn" class="secondary-btn" type="button">Cargar biblioteca ICAP-50 de ejemplo</button>
+            </div>
+
+            <p id="libraryStatus" class="status-text">Aún no hay biblioteca cargada.</p>
+            <div id="librarySummary" class="summary-card hidden"></div>
+
+            <div class="screen-actions">
+              <button id="toStep2Btn" class="primary-btn" type="button" disabled>Continuar a paso 2</button>
+            </div>
+          </div>
+
+          <div id="libraryPreview" class="library-preview hidden">
+            <button id="previewPrevBtn" type="button" class="arrow-btn" aria-label="Pictograma anterior">◀</button>
+
+            <figure class="preview-figure">
+              <img id="previewImage" alt="Vista de pictograma" class="preview-image" />
+              <div id="previewCounter" class="preview-counter"></div>
+            </figure>
+
+            <button id="previewNextBtn" type="button" class="arrow-btn" aria-label="Siguiente pictograma">▶</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="step2" class="screen hidden">
+        <h2>Paso 2. Datos del evaluador</h2>
+
+        <form id="evaluatorForm" class="evaluator-grid">
+          <label>
+            Nombre o alias
+            <input id="evalName" name="name" type="text" maxlength="120" required />
+          </label>
+
+          <label>
+            Edad (rango)
+            <select id="evalAgeRange" name="ageRange" required>
+              <option value="">Seleccionar</option>
+              <option value="menor_18">Menor de 18</option>
+              <option value="18_29">18-29</option>
+              <option value="30_44">30-44</option>
+              <option value="45_59">45-59</option>
+              <option value="60_mas">60 o más</option>
+              <option value="prefiere_no_decir">Prefiere no decir</option>
+            </select>
+          </label>
+
+          <label>
+            Género
+            <select id="evalGender" name="gender" required>
+              <option value="">Seleccionar</option>
+              <option value="mujer">Mujer</option>
+              <option value="hombre">Hombre</option>
+              <option value="no_binario">No binario</option>
+              <option value="prefiere_no_decir">Prefiero no decir</option>
+              <option value="otro">Otro</option>
+            </select>
+          </label>
+
+          <label>
+            País / región
+            <input id="evalRegion" name="region" type="text" maxlength="120" required />
+          </label>
+
+          <label>
+            Institución / organización
+            <input id="evalInstitution" name="institution" type="text" maxlength="160" required />
+          </label>
+
+          <label>
+            Nivel educativo
+            <select id="evalEducation" name="education">
+              <option value="">No especifica</option>
+              <option value="basica">Educación básica</option>
+              <option value="media">Educación media</option>
+              <option value="tecnica">Técnica</option>
+              <option value="universitaria">Universitaria</option>
+              <option value="postgrado">Postgrado</option>
+            </select>
+          </label>
+
+          <label>
+            Idioma principal
+            <select id="evalPrimaryLanguage" name="primaryLanguage" required>
+              <option value="">Seleccionar</option>
+              <option value="es">Español</option>
+              <option value="en">Inglés</option>
+              <option value="otro">Otro</option>
+            </select>
+          </label>
+
+          <label>
+            Experiencia en CAA
+            <select id="evalAacExperience" name="aacExperience" required>
+              <option value="">Seleccionar</option>
+              <option value="ninguna">Ninguna</option>
+              <option value="basica">Básica (&lt;1 año)</option>
+              <option value="intermedia">Intermedia (1-3 años)</option>
+              <option value="avanzada">Avanzada (4+ años)</option>
+            </select>
+          </label>
+
+          <label>
+            Contexto de evaluación
+            <select id="evalContext" name="context" required>
+              <option value="">Seleccionar</option>
+              <option value="investigacion">Investigación</option>
+              <option value="clinico">Clínico / terapéutico</option>
+              <option value="educativo">Educativo</option>
+              <option value="familiar">Familiar / hogar</option>
+              <option value="otro">Otro</option>
+            </select>
+          </label>
+
+          <label>
+            Rol
+            <select id="evalRole" name="role" required>
+              <option value="">Seleccionar</option>
+              <option value="usuario_pictogramas">Persona con dificultades de comunicación oral (usuario de pictogramas)</option>
+              <option value="sin_dificultades_orales">Persona sin dificultades de comunicación oral</option>
+              <option value="familiar_cuidador">Familiar o cuidador de persona con dificultades de comunicación</option>
+              <option value="profesional_caa">Profesional CAA</option>
+            </select>
+          </label>
+
+          <label class="consent-row full-width">
+            <input id="evalConsent" name="consent" type="checkbox" required />
+            Acepto el uso de estos datos de forma anonimizada para análisis de calidad pictográfica.
+          </label>
+
+          <div class="screen-actions full-width">
+            <button id="toStep1Btn" class="secondary-btn" type="button">Volver al paso 1</button>
+            <button class="primary-btn" type="submit">Guardar y continuar al paso 3</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="step3" class="screen hidden">
+        <h2>Paso 3. Evaluación</h2>
+
+        <div class="eval-topbar">
+          <button id="backToStep2Btn" type="button" class="secondary-btn">Volver al paso 2</button>
+
+          <div class="item-nav">
+            <button id="evalPrevBtn" type="button" class="arrow-btn" aria-label="Anterior">◀</button>
+            <span id="evalCounter" class="counter">0 / 0</span>
+            <button id="evalNextBtn" type="button" class="arrow-btn" aria-label="Siguiente">▶</button>
+          </div>
+
+          <div class="eval-top-right">
+            <div id="evalProgress" class="muted small"></div>
+            <button id="exportJsonBtn" type="button" class="icon-btn" title="Exportar evaluación JSON" aria-label="Exportar evaluación JSON">⭳ Exportar</button>
+          </div>
+        </div>
+
+        <div class="focus-figure-wrap">
+          <img id="focusImage" alt="Pictograma actual" class="focus-image" />
+          <p id="focusPhrase" class="focus-phrase"></p>
+        </div>
+
+        <div id="interpretationStage" class="interpretation-stage">
+          <p class="muted small">Comprensión pragmática (previa a la evaluación dimensional)</p>
+          <label>
+            ¿Qué comunica este pictograma?
+            <textarea id="guessText" rows="3" placeholder="Escribe lo que entiendes que comunica..."></textarea>
+          </label>
+          <div class="screen-actions">
+            <button id="saveGuessBtn" type="button" class="primary-btn">Confirmar interpretación y pasar a evaluación</button>
+            <button id="skipGuessBtn" type="button" class="secondary-btn">Omitir comprensión pragmática</button>
+          </div>
+        </div>
+
+        <div id="likertStage" class="likert-stage hidden">
+          <div class="left-panel">
+            <p class="real-phrase-label">Frase real de origen:</p>
+            <p id="realPhraseText" class="real-phrase"></p>
+
+            <div class="chart-box">
+              <canvas id="hexChart" width="360" height="320"></canvas>
+              <div id="scoreBadge" class="score-badge">ICAP 0.00</div>
+            </div>
+
+            <div id="dynamicTexts" class="dynamic-texts"></div>
+          </div>
+
+          <aside class="right-panel">
+            <h3 class="right-title">Likert por dimensión</h3>
+            <div id="slidersContainer" class="sliders-column"></div>
+
+            <div class="screen-actions tight">
+              <button id="editGuessBtn" class="secondary-btn" type="button">Editar interpretación inicial</button>
+              <button id="clearEvalBtn" class="secondary-btn" type="button">Limpiar este item</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./web/app.js"></script>
+  </body>
+</html>
