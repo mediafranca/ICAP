@@ -92,6 +92,9 @@ function bindElements() {
   el.editGuessBtn = document.getElementById("editGuessBtn");
   el.clearEvalBtn = document.getElementById("clearEvalBtn");
 
+  el.saveAndNextBtn = document.getElementById("saveAndNextBtn");
+  el.saveAndNextCounter = document.getElementById("saveAndNextCounter");
+
   el.slidersContainer = document.getElementById("slidersContainer");
   el.rubricDetails = document.getElementById("rubricDetails");
   el.hexChart = document.getElementById("hexChart");
@@ -124,6 +127,7 @@ function bindEvents() {
   el.skipGuessBtn.addEventListener("click", onSkipGuess);
   el.editGuessBtn.addEventListener("click", onEditGuess);
   el.clearEvalBtn.addEventListener("click", clearCurrentEvaluation);
+  el.saveAndNextBtn.addEventListener("click", onSaveAndNext);
 
   el.exportJsonBtn.addEventListener("click", exportEvaluationJson);
 }
@@ -428,6 +432,8 @@ function renderCurrentEvalItem() {
     el.interpretationStage.classList.remove("hidden");
     el.likertStage.classList.add("hidden");
     el.guessText.value = record.guess || "";
+    el.saveAndNextBtn.disabled = true;
+    updateSaveAndNextBtn({});
     return;
   }
 
@@ -438,6 +444,7 @@ function renderCurrentEvalItem() {
   const scores = normalizeScores(record.scores);
   setScoresToUI(scores);
   updateLikertPanels(scores);
+  updateSaveAndNextBtn(scores);
 }
 
 function setRealPhraseVisibility(isVisible) {
@@ -572,6 +579,22 @@ function onDimensionScoreChange() {
   state.evaluations.set(item.id, record);
   persistEvaluations();
   updateLikertPanels(scores);
+  updateSaveAndNextBtn(scores);
+}
+
+function updateSaveAndNextBtn(scores) {
+  const allScored = hasAllDimensionsScored(scores);
+  const isLast = state.evalIndex >= state.items.length - 1;
+  el.saveAndNextBtn.disabled = !allScored;
+  el.saveAndNextBtn.textContent = isLast
+    ? `Guardar evaluación (${state.evalIndex + 1}/${state.items.length})`
+    : `Guardar evaluación y pasar a la siguiente (${state.evalIndex + 1}/${state.items.length})`;
+}
+
+function onSaveAndNext() {
+  if (state.evalIndex < state.items.length - 1) {
+    changeEvalItem(state.evalIndex + 1);
+  }
 }
 
 function updateLikertPanels(scores) {
