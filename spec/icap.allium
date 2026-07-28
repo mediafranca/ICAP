@@ -1,0 +1,1336 @@
+-- allium: 3
+-- icap.allium
+--
+-- REGLA CONCEPTUAL DEL INSTRUMENTO:
+--   PICTOS.net publica bibliotecas; ICAP produce registros de evidencia sobre
+--   versiones exactas de sus pictogramas.
+--
+-- Scope: Instrumento de evaluacion de calidad pictografica ICAP v2.
+-- Includes: los cuatro objetos desacoplados (Source, Item, EvaluationRecord,
+--   Aggregate), la capa de ingesta y normalizacion con informe de validacion, las
+--   cuatro capas de medicion (A geometrica, B psicofisica, C interpretativa,
+--   D familia), el veredicto separado por origen del dato, y exportacion en dos
+--   niveles (registro atomico y bundle).
+-- Excludes:
+--   - Autenticacion / gestion de cuentas.
+--   - Algoritmos de vision por computador: black box / deferred.
+--   - Aparato de certificacion (tamanos minimos de muestra, acuerdo
+--     interevaluador, firma verificable, vigencia y revocacion del sello): ver
+--     preguntas abiertas, es trabajo posterior.
+--   - Layout de interfaz: las surfaces describen el contrato de frontera.
+-- Reemplaza: la logica de v1 (promedio de 6 Likert, hexagono,
+--   meetsICAPThreshold). v1 queda congelado en la rama v1-archive.
+--
+-- REVISION 2 (evaluacion arquitectonica). Cambio de fondo: la evaluacion deja de
+-- ser una propiedad del pictograma y pasa a ser un registro independiente,
+-- inmutable y multiple, anclado a una version exacta del item. Consecuencia no
+-- prevista en la evaluacion pero forzosa: el veredicto de dos niveles definido en
+-- la revision 1 asumia un juicio por pictograma, y con N evaluadores esa
+-- derivacion se rompe. Se resuelve con el mismo principio que rige toda la v2,
+-- separar por ORIGEN DEL DATO:
+--   - Vetos A1 (geometria) y D1 (familia): deterministas, no dependen de quien
+--     evalua. Son propiedad de la VERSION DEL ITEM.
+--   - Veto B2 (tamano) y capas B y C: los produce una persona en un contexto.
+--     Son propiedad del REGISTRO, y se agregan entre registros.
+-- El agregado nunca se mezcla con la evidencia original y nunca colapsa en un
+-- numero: reporta cobertura, cuantas personas, bajo que protocolo, con que
+-- desacuerdo y en que contextos.
+--
+-- ADVERTENCIA SOBRE EVIDENCIA LOCAL. El analisis de referencia corrio sobre 13
+-- pictogramas cuando el corpus es de 21. Ninguna cifra local debe tratarse como
+-- calibrada hasta recomputar. Los valores de config son marcadores de posicion.
+
+------------------------------------------------------------
+-- Value Types
+------------------------------------------------------------
+
+-- Metadatos editoriales. Viven en la FUENTE y los items los heredan. Un item
+-- solo declara override cuando difiere. No se duplican fisicamente.
+value EditorialMetadata {
+    author: String?
+    license: String?
+    organization: String?
+    language: String?
+    published_at: Timestamp?
+}
+
+-- Capa A. Cuatro metricas geometricas sobre la mascara binaria figura/fondo.
+-- Determinista: depende del pixel, no de quien mira. Por eso pertenece al item.
+-- Validacion convergente disponible: existen normas publicadas de complejidad y
+-- concrecion de iconos, y un confundido documentado entre complejidad y
+-- familiaridad que conviene tener presente.
+value GeometryLayer {
+    stroke_pct: Decimal            -- A1 grosor de trazo (% del diametro de soporte)
+    unlinked_units: Integer        -- A2 unidades desligadas (componentes conexas)
+    closed_regions: Integer        -- A3 regiones cerradas (huecos topologicos)
+    inferred_contour_pct: Decimal  -- A4 contorno inferido (% del largo de esqueleto)
+}
+
+------------------------------------------------------------
+-- Enumerations
+------------------------------------------------------------
+
+-- Una fuente puede ser una biblioteca completa o un pictograma suelto. Cuando se
+-- ingesta un item individual, ICAP crea una fuente minima de tipo single_item; no
+-- finge que pertenece a una biblioteca real.
+enum SourceType { library | single_item }
+
+-- Resultado de la validacion de una fila del dump. partially_compatible se
+-- presenta al usuario, nunca se corrige en silencio.
+enum RowOutcome { valid | partially_compatible | invalid }
+
+enum FindingKind {
+    duplicate_id
+    missing_image
+    unsupported_format
+    empty_utterance
+    inherited_metadata
+    metadata_override
+    schema_mismatch
+}
+
+-- Los tres ejes de degradacion de la capa B. La separacion entre esta tarea
+-- perceptual y el juicio de comprension de la capa C reproduce la de ISO 9186
+-- partes 2 y 1 respectivamente.
+enum ThresholdAxis { blur | size | shift }
+
+-- Las cuatro dimensiones interpretativas. C4 se agrego en la revision 1:
+-- transparencia y aprendibilidad son constructos distintos, no derivables uno del
+-- otro.
+enum DimensionId { c1_semantic | c2_pragmatic | c3_cultural | c4_learnability }
+
+-- Estado de una respuesta dimensional. Forzar un 3 cuando la persona no sabe
+-- evaluar algo contamina los resultados mas que aceptar la ausencia de dato.
+-- not_qualified es distinto de not_applicable: el primero habla del evaluador, el
+-- segundo del item.
+enum ResponseState { scored | not_applicable | not_qualified | skipped }
+
+-- Codificacion posterior de la respuesta espontanea. La hace un tercero, despues,
+-- no el evaluador durante la sesion.
+enum ResponseCoding { correct | close | alternative | incorrect }
+
+-- Tipos de nota. No todas se publican: las libres pueden contener informacion
+-- sensible.
+enum NoteType { free | suggested_change | curatorial | moderation }
+
+enum Visibility { private | team | public }
+
+-- Alcance declarado del consentimiento. Tiene version propia.
+enum ConsentScope { private_only | aggregated_public | full_public }
+
+-- Cruce C1 x C4. opaque_but_learnable es un veredicto legitimo y distinto de
+-- opaque_and_hard: los sistemas de alta productividad composicional pagan
+-- opacidad inicial a cambio de gramatica visual generativa.
+enum LearningProfile {
+    transparent_and_learnable
+    transparent_but_hard
+    opaque_but_learnable
+    opaque_and_hard
+}
+
+enum Verdict { blocked | admissible }
+
+------------------------------------------------------------
+-- OBJETO 1 — FUENTE
+-- Biblioteca o pictograma individual importado. Aloja los metadatos editoriales
+-- que los items heredan.
+------------------------------------------------------------
+
+entity Source {
+    source_type: SourceType
+    external_id: String
+    external_version: String
+    detected_schema_version: String
+    imported_at: Timestamp
+    metadata: EditorialMetadata
+    status: importing | validated | analysed
+
+    items: Item with source = this
+    report: ImportReport with source = this
+    family: FamilyReport with source = this
+    aggregate: SourceAggregate with source = this
+
+    -- Projections
+    blocked_items: items where deterministic_verdict = blocked
+
+    -- Derived
+    all_geometry_computed: items.count > 0 and items.all(i => i.geometry != null)
+
+    transitions status {
+        importing -> validated
+        validated -> analysed
+        terminal: analysed
+    }
+
+    -- Nunca corregir en silencio: no se puede pasar de la ingesta sin que exista
+    -- el informe de validacion que el usuario puede descargar.
+    invariant NoSilentImport {
+        status != importing implies report != null
+    }
+
+    invariant AnalysedHasFamilyReport {
+        status = analysed implies family != null
+    }
+}
+
+-- Informe de validacion de ingesta. Se muestra ANTES de empezar a evaluar.
+entity ImportReport {
+    source: Source
+    rows_seen: Integer
+    valid_count: Integer
+    partial_count: Integer
+    invalid_count: Integer
+
+    findings: ValidationFinding with report = this
+
+    invariant CountsCoverRows {
+        rows_seen = valid_count + partial_count + invalid_count
+    }
+}
+
+-- Un hallazgo concreto sobre una fila del dump. Cada exclusion y cada herencia
+-- aplicada queda nombrada.
+entity ValidationFinding {
+    report: ImportReport
+    kind: FindingKind
+    row_ref: String
+    outcome: RowOutcome
+    detail: String
+}
+
+------------------------------------------------------------
+-- OBJETO 2 — ITEM NORMALIZADO
+-- El pictograma que ICAP efectivamente presenta, con identidad de version.
+------------------------------------------------------------
+
+-- No basta con row.id. La evaluacion se ancla a una version exacta: si cambia el
+-- dibujo, o si "quiero agua" pasa a "dame agua", las evaluaciones anteriores
+-- siguen existiendo pero quedan asociadas a la version antigua. Esta es la pieza
+-- imprescindible para un sello verificable futuro.
+entity Item {
+    source: Source
+    stable_id: String
+    item_version: String
+    item_dated_at: Timestamp
+
+    utterance: String
+    utterance_hash: String
+    image_ref: String
+    image_hash: String
+    content_hash: String        -- combina image_hash y utterance_hash
+
+    -- Herencia explicita: solo se declara lo que difiere de la fuente.
+    overrides: EditorialMetadata?
+
+    -- Vista resuelta: valores efectivos, para sistemas que no entienden herencia.
+    effective_author: overrides?.author ?? source.metadata.author
+    effective_license: overrides?.license ?? source.metadata.license
+    effective_organization: overrides?.organization ?? source.metadata.organization
+    effective_language: overrides?.language ?? source.metadata.language
+
+    geometry: GeometryLayer?    -- Capa A: ausente hasta que se computa
+
+    -- Relationships
+    records: EvaluationRecord with item = this
+    notes: Note with item = this
+
+    -- Projections
+    current_records: records where status = sealed and pinned_to_current = true
+    superseded_records: records where status = sealed and pinned_to_current = false
+
+    ---- Veredicto determinista (nivel del item, no del evaluador) ----
+    -- A1 y D1 no dependen de quien evalua: son propiedad de esta version del
+    -- item. Ambos son pisos, no predictores estadisticos, y por eso su
+    -- justificacion no depende de la magnitud de ninguna correlacion local.
+
+    -- A1: trazo bajo el minimo, el signo desaparece al reducirse.
+    veto_stroke: geometry != null
+        and geometry.stroke_pct < config.a1_stroke_min_pct
+
+    -- D1: confusable con un vecino del mismo tablero por encima del corte
+    -- critico derivado de la distribucion de la propia familia.
+    veto_confusable: source.family != null
+        and source.family.critical_pairs.any(p => p.a = this or p.b = this)
+
+    deterministic_verdict:
+        if veto_stroke or veto_confusable: blocked else: admissible
+
+    ---- Perfil compensatorio de capa A (se reporta, no elimina) ----
+    a2_ok: geometry != null and geometry.unlinked_units <= config.a2_units_max
+    a3_warning: geometry != null and geometry.closed_regions < config.a3_closed_regions_min
+    a4_ok: geometry != null and geometry.inferred_contour_pct <= config.a4_inferred_contour_max_pct
+
+    invariant BlockedImpliesNamedVeto {
+        deterministic_verdict = blocked implies (veto_stroke or veto_confusable)
+    }
+}
+
+------------------------------------------------------------
+-- OBJETO 3 — EVALUACION
+-- El juicio de una persona sobre una version exacta del item. Independiente,
+-- inmutable una vez sellado, y multiple: diez personas pueden evaluar el mismo
+-- pictograma sin sobrescribirse.
+------------------------------------------------------------
+
+-- Perfil del evaluador. La identidad no viaja al archivo publico: el registro se
+-- ancla a un seudonimo estable local, que permite analisis longitudinal sin
+-- publicar identidad.
+entity EvaluatorProfile {
+    pseudonym: String
+    age_range: String
+    gender: String
+    region: String
+    education: String?
+    primary_language: String
+    aac_experience: String
+    role: String
+    consent_version: String
+    consent_scope: ConsentScope
+}
+
+-- Contexto de evaluacion, capturado una vez por sesion. Misma logica de herencia
+-- que fuente/item, aplicada al protocolo.
+value EvaluationContext {
+    target_population: String     -- poblacion respecto de la cual se juzga
+    communicative_task: String
+    environment: String           -- hogar, escuela, espacio publico
+    modality: String
+    presentation_size_px: Integer -- referente del veto B2
+    label_shown: Boolean          -- si se mostro etiqueta o contexto adicional
+}
+
+entity EvaluationSession {
+    evaluator: EvaluatorProfile
+    context: EvaluationContext
+    protocol_version: String
+    rubric_version: String
+    app_version: String
+    started_at: Timestamp
+
+    records: EvaluationRecord with session = this
+    calibration: SessionCalibration with session = this
+
+    -- La calibracion es bloqueante: no se abren registros sin ella. El sitio es
+    -- abierto, de modo que la calibracion es la unica defensa disponible contra
+    -- la varianza entre jueces, que en v2 deja de ser ruido individual porque la
+    -- capa C alimenta un agregado entre evaluadores.
+    is_calibrated: calibration != null and calibration.status = anchors_revealed
+}
+
+------------------------------------------------------------
+-- CALIBRACION PREVIA
+-- El evaluador puntua casos de referencia ANTES de ver el ancla consensuada. La
+-- divergencia resultante es un dato del registro, no una nota privada.
+------------------------------------------------------------
+
+-- Conjunto de casos de calibracion, versionado. Su version viaja en el registro
+-- junto a las de rubrica y protocolo, porque es parte de COMO se obtuvo el dato.
+entity CalibrationSet {
+    version: String
+    published_at: Timestamp
+
+    cases: CalibrationCase with calibration_set = this
+}
+
+-- Un caso de referencia: un pictograma con anclas consensuadas por dimension.
+entity CalibrationCase {
+    calibration_set: CalibrationSet
+    label: String
+    image_ref: String
+    utterance: String
+
+    anchors: CalibrationAnchor with case = this
+}
+
+-- El valor consensuado para una dimension en un caso, con su fundamento en la
+-- rubrica. El fundamento importa tanto como el numero: calibrar es alinear el
+-- uso de la escala, no memorizar respuestas.
+entity CalibrationAnchor {
+    case: CalibrationCase
+    dimension: DimensionId
+    anchor_score: Integer
+    rationale: String
+}
+
+-- La calibracion de una sesion concreta. Mismo patron que el momento de
+-- comprension espontanea: se puntua primero, se revela el ancla despues, y no
+-- hay camino de vuelta al estado que permite puntuar.
+entity SessionCalibration {
+    session: EvaluationSession
+    calibration_set: CalibrationSet
+    status: scoring | anchors_revealed
+    started_at: Timestamp
+    completed_at: Timestamp?
+
+    responses: CalibrationResponse with calibration = this
+
+    -- Divergencia CON SIGNO agregada: distingue a quien es sistematicamente
+    -- generoso de quien es sistematicamente severo. Un promedio de valores
+    -- absolutos perderia justamente esa direccion.
+    mean_signed_divergence: mean_of(responses, r => r.divergence)
+    mean_absolute_divergence: mean_of(responses, r => r.abs_divergence)
+
+    -- Se REPORTA, no bloquea. Impedir evaluar a quien diverge del ancla seria un
+    -- veto sobre una persona, y no hay evidencia de que la divergencia respecto
+    -- de un ancla consensuada prediga mal juicio. Coherente con la arquitectura
+    -- del instrumento: los vetos son pisos fisicos, no juicios sobre el juez.
+    diverges_notably: mean_absolute_divergence > config.calibration_divergence_flag
+
+    transitions status {
+        scoring -> anchors_revealed
+        terminal: anchors_revealed
+    }
+
+    invariant RevealedIsComplete {
+        status = anchors_revealed implies completed_at != null
+    }
+}
+
+-- La respuesta del evaluador a un ancla, emitida a ciegas.
+entity CalibrationResponse {
+    calibration: SessionCalibration
+    anchor: CalibrationAnchor
+    given_score: Integer
+
+    divergence: given_score - anchor.anchor_score
+    abs_divergence: abs_diff(given_score, anchor.anchor_score)
+}
+
+-- El registro. Congela la version evaluada mediante item_content_hash, de modo
+-- que si el item cambia despues, este registro sigue siendo evidencia valida
+-- sobre la version antigua.
+--
+-- La rubrica dice QUE significan los puntajes; el protocolo dice COMO se
+-- obtuvieron. Un registro solo es comparable con otro si se conocen ambos, por
+-- eso ambas versiones viajan en el registro y no en la aplicacion.
+entity EvaluationRecord {
+    item: Item
+    session: EvaluationSession
+    item_content_hash: String
+    source_id: String
+    source_version: String
+    protocol_version: String
+    rubric_version: String
+    calibration_set_version: String
+    schema_version: String
+    created_at: Timestamp
+    status: in_progress | sealed
+
+    context_override: EvaluationContext?
+
+    -- Relationships
+    comprehension: ComprehensionMoment with record = this
+    responses: DimensionResponse with record = this
+    thresholds: ThresholdMeasurement with record = this
+    notes: Note with record = this
+
+    -- Projections
+    scored_responses: responses where state = scored
+
+    -- Herencia de contexto con excepcion explicita.
+    effective_context: context_override ?? session.context
+
+    -- Si el item cambio despues de sellado, el registro deja de estar vigente
+    -- pero no se borra ni se corrige: queda asociado a la version que evaluo.
+    pinned_to_current: item_content_hash = item.content_hash
+
+    ---- Veto de nivel de registro ----
+    -- B2 depende de una medicion humana Y del tamano de presentacion declarado en
+    -- el contexto. El mismo pictograma puede aprobar para un tablero de escritorio
+    -- y fallar para senaletica lejana: por eso este veto no puede vivir en el item.
+    size_measurement: ThresholdMeasurement{record: this, axis: size}
+
+    veto_size: size_measurement != null
+        and size_measurement.threshold != null
+        and size_measurement.threshold > effective_context.presentation_size_px
+
+    record_verdict: if veto_size: blocked else: admissible
+
+    transitions status {
+        in_progress -> sealed
+        terminal: sealed
+    }
+
+    invariant SealedHasComprehension {
+        status = sealed implies comprehension != null
+    }
+}
+
+-- Momento de comprension. Dos momentos claramente separados y registrados: se
+-- muestra solo el pictograma y se pregunta que comunica; recien despues se revela
+-- la frase objetivo y se evalua correspondencia.
+--
+-- La prohibicion de reescribir en silencio la primera respuesta es ESTRUCTURAL,
+-- no una advertencia de interfaz: la unica regla que escribe spontaneous_response
+-- exige status = awaiting_spontaneous, y ese estado no es alcanzable de vuelta
+-- desde el grafo de transiciones.
+entity ComprehensionMoment {
+    record: EvaluationRecord
+    status: awaiting_spontaneous | spontaneous_closed | phrase_revealed
+
+    -- Momento 1: solo el pictograma
+    spontaneous_response: String?
+    response_language: String?
+    response_seconds: Integer?
+    declared_confidence: Integer?    -- seguridad declarada, 1-5
+    spontaneous_skipped: Boolean
+
+    -- Momento 2: revelada la frase objetivo
+    correspondence: Integer?
+
+    -- Codificacion posterior, por un tercero
+    coding: ResponseCoding?
+    coded_by: String?
+    coded_at: Timestamp?
+
+    transitions status {
+        awaiting_spontaneous -> spontaneous_closed
+        spontaneous_closed -> phrase_revealed
+        terminal: phrase_revealed
+    }
+
+    invariant NoRevealBeforeClosing {
+        status = phrase_revealed
+            implies (spontaneous_response != null or spontaneous_skipped)
+    }
+}
+
+-- Respuesta a una dimension interpretativa. La ausencia de dato es un dato:
+-- not_applicable habla del item, not_qualified habla de la competencia declarada
+-- del evaluador, skipped es omision sin motivo.
+entity DimensionResponse {
+    record: EvaluationRecord
+    dimension: DimensionId
+    state: ResponseState
+    score: Integer?
+    reason: String?
+
+    invariant ScoredHasScore {
+        state = scored implies score != null
+    }
+
+    -- Declarar falta de competencia obliga a decir respecto de que.
+    invariant NotQualifiedHasReason {
+        state = not_qualified implies reason != null
+    }
+
+    invariant OnlyScoredCarriesScore {
+        state != scored implies score = null
+    }
+}
+
+-- Capa B. Umbral psicofisico por metodo de ajuste con doble pasada. La histeresis
+-- es el estadistico de fiabilidad del dato, no un indicador cualitativo: el
+-- ranking de fragilidad depende de que el orden de umbrales sea estable.
+entity ThresholdMeasurement {
+    record: EvaluationRecord
+    axis: ThresholdAxis
+    status: pending | descending_done | completed
+
+    descending_value: Decimal?
+    ascending_value: Decimal?
+    threshold: Decimal?
+    hysteresis: Decimal?
+
+    transitions status {
+        pending -> descending_done
+        descending_done -> completed
+        terminal: completed
+    }
+}
+
+-- Nota tipada. Las curatoriales llegan importadas desde la fuente y no pertenecen
+-- a ningun registro; las de moderacion son decision posterior del equipo revisor.
+-- La visibilidad es explicita porque las notas libres pueden contener informacion
+-- sensible.
+entity Note {
+    item: Item
+    record: EvaluationRecord?
+    note_type: NoteType
+    body: String
+    visibility: Visibility
+    created_at: Timestamp
+
+    invariant CuratorialHasNoRecord {
+        note_type = curatorial implies record = null
+    }
+}
+
+------------------------------------------------------------
+-- OBJETO 4 — AGREGADO
+-- Estadisticas calculadas a partir de muchas evaluaciones. NUNCA mezcladas con la
+-- evidencia original, NUNCA colapsadas en un numero unico.
+------------------------------------------------------------
+
+-- El agregado de una fuente no dice "esta biblioteca obtuvo 4,2". Dice cuantos de
+-- sus items fueron evaluados, por cuantas personas, bajo que protocolo, con que
+-- desacuerdo y en que contextos. Esa es la estructura de una certificacion seria.
+entity SourceAggregate {
+    source: Source
+    items_total: Integer
+    items_with_records: Integer
+    evaluator_count: Integer
+    record_count: Integer
+    protocol_versions_covered: Set<String>
+    contexts_covered: Set<String>
+    superseded_record_count: Integer
+
+    coverage_pct: items_with_records * 100 / items_total
+
+    invariant CoverageBounded {
+        items_with_records <= items_total
+    }
+}
+
+-- Capa D. Propiedades de familia, deterministas sobre el set completo.
+--
+-- FUNDAMENTO. Duncan y Humphreys: la dificultad de busqueda CRECE con la
+-- similitud objetivo-distractor y DECRECE con la similitud entre distractores.
+-- D1 mide el primer termino, D2 el segundo, y estan EN TENSION: una familia muy
+-- homogenea favorece la busqueda por agrupamiento y a la vez empeora la
+-- discriminacion entre sus miembros. El objetivo de diseno es alta homogeneidad
+-- de ESTILO con baja similitud de SILUETA, que es el logro de la tradicion
+-- Aicher. Evidencia con la poblacion destinataria: agrupar simbolos por color
+-- interno acelera la busqueda en personas con sindrome de Down y con TEA.
+entity FamilyReport {
+    source: Source
+
+    -- D2 consistencia paradigmatica
+    cv_stroke_pct: Decimal
+    cv_head_pct: Decimal
+    cv_cardinal_pct: Decimal
+    cv_entropy_pct: Decimal
+
+    -- D1 confusabilidad: distribucion completa, no solo la cola marcada. Una
+    -- biblioteca de 100 items tiene 4.950 pares; un corte fijo importado produce
+    -- alertas por construccion. El corte se deriva de la propia distribucion.
+    confusable_pairs: ConfusablePair with family = this
+    pair_median_r: Decimal
+    pair_p90_r: Decimal
+    critical_r_cutoff: Decimal
+
+    critical_pairs: confusable_pairs where r >= critical_r_cutoff
+
+    d2_consistent: cv_stroke_pct < config.d2_cv_max_pct
+        and cv_head_pct < config.d2_cv_max_pct
+        and cv_cardinal_pct < config.d2_cv_max_pct
+        and cv_entropy_pct < config.d2_cv_max_pct
+}
+
+entity ConfusablePair {
+    family: FamilyReport
+    a: Item
+    b: Item
+    r: Decimal
+}
+
+------------------------------------------------------------
+-- EXPORTACION EN DOS NIVELES
+------------------------------------------------------------
+
+-- Un registro atomico, durable y firmable, o un bundle con la fuente, el conjunto
+-- de registros y el resumen calculado. Permite evaluar un pictograma hoy,
+-- agregarlo despues a una biblioteca y combinar resultados sin rehacer el archivo.
+entity Export {
+    kind: RecordExport | BundleExport
+    schema_version: String
+    app_version: String
+    created_at: Timestamp
+    -- Privacidad por diseno: el archivo publico no lleva el perfil completo del
+    -- evaluador, solo el seudonimo y atributos agrupados segun el alcance del
+    -- consentimiento declarado.
+    includes_evaluator_profile: Boolean
+}
+
+variant RecordExport : Export {
+    record: EvaluationRecord
+}
+
+variant BundleExport : Export {
+    source: Source
+    resolved_inheritance: Boolean   -- vista compacta o resuelta
+}
+
+------------------------------------------------------------
+-- Config
+------------------------------------------------------------
+
+-- MARCADORES DE POSICION, NO CONSTANTES CALIBRADAS. La decision entre umbrales
+-- absolutos y percentiles relativos queda pendiente del corpus completo.
+-- critical_r_cutoff ya opera de forma relativa, lo que demuestra que el mecanismo
+-- es implementable sin rehacer el modelo de datos.
+config {
+    a1_stroke_min_pct: Decimal = 4.0
+    a2_units_max: Integer = 3
+    a3_closed_regions_min: Integer = 1
+    a4_inferred_contour_max_pct: Decimal = 10.0
+    c_likert_floor: Integer = 3
+    d2_cv_max_pct: Decimal = 25.0
+    sample_fraction: Decimal = 0.20
+    sample_min_items: Integer = 8
+    schema_version: String = "icap-evaluation-2.0.0"
+    rubric_version: String = "icap-rubric-1.0.0"
+    protocol_version: String = "icap-protocol-1.0.0"
+    calibration_set_version: String = "icap-calibration-1.0.0"
+    calibration_min_responses: Integer = 4
+    calibration_divergence_flag: Decimal = 1.0
+}
+
+------------------------------------------------------------
+-- Rules
+------------------------------------------------------------
+
+-- INGESTA. Todo importador entrega el mismo modelo interno, de modo que manana
+-- ICAP puede aceptar una biblioteca de PICTOS.net, un pictograma suelto, varios
+-- sueltos u otras bibliotecas mediante adaptadores, sin tocar el resto del
+-- instrumento. La normalizacion es responsabilidad del adaptador.
+rule ImportSource {
+    when: ImportSource(evaluator, payload, adapter)
+    ensures:
+        let source = Source.created(
+            source_type: adapter_source_type(payload),
+            external_id: adapter_source_id(payload),
+            external_version: adapter_source_version(payload),
+            detected_schema_version: detect_schema(payload),
+            imported_at: now,
+            metadata: adapter_metadata(payload),
+            status: importing
+        )
+        SourceValidation.normalize(source, payload, adapter)
+}
+
+-- Cierre de la ingesta: existe el informe y el usuario puede leerlo antes de
+-- evaluar nada. Nunca se corrige en silencio.
+rule PublishImportReport {
+    when: SourceNormalized(source, rows_seen, valid_count, partial_count, invalid_count)
+    requires: source.status = importing
+    ensures:
+        ImportReport.created(
+            source: source,
+            rows_seen: rows_seen,
+            valid_count: valid_count,
+            partial_count: partial_count,
+            invalid_count: invalid_count
+        )
+        source.status = validated
+}
+
+-- Capa A, automatica. La geometria es propiedad del item porque depende del pixel.
+rule ComputeGeometry {
+    when: item: Item.created
+    ensures:
+        item.geometry = compute_geometry(item.image_ref)
+}
+
+-- Cierre del pipeline automatico: informe de familia disponible antes de pedir un
+-- solo dato humano.
+rule CompleteFamilyAnalysis {
+    when: source: Source.all_geometry_computed
+    requires: source.status = validated
+    ensures:
+        source.status = analysed
+        FamilyAnalysis.compute(source)
+        ThresholdSampling.select(source)
+}
+
+-- CALIBRACION, paso bloqueante entre el perfil y la evaluacion. Se abre con el
+-- conjunto vigente y arranca en estado de puntuacion: las anclas NO son visibles.
+rule StartCalibration {
+    when: StartCalibration(evaluator, session, calibration_set)
+    requires: session.calibration = null
+    ensures:
+        SessionCalibration.created(
+            session: session,
+            calibration_set: calibration_set,
+            status: scoring,
+            started_at: now
+        )
+}
+
+-- El evaluador puntua a ciegas. Solo admite escritura mientras el ancla sigue
+-- oculta: una vez reveladas, no hay transicion de vuelta a scoring.
+rule RecordCalibrationResponse {
+    when: RecordCalibrationResponse(evaluator, calibration, anchor, given_score)
+    requires: calibration.status = scoring
+    ensures:
+        let existing = CalibrationResponse{calibration: calibration, anchor: anchor}
+        if exists existing:
+            existing.given_score = given_score
+        else:
+            CalibrationResponse.created(
+                calibration: calibration,
+                anchor: anchor,
+                given_score: given_score
+            )
+}
+
+-- Se revelan las anclas con su fundamento. Aqui la calibracion cumple su funcion
+-- pedagogica y, simultaneamente, queda fijada la divergencia como dato.
+rule RevealCalibrationAnchors {
+    when: RevealCalibrationAnchors(evaluator, calibration)
+    requires: calibration.status = scoring
+    requires: calibration.responses.count >= config.calibration_min_responses
+    ensures:
+        calibration.status = anchors_revealed
+        calibration.completed_at = now
+}
+
+-- Abrir un registro. Congela la version del item en el momento de abrir.
+rule OpenEvaluationRecord {
+    when: OpenEvaluationRecord(evaluator, session, item)
+    requires: item.source.status = analysed
+    requires: session.is_calibrated
+    ensures:
+        let record = EvaluationRecord.created(
+            item: item,
+            session: session,
+            item_content_hash: item.content_hash,
+            source_id: item.source.external_id,
+            source_version: item.source.external_version,
+            protocol_version: session.protocol_version,
+            rubric_version: session.rubric_version,
+            calibration_set_version: session.calibration.calibration_set.version,
+            schema_version: config.schema_version,
+            created_at: now,
+            status: in_progress
+        )
+        ComprehensionMoment.created(
+            record: record,
+            status: awaiting_spontaneous,
+            spontaneous_skipped: false
+        )
+}
+
+-- MOMENTO 1. Se registra la respuesta espontanea con sus metadatos de respuesta.
+-- Al cerrarse, ya no es reescribible: no existe transicion de vuelta.
+rule RecordSpontaneousResponse {
+    when: RecordSpontaneousResponse(evaluator, moment, response, language, seconds, confidence)
+    requires: moment.status = awaiting_spontaneous
+    ensures:
+        moment.spontaneous_response = response
+        moment.response_language = language
+        moment.response_seconds = seconds
+        moment.declared_confidence = confidence
+        moment.status = spontaneous_closed
+}
+
+rule SkipSpontaneousResponse {
+    when: SkipSpontaneousResponse(evaluator, moment)
+    requires: moment.status = awaiting_spontaneous
+    ensures:
+        moment.spontaneous_skipped = true
+        moment.status = spontaneous_closed
+}
+
+-- MOMENTO 2. Recien ahora se revela la frase objetivo y se evalua correspondencia.
+rule RevealTargetPhrase {
+    when: RevealTargetPhrase(evaluator, moment, correspondence)
+    requires: moment.status = spontaneous_closed
+    ensures:
+        moment.correspondence = correspondence
+        moment.status = phrase_revealed
+}
+
+-- Codificacion posterior de la respuesta abierta, por un tercero. No la hace el
+-- evaluador durante la sesion.
+rule CodeSpontaneousResponse {
+    when: CodeSpontaneousResponse(coder, moment, coding)
+    requires: moment.status = phrase_revealed
+    requires: moment.spontaneous_response != null
+    ensures:
+        moment.coding = coding
+        moment.coded_by = coder.pseudonym
+        moment.coded_at = now
+}
+
+-- Capa C. Cada dimension se responde con estado explicito. No hay puntaje por
+-- defecto ni valor forzado.
+rule RecordDimensionResponse {
+    when: RecordDimensionResponse(evaluator, record, dimension, state, score?, reason?)
+    requires: record.status = in_progress
+    ensures:
+        let existing = DimensionResponse{record: record, dimension: dimension}
+        if exists existing:
+            existing.state = state
+            existing.score = score
+            existing.reason = reason
+        else:
+            DimensionResponse.created(
+                record: record,
+                dimension: dimension,
+                state: state,
+                score: score,
+                reason: reason
+            )
+}
+
+-- Capa B, pasada descendente (nitido -> degradado).
+rule RecordDescendingPass {
+    when: RecordThresholdPass(evaluator, measurement, value)
+    requires: measurement.status = pending
+    ensures:
+        measurement.descending_value = value
+        measurement.status = descending_done
+}
+
+-- Capa B, pasada ascendente. Cierra la medicion y deriva umbral e histeresis.
+rule RecordAscendingPass {
+    when: RecordThresholdPass(evaluator, measurement, value)
+    requires: measurement.status = descending_done
+    ensures:
+        measurement.ascending_value = value
+        measurement.threshold = mean_pair(measurement.descending_value, value)
+        measurement.hysteresis = abs_diff(measurement.descending_value, value)
+        measurement.status = completed
+}
+
+-- Nota tipada sobre un item, con visibilidad explicita.
+rule AddNote {
+    when: AddNote(author, item, record?, note_type, body, visibility)
+    ensures:
+        Note.created(
+            item: item,
+            record: record,
+            note_type: note_type,
+            body: body,
+            visibility: visibility,
+            created_at: now
+        )
+}
+
+-- Sellar el registro lo vuelve inmutable: ninguna regla de escritura admite
+-- status = sealed en su precondicion.
+rule SealEvaluationRecord {
+    when: SealEvaluationRecord(evaluator, record)
+    requires: record.status = in_progress
+    requires: record.comprehension.status = phrase_revealed
+    ensures:
+        record.status = sealed
+}
+
+-- Recalculo del agregado cuando entra evidencia nueva. Nunca se mezcla con la
+-- evidencia original: vive en su propio objeto.
+rule RecomputeAggregate {
+    when: record: EvaluationRecord.status transitions_to sealed
+    ensures:
+        AggregateComputation.recompute(record.item.source)
+}
+
+-- Exportacion atomica: un registro durable y firmable.
+rule ExportRecord {
+    when: ExportRecord(evaluator, record, include_profile)
+    requires: record.status = sealed
+    ensures:
+        RecordExport.created(
+            record: record,
+            schema_version: config.schema_version,
+            app_version: record.session.app_version,
+            created_at: now,
+            includes_evaluator_profile: include_profile
+        )
+}
+
+-- Exportacion de bundle: fuente, registros y resumen calculado, en vista compacta
+-- (conserva herencia) o resuelta (materializa valores efectivos).
+rule ExportBundle {
+    when: ExportBundle(evaluator, source, resolved, include_profile)
+    requires: source.status = analysed
+    ensures:
+        BundleExport.created(
+            source: source,
+            resolved_inheritance: resolved,
+            schema_version: config.schema_version,
+            app_version: app_version_of(source),
+            created_at: now,
+            includes_evaluator_profile: include_profile
+        )
+}
+
+------------------------------------------------------------
+-- Invariants
+------------------------------------------------------------
+
+-- Identidad de version: todo registro sellado declara el hash del item que
+-- efectivamente evaluo. Es la pieza sobre la que descansa cualquier sello futuro.
+invariant SealedRecordPinsVersion {
+    for r in EvaluationRecords:
+        r.status = sealed implies r.item_content_hash != null
+}
+
+-- Comparabilidad: rubrica, protocolo y conjunto de calibracion viajan en el
+-- registro, no en la aplicacion. Un registro sin las tres versiones no es
+-- comparable con ningun otro.
+invariant RecordDeclaresRubricAndProtocol {
+    for r in EvaluationRecords:
+        r.rubric_version != null
+            and r.protocol_version != null
+            and r.calibration_set_version != null
+}
+
+-- Ningun registro proviene de una sesion sin calibrar.
+invariant RecordsComeFromCalibratedSessions {
+    for r in EvaluationRecords:
+        r.session.is_calibrated
+}
+
+-- A lo sumo una respuesta de calibracion por ancla.
+invariant OneCalibrationResponsePerAnchor {
+    for a in CalibrationResponses:
+        for b in CalibrationResponses:
+            a != b and a.calibration = b.calibration implies a.anchor != b.anchor
+}
+
+-- A lo sumo una medicion por par (registro, eje).
+invariant OneMeasurementPerAxisPerRecord {
+    for a in ThresholdMeasurements:
+        for b in ThresholdMeasurements:
+            a != b and a.record = b.record implies a.axis != b.axis
+}
+
+-- A lo sumo una respuesta por par (registro, dimension).
+invariant OneResponsePerDimension {
+    for a in DimensionResponses:
+        for b in DimensionResponses:
+            a != b and a.record = b.record implies a.dimension != b.dimension
+}
+
+-- Privacidad por diseno: un export que declara no incluir el perfil no puede
+-- hacerlo, y el consentimiento con alcance privado prohibe la publicacion.
+invariant PrivateConsentNeverPublished {
+    for e in Exports:
+        e.kind = RecordExport and e.includes_evaluator_profile
+            implies e.record.session.evaluator.consent_scope != private_only
+}
+
+------------------------------------------------------------
+-- Actor Declarations
+------------------------------------------------------------
+
+-- El evaluador, identificado por un perfil con consentimiento versionado.
+actor Evaluator {
+    identified_by: EvaluatorProfile where consent_version != null
+}
+
+-- Quien codifica respuestas abiertas a posteriori. Rol distinto del evaluador:
+-- la codificacion no se hace durante la sesion.
+actor Coder {
+    identified_by: EvaluatorProfile where role = "coder"
+}
+
+------------------------------------------------------------
+-- Surfaces
+------------------------------------------------------------
+
+-- Paso 1: importar. Un adaptador por tipo de fuente, un solo modelo interno.
+surface SourceImport {
+    facing evaluator: Evaluator
+
+    provides:
+        ImportSource(evaluator, payload, adapter)
+
+    @guidance
+        -- El importador acepta biblioteca completa, pictograma suelto o varios
+        -- sueltos. Un item individual genera una fuente minima de tipo
+        -- single_item: no se finge pertenencia a una biblioteca real.
+}
+
+-- Informe de validacion, ANTES de evaluar. Descargable.
+surface ImportReportView {
+    facing viewer: Evaluator
+
+    context report: ImportReport
+
+    exposes:
+        report.source.detected_schema_version
+        report.rows_seen
+        report.valid_count
+        report.partial_count
+        report.invalid_count
+        for finding in report.findings:
+            finding.kind
+            finding.row_ref
+            finding.outcome
+            finding.detail
+
+    @guarantee NeverSilentlyCorrected
+        -- Toda fila excluida, todo ID duplicado, toda imagen ausente, todo
+        -- formato no admitido, toda frase vacia y toda herencia o excepcion de
+        -- metadatos aparece nombrada en el informe. ICAP no corrige en silencio.
+
+    @guarantee ReportIsDownloadable
+        -- El informe se puede descargar antes de comenzar la evaluacion.
+}
+
+-- Calibracion previa, bloqueante. Dos fases en una misma surface: se puntua con
+-- las anclas ocultas, y recien al revelarlas aparece el fundamento de rubrica.
+surface CalibrationTask {
+    facing evaluator: Evaluator
+
+    context calibration: SessionCalibration
+
+    exposes:
+        calibration.calibration_set.version
+        calibration.status
+        for case in calibration.calibration_set.cases:
+            case.label
+            case.image_ref
+            case.utterance
+        for response in calibration.responses:
+            response.given_score
+
+    provides:
+        RecordCalibrationResponse(evaluator, calibration, anchor, given_score)
+            when calibration.status = scoring
+        RevealCalibrationAnchors(evaluator, calibration)
+            when calibration.status = scoring
+
+    @guarantee AnchorsHiddenWhileScoring
+        -- anchor_score y rationale no se exponen mientras status = scoring.
+        -- Mostrarlos antes convertiria la calibracion en una lectura y anularia
+        -- el dato de divergencia, que es la unica estimacion de varianza entre
+        -- jueces que el instrumento puede obtener en un sitio abierto.
+
+    @guarantee DivergenceNeverBlocks
+        -- La divergencia se reporta y viaja en el registro, pero no impide
+        -- evaluar. Los vetos del instrumento son pisos fisicos del signo, no
+        -- juicios sobre la competencia de quien juzga.
+
+    @guidance
+        -- Al revelar, mostrar el ancla junto a su fundamento de rubrica y junto
+        -- a lo que la persona puso. La funcion pedagogica esta en la comparacion,
+        -- no en el numero.
+}
+
+-- Momento 1: solo el pictograma. La frase objetivo NO es visible aqui.
+surface SpontaneousComprehension {
+    facing evaluator: Evaluator
+
+    context moment: ComprehensionMoment
+
+    exposes:
+        moment.record.item.image_ref
+        moment.status
+
+    provides:
+        RecordSpontaneousResponse(evaluator, moment, response, language, seconds, confidence)
+            when moment.status = awaiting_spontaneous
+        SkipSpontaneousResponse(evaluator, moment)
+            when moment.status = awaiting_spontaneous
+
+    @guarantee TargetPhraseHidden
+        -- La frase objetivo no se expone en esta surface. Exponerla
+        -- contaminaria el dato de comprension espontanea, que es el unico
+        -- momento en que se mide reconocimiento sin clave.
+
+    @guarantee NoSilentRewrite
+        -- Cerrada la respuesta espontanea, no hay camino de vuelta al estado
+        -- que permite escribirla. La prohibicion es estructural, no una
+        -- advertencia de interfaz.
+}
+
+-- Momento 2: revelada la frase, se evalua correspondencia.
+surface PhraseCorrespondence {
+    facing evaluator: Evaluator
+
+    context moment: ComprehensionMoment
+
+    exposes:
+        moment.record.item.image_ref
+        moment.record.item.utterance
+        moment.spontaneous_response
+        moment.declared_confidence
+
+    provides:
+        RevealTargetPhrase(evaluator, moment, correspondence)
+            when moment.status = spontaneous_closed
+}
+
+-- Codificacion posterior de la respuesta abierta.
+surface ResponseCodingView {
+    facing coder: Coder
+
+    context moment: ComprehensionMoment
+
+    exposes:
+        moment.spontaneous_response
+        moment.response_language
+        moment.record.item.utterance
+
+    provides:
+        CodeSpontaneousResponse(coder, moment, coding)
+            when moment.status = phrase_revealed
+}
+
+-- Capa C con estados explicitos de ausencia de dato.
+surface JudgmentEntry {
+    facing evaluator: Evaluator
+
+    context record: EvaluationRecord
+
+    exposes:
+        record.item.utterance
+        record.effective_context
+        for response in record.responses:
+            response.dimension
+            response.state
+            response.score
+
+    provides:
+        RecordDimensionResponse(evaluator, record, dimension, state, score?, reason?)
+            when record.status = in_progress
+
+    @guarantee NoForcedMidpoint
+        -- Ninguna dimension tiene puntaje por defecto. No poder juzgar algo se
+        -- registra como not_qualified con motivo, no como un 3.
+}
+
+-- Capa B, sobre la submuestra.
+surface ThresholdTask {
+    facing evaluator: Evaluator
+
+    context measurement: ThresholdMeasurement
+
+    exposes:
+        measurement.axis
+        measurement.status
+        measurement.hysteresis
+        measurement.record.item.image_ref
+
+    provides:
+        RecordThresholdPass(evaluator, measurement, value)
+
+    @guidance
+        -- Tarea con respuesta verificable, no preferencia. Doble pasada
+        -- obligatoria, punto de partida y orden de items aleatorizados.
+}
+
+-- Ficha del item. Encabezada por el veredicto determinista, que es propiedad de
+-- esta version del item; los resultados humanos se muestran agregados aparte.
+surface ItemFicha {
+    facing viewer: Evaluator
+
+    context item: Item
+
+    exposes:
+        item.utterance
+        item.item_version
+        item.content_hash
+        item.deterministic_verdict
+        item.veto_stroke
+        item.veto_confusable
+        item.geometry
+        item.a2_ok
+        item.a3_warning
+        item.a4_ok
+        item.effective_author
+        item.effective_license
+        for record in item.current_records:
+            record.record_verdict
+            record.effective_context
+        for note in item.notes where visibility = public:
+            note.note_type
+            note.body
+
+    @guarantee VetoesAreNamed
+        -- Un item bloqueado muestra CUAL veto fallo. Nunca un rojo agregado sin
+        -- causa identificada.
+
+    @guarantee VersionIsVisible
+        -- La ficha muestra sobre que version se computo. Los registros de
+        -- versiones superadas se listan aparte, no se borran ni se mezclan.
+}
+
+-- Informe de familia (capa D).
+surface FamilyReportView {
+    facing viewer: Evaluator
+
+    context family: FamilyReport
+
+    exposes:
+        family.source.external_version
+        family.cv_stroke_pct
+        family.cv_head_pct
+        family.cv_cardinal_pct
+        family.cv_entropy_pct
+        family.d2_consistent
+        family.pair_median_r
+        family.pair_p90_r
+        family.critical_r_cutoff
+        for pair in family.critical_pairs:
+            pair.a.utterance
+            pair.b.utterance
+            pair.r
+
+    @guarantee PairDistributionReported
+        -- La matriz D1 se reporta con su distribucion completa, no solo con la
+        -- cola que cruza el corte.
+
+    @guidance
+        -- Figura de portada: la fuente situada en el plano D1 x D2. Dos ejes
+        -- conmensurables que muestran los dos terminos de la ecuacion de Duncan
+        -- y Humphreys y su tension.
+}
+
+-- Agregado. Nunca un numero unico.
+surface AggregateView {
+    facing viewer: Evaluator
+
+    context aggregate: SourceAggregate
+
+    exposes:
+        aggregate.items_total
+        aggregate.items_with_records
+        aggregate.coverage_pct
+        aggregate.evaluator_count
+        aggregate.record_count
+        aggregate.protocol_versions_covered
+        aggregate.contexts_covered
+        aggregate.superseded_record_count
+
+    @guarantee NeverASingleNumber
+        -- El agregado no dice "esta biblioteca obtuvo 4,2". Dice que porcentaje
+        -- de sus items fue evaluado, por cuantas personas, bajo que protocolo,
+        -- con que desacuerdo y en que contextos.
+
+    @guarantee EvidenceNeverMixed
+        -- Las estadisticas viven en su propio objeto. No se escriben sobre los
+        -- registros ni sobre los items.
+}
+
+------------------------------------------------------------
+-- Deferred Specifications
+------------------------------------------------------------
+
+-- Normalizacion por adaptador y validacion fila por fila. Crea los Item y los
+-- ValidationFinding, resuelve herencia y calcula hashes.
+deferred SourceValidation.normalize     -- see: spec/ingest-validation.allium
+
+-- Capa D: matriz de confusabilidad con distribucion y corte derivado,
+-- coeficientes de variacion y ranking de fragilidad.
+deferred FamilyAnalysis.compute         -- see: spec/family-analysis.allium
+
+-- Seleccion de la submuestra de capa B.
+deferred ThresholdSampling.select       -- see: spec/threshold-sampling.allium
+
+-- Agregacion entre registros: cobertura, distribuciones, desacuerdo entre
+-- evaluadores y contextos cubiertos.
+deferred AggregateComputation.recompute -- see: spec/aggregation.allium
+
+------------------------------------------------------------
+-- Open Questions
+------------------------------------------------------------
+
+open question "CORPUS: el analisis de referencia corrio sobre 13 pictogramas cuando el corpus es de 21. Toda cifra empirica local debe recomputarse antes de tratarse como evidencia."
+open question "Agregacion de capa C entre registros: que estadistico resume respuestas ordinales con estados de ausencia mezclados (scored, not_applicable, not_qualified, skipped). Los estados de ausencia no son intercambiables y no deben promediarse juntos."
+open question "Acuerdo interevaluador: la eleccion de coeficiente para escalas ordinales cambia las conclusiones (kappa ponderado cuadratico o ICC). Declararlo en el protocolo, no en la aplicacion. La divergencia de calibracion es una estimacion previa y barata, pero no sustituye al acuerdo medido sobre los items reales."
+open question "Uso de la divergencia de calibracion: hoy solo se reporta. Definir si mas adelante se usa para ponderar registros, para segmentar el agregado, o solo como descriptor. Ponderar exige evidencia de que la divergencia respecto del ancla predice algo, evidencia que hoy no existe."
+open question "Composicion del conjunto de calibracion: cuantos casos, con que dimensiones y con que criterio se consensuan las anclas. Un ancla mal consensuada calibra mal a todos los evaluadores a la vez, de modo que el riesgo se concentra aqui."
+open question "Recalibracion: si el conjunto de calibracion cambia de version, definir si las sesiones abiertas siguen validas o si se exige recalibrar."
+open question "Umbrales absolutos frente a percentiles relativos: pendiente del corpus completo. critical_r_cutoff ya opera de forma relativa."
+open question "Derivacion de critical_r_cutoff: percentil de la distribucion de pares, corte por atipicos, o valor fijo por diseno. Afecta directamente al veto D1."
+open question "Que hace el instrumento cuando un item cambia de version y existen registros previos: notificar, invitar a reevaluar, o solo marcar como superado. Hoy solo marca."
+open question "C4 como estimacion frente a medicion: la aprendibilidad medida requiere protocolo de exposicion repetida. Definir si se incorpora un modulo longitudinal."
+open question "Criterio de aceptacion: la poblacion destinataria de ICAP no es la de ISO 9186, lo que probablemente justifica un criterio propio y argumentado en vez de importar un porcentaje."
+open question "Estratificacion por categoria gramatical: la transparencia varia significativamente segun categoria. UTTERANCE permite derivarla; contrastar con los datos que v2 genere."
+open question "CERTIFICACION (trabajo posterior): tamanos minimos de muestra, umbrales de acuerdo, firma o URL verificable, y vigencia, revocacion y reevaluacion del sello."
+open question "Modularizacion de la especificacion: separar ingesta, evaluacion y familia en modulos .allium con use, una vez que allium check pueda validar las referencias cruzadas."
