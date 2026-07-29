@@ -4,6 +4,78 @@ Documento de trabajo, rama `v2`. Define tipos de pantalla, patrones de interacci
 
 Stack decidido: framework con build. Acceso: abierto, con datos etnográficos del evaluador y calibración previa bloqueante.
 
+## Respuestas rápidas
+
+Bloque de referencia para quien entra al proyecto por primera vez. Cada respuesta se desarrolla en la sección correspondiente.
+
+### ¿Cómo se puntúa cada dimensión?
+
+No hay una forma de puntuar sino cuatro, y esa es la decisión de diseño más importante del instrumento. Las dimensiones no comparten escala y no se convierten a una escala común.
+
+| Capa | Dimensión | Qué produce | Criterio |
+|---|---|---|---|
+| A | A1 grosor de trazo | decimal, % del diámetro de soporte | mínimo, veto duro |
+| A | A2 unidades desligadas | conteo entero | máximo, perfil |
+| A | A3 regiones cerradas | conteo entero | advertencia, fuera de todo veredicto |
+| A | A4 contorno inferido | decimal, % del esqueleto | máximo, marcada como hipótesis |
+| B | B1 desenfoque | sigma en píxeles | piso, perfil |
+| B | B2 tamaño | píxeles de diagonal | contra el tamaño real de presentación, veto duro |
+| B | B3 desplazamiento | píxeles de barrido | piso, perfil |
+| C | C1 a C4 | ordinal 1 a 5, o ausencia tipada | piso y promedio dentro de la capa |
+| D | D1 confusabilidad | correlación 0 a 1 por par | corte derivado de la distribución, veto duro |
+| D | D2 consistencia | coeficiente de variación en % | máximo, perfil de familia |
+| D | D3 fragilidad | ordenamiento | sin criterio, es diagnóstico |
+
+Tres precisiones que cambian el diseño. Las capas A y D no se puntúan: se miden, y lo que la interfaz muestra es la distancia al criterio. La capa B produce el promedio de dos pasadas en direcciones opuestas, y la diferencia entre ellas es el indicador de fiabilidad del dato, no un descarte. La capa C es la única Likert, y admite cuatro estados —puntuada, no aplicable, sin competencia para juzgar, y omitida— con el mismo peso visual, nunca con la ausencia como escape secundario.
+
+### ¿Quién evalúa?
+
+Tres agentes distintos, y conviene no confundirlos porque producen datos de naturaleza diferente. El script evalúa las capas A y D completas, en la ingesta, sin intervención humana y con reproducibilidad perfecta. El evaluador humano produce las capas B y C: la B solo sobre una submuestra cercana al veinte por ciento, la C sobre los ítems que alcance a ver. Un tercero, en rol de codificador, clasifica después las respuestas abiertas, fuera de la sesión y sin haber participado en ella.
+
+El sitio es abierto. Cualquiera puede evaluar, declarando perfil etnográfico y consentimiento versionado, y pasando por la calibración previa, que es bloqueante. Los roles declarados incluyen a personas usuarias de pictogramas, personas sin dificultades de comunicación oral, familiares o cuidadores, y profesionales de comunicación aumentativa. Varias personas pueden evaluar el mismo pictograma sin sobrescribirse: cada evaluación es un registro independiente.
+
+### ¿Qué pantallas debería cubrir el diseño?
+
+Diecisiete, en cinco familias, detalladas en las secciones 3 y 4. Para ordenar el esfuerzo conviene distinguir las que no tienen precedente que copiar de las que son convencionales.
+
+Necesitan diseño original, en este orden: comprensión espontánea y correspondencia, que son el par donde ocurre la revelación diferida; calibración, que repite ese mismo patrón; umbrales de capa B, que es la interacción más novedosa y la más fácil de arruinar; juicio de capa C, por el problema de jerarquía entre escala y ausencia; ficha del ítem con sus tres bandas; e informe de familia con la matriz y el plano de portada.
+
+Son convencionales y no merecen exploración: perfil, contexto de evaluación, índice de ítems, exportación y las dos páginas públicas. El informe de validación está en medio: su forma es una tabla, pero su condición de pantalla bloqueante y descargable sí merece atención.
+
+### ¿Cómo visualizar el resultado?
+
+No hay puntaje que visualizar, y ese es el punto. La v2 elimina el número único y el hexágono de seis ejes porque mezclaban unidades no conmensurables. Lo que hay son cuatro objetos visuales distintos.
+
+Por ítem, un veredicto binario con su causa nombrada: bloqueado o admisible, y si está bloqueado, cuál de los tres vetos falló y con qué magnitud. Junto a él, la ficha de tres bandas, con barras contra umbral para la capa A, valores en unidades físicas para la B, y un triángulo para la C, que es el único radar legítimo del instrumento porque sus tres ejes sí son conmensurables.
+
+Por familia, el plano de confusabilidad contra consistencia. Es la figura de portada y reemplaza la función retórica que cumplía el hexágono: legible de un vistazo, con dos ejes comparables entre sí, y muestra la única propiedad que ningún otro instrumento del campo mide.
+
+Por biblioteca, el agregado nunca colapsa en una cifra. Dice qué porcentaje de los ítems fue evaluado, por cuántas personas, bajo qué protocolo, con cuánto desacuerdo y en qué contextos.
+
+### ¿Hay umbral de aprobación?
+
+Hay tres, y ninguno está calibrado todavía.
+
+Los tres son vetos duros: grosor de trazo bajo el mínimo, tamaño de legibilidad por encima del tamaño real de presentación, y confusabilidad crítica con un vecino del mismo tablero. Son condiciones necesarias, no predictores estadísticos: si el signo no se ve o se confunde con su vecino, ninguna virtud lo redime. Todo lo demás se reporta como perfil y no elimina.
+
+No existe un puntaje de corte agregado, y reconstruirlo promediando capas está explícitamente prohibido. Los valores numéricos de los tres vetos son propuestas heredadas de las anclas verbales de la rúbrica anterior y de literatura de población general, no de calibración sobre datos de comportamiento. La interfaz debe presentarlos como editables y mostrar esa condición en el punto de edición, no enterrada en la documentación. La divergencia de calibración de un evaluador, por su parte, nunca bloquea: se reporta.
+
+### ¿Evaluación por lote?
+
+Sí para lo automático, no para lo humano, y con progreso parcial legítimo.
+
+Las capas A y D se calculan sobre la biblioteca completa al importarla, en segundos y sin intervención. Ese es el lote, y su resultado está disponible antes de que nadie entregue un dato. Las capas B y C son por ítem: la B solo sobre la submuestra, la C sobre los ítems que la persona alcance a evaluar.
+
+Que una biblioteca quede evaluada a medias no es un estado de error sino la situación normal, y el agregado la reporta como cobertura. La interfaz debe distinguir con claridad entre un ítem pendiente y un ítem fuera de la submuestra, que no tiene tarea asociada y nunca la tendrá.
+
+El modelo admite además un caso que la versión anterior no contemplaba: importar un pictograma suelto, evaluarlo, y agregarlo después a una biblioteca combinando resultados sin rehacer nada, porque cada evaluación es un registro atómico anclado a una versión exacta.
+
+### ¿Conviene explorar variaciones?
+
+En las seis pantallas de interacción novedosa, sí, porque no hay precedente del cual partir y el costo de equivocarse es alto: una mala resolución de la revelación diferida o del método de ajuste no produce una experiencia mediocre, produce un dato inválido. En los formularios y las vistas de lectura, no: conviene que se parezcan a lo que la gente ya sabe usar.
+
+Con una restricción que acota el espacio de exploración. Las trece garantías de la sección 6 no son negociables en ninguna variante. Una propuesta que muestre el ancla mientras se puntúa, o la frase objetivo durante la comprensión espontánea, o un puntaje único agregado, no es una variación del instrumento sino otro instrumento, y uno que no mide lo que este mide.
+
 ## 1. Marca
 
 La marca principal es **ICAP**, sola. El nombre extendido acompaña como subtítulo, nunca como marca.
